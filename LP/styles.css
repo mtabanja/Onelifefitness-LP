@@ -99,19 +99,94 @@ img { display: block; max-width: 100%; }
 .site-header {
   width: min(var(--max-w), calc(100% - var(--page-pad) * 2));
   margin: 0.75rem auto 0;
-  padding: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius-xl);
-  background: rgba(255, 250, 243, 0.78);
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 0.55rem;
+  background: rgba(12, 10, 7, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 10px 32px rgba(84, 52, 28, 0.07), inset 0 1px 0 rgba(255,255,255,0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  flex-wrap: wrap;       /* allows nav to drop to new row on mobile */
+  flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+/* Logo sits directly on dark header — no inner dark pill needed */
+.site-header .brand-core {
+  background: transparent;
+  padding: 0.25rem 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Nav links → white on dark header */
+.site-header .nav-link {
+  color: rgba(255, 255, 255, 0.68);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+.site-header .nav-link:hover,
+.site-header .nav-link.is-active {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.06);
+}
+.site-header.nav-open .site-nav {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Hamburger bars → white */
+.site-header .nt-bar { background: rgba(255, 255, 255, 0.88); }
+.site-header .nav-toggle {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.site-header .nav-toggle:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* Header CTA → terracotta on dark header (desktop only — mobile is hidden) */
+.site-header .nav-cta {
+  background: var(--accent-warm);
+  color: #fff;
+  border-color: rgba(255, 160, 80, 0.25);
+  box-shadow: 0 2px 14px rgba(180, 84, 39, 0.38);
+}
+.site-header .nav-cta:hover {
+  background: var(--accent-warm-soft);
+  box-shadow: 0 4px 20px rgba(180, 84, 39, 0.48);
+}
+
+/* ── LANGUAGE TOGGLE ─────────────────────────────────────────── */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.28rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 220ms var(--ease);
+  flex-shrink: 0;
+}
+.lang-toggle:hover { border-color: rgba(255, 255, 255, 0.22); }
+
+.lang-opt {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 200ms var(--ease);
+  line-height: 1;
+}
+.lang-opt.is-active { color: rgba(255, 255, 255, 0.90); }
+
+.lang-sep {
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.20);
+  line-height: 1;
 }
 
 /* ── NAVIGATION ──────────────────────────────────────────────── */
@@ -240,14 +315,17 @@ img { display: block; max-width: 100%; }
     0 12px 36px rgba(76, 45, 18, 0.055);
 }
 
-/* Logo pill */
+/* Logo container — used in cards (brand-core) */
 .brand-core {
-  padding: 0.8rem 1.1rem;
+  padding: 0.72rem 1.1rem;
   background: #1A1510;
   display: flex;
+  align-items: center;
   justify-content: center;
-  border-radius: 0.55rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  border-radius: 0.45rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 2px 8px rgba(0,0,0,0.18);
 }
 
 .brand-logo { display: block; width: 142px; height: auto; }
@@ -414,12 +492,13 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: -0.1rem;
-  height: 12rem;
+  height: 16rem;
   background: linear-gradient(
     180deg,
-    rgba(245, 240, 232, 0) 0%,
-    rgba(245, 240, 232, 0.62) 55%,
-    rgba(245, 240, 232, 1) 100%
+    rgba(245, 240, 232, 0)    0%,
+    rgba(245, 240, 232, 0)    52%,
+    rgba(245, 240, 232, 0.55) 74%,
+    rgba(245, 240, 232, 1)    100%
   );
   pointer-events: none;
   z-index: 1;
@@ -562,11 +641,11 @@ h1, h2, h3 {
 .hero-copy.is-visible .hero-meta { opacity: 1; transition-delay: 0.62s; }
 
 .hero-meta span {
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.3rem;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.86);
+  padding: 0.38rem 0.7rem;
+  border-radius: 0.35rem;
+  background: rgba(8, 6, 4, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -754,9 +833,24 @@ h1, h2, h3 {
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.22;
+  line-height: 1.28;
   color: var(--text);
   margin: 0 0 0.75rem;
+  position: relative;
+  padding-left: 0.05rem;
+}
+
+/* Large decorative opening quote mark */
+.forwho-quote::before {
+  content: '\201C';
+  display: block;
+  font-size: 3.8rem;
+  line-height: 0.65;
+  color: var(--accent-warm);
+  opacity: 0.22;
+  margin-bottom: 0.35rem;
+  font-style: normal;
+  letter-spacing: 0;
 }
 
 .forwho-card p {
@@ -904,24 +998,47 @@ h1, h2, h3 {
 .team-section {
   margin-top: 4.8rem;
   border-radius: var(--radius-xl);
-  background:
-    linear-gradient(155deg, rgba(24, 20, 13, 0.96) 0%, rgba(18, 14, 9, 0.99) 100%);
+  /* Desktop: cover crops to the face area */
+  background-image: url('ASSETS/generated-image (3).png');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 24px 64px rgba(18, 12, 6, 0.16);
+  box-shadow: 0 24px 64px rgba(18, 12, 6, 0.22);
 }
 
-/* Subtle texture orbs */
+/* Warm cinematic tone wash — softens harsh image contrast on all breakpoints */
+.team-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 16, 6, 0.30);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Desktop scrim: dark-left (text readable) → light-right (trainers visible) */
 .team-section::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 82% 22%, rgba(180, 84, 39, 0.08) 0%, transparent 30%),
-    radial-gradient(circle at 14% 82%, rgba(255, 255, 255, 0.025) 0%, transparent 26%);
+    linear-gradient(108deg,
+      rgba(14, 11, 7, 0.88) 0%,
+      rgba(14, 11, 7, 0.70) 38%,
+      rgba(14, 11, 7, 0.32) 62%,
+      rgba(14, 11, 7, 0.12) 100%
+    );
   pointer-events: none;
   z-index: 0;
 }
+
+/* Desktop: tray is invisible — children go directly into the grid cells */
+.team-tray {
+  display: contents;
+}
+
 
 .team-shell {
   position: relative;
@@ -1058,23 +1175,50 @@ h1, h2, h3 {
 .closing-panel { padding-top: 4.4rem; }
 
 .closing-core {
-  padding-top: 1.8rem;
-  border-top: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 88% 18%, rgba(180, 84, 39, 0.10) 0%, transparent 32%),
+    linear-gradient(155deg, rgba(24, 20, 13, 0.97) 0%, rgba(18, 14, 9, 1) 100%);
+  padding: 2.4rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.2rem;
+  gap: 1.6rem;
   flex-direction: column;
+  box-shadow: 0 24px 64px rgba(18, 12, 6, 0.18);
 }
 
-.closing-copy .eyebrow { margin-bottom: 1rem; }
+.closing-copy .eyebrow {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.closing-core h2 { color: #F5F0E8; }
 
 .closing-sub {
   margin-top: 0.75rem;
-  color: var(--muted);
+  color: rgba(245, 240, 232, 0.66);
   font-size: 0.94rem;
   line-height: 1.6;
   max-width: 28rem;
+}
+
+/* Light button on dark closing panel */
+.closing-core .primary-cta {
+  background: #F7F2EA;
+  color: var(--accent);
+  box-shadow: 0 16px 32px rgba(23, 20, 13, 0.20);
+  flex-shrink: 0;
+}
+.closing-core .primary-cta:hover {
+  background: #fff;
+  color: #111009;
+  box-shadow: 0 22px 44px rgba(23, 20, 13, 0.28);
+}
+.closing-core .primary-cta .primary-cta-icon {
+  background: rgba(23, 20, 13, 0.09);
 }
 
 /* ── FOOTER ──────────────────────────────────────────────────── */
@@ -1152,6 +1296,19 @@ h1, h2, h3 {
   color: var(--muted);
   line-height: 1.55;
   font-size: 0.91rem;
+}
+
+/* ── TESTIMONIAL STAR RATINGS ────────────────────────────────── */
+.testi-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.1rem;
+}
+
+.testi-stars span {
+  color: var(--accent-warm);
+  font-size: 0.82rem;
+  line-height: 1;
 }
 
 /* ── MOBILE STICKY CTA ──────────────────────────────────────── */
@@ -1528,6 +1685,7 @@ h1, h2, h3 {
   }
 
   .nav-cta { width: auto; }
+  .header-actions { order: 3; } /* push CTA to far right after nav links */
 
   /* Desktop nav: horizontal, inline, no collapse */
   .nav-toggle { display: none; }
@@ -1645,7 +1803,7 @@ h1, h2, h3 {
   .closing-core {
     align-items: center;
     flex-direction: row;
-    padding-top: 2rem;
+    padding: 3.6rem;
   }
 
   /* Footer */
@@ -1686,13 +1844,24 @@ h1, h2, h3 {
     justify-content: space-between;
   }
 
-  /* Mobile header: hide CTA button — sticky footer handles conversions.
-     Single row: [logo pill]  ←→  [hamburger] */
+  /* Mobile header: centered logo + absolute hamburger pinned top-right */
   .header-actions .nav-cta { display: none; }
-
-  /* Compact logo pill on mobile */
-  .brand-logo { width: 100px; }
-  .brand-core  { padding: 0.55rem 0.8rem; }
+  .site-header {
+    justify-content: center;
+    position: relative;
+  }
+  .header-actions {
+    position: absolute;
+    right: 0.6rem;
+    top: 0.55rem;          /* fixed from top — does not shift when nav expands */
+    transform: none;
+  }
+  /* Keep hamburger aligned to top when nav is open */
+  .site-header.nav-open .header-actions {
+    top: 0.55rem;
+    transform: none;
+  }
+  .brand-logo { width: 120px; }
 
   /* Secondary CTA stays centered, not stretched */
   .secondary-cta {
@@ -1702,7 +1871,241 @@ h1, h2, h3 {
 
   .process-copy { padding: 0 0 0.35rem; }
 
-  .hero::after { height: 8rem; }
+  .hero::after { height: 12rem; }
 
   .quiz-panel { padding: 1rem; }
+
+  /* ── TEAM SECTION: portrait photo, faces at top, premium tray at bottom ─ */
+  .team-section {
+    background-image: url('ASSETS/Untitled design.png'); /* 9:16 portrait */
+    background-size: cover;
+    background-position: center top;
+    min-height: calc(100vw * 16 / 9);
+  }
+
+  /* Heavier warm tone on mobile — kills the harsh cold whites */
+  .team-section::before {
+    background: rgba(24, 12, 4, 0.44);
+  }
+
+  /* Top: clean & transparent (faces breathe) → heavy dark vignette at bottom */
+  .team-section::after {
+    background: linear-gradient(
+      180deg,
+      rgba(12, 8, 4, 0.00) 0%,
+      rgba(12, 8, 4, 0.00) 38%,
+      rgba(12, 8, 4, 0.60) 58%,
+      rgba(12, 8, 4, 0.88) 72%,
+      rgba(12, 8, 4, 0.97) 100%
+    );
+  }
+
+  /* Full-height flex container — pushes tray to the bottom */
+  .team-shell {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: calc(100vw * 16 / 9);
+    padding: 0 0.9rem 0.9rem;
+    gap: 0;
+  }
+
+  /* ── Double-Bezel glass tray (content panel) ─────────────────── */
+  .team-tray {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    /* Warm espresso — distinguishable from the cold-dark gradient above */
+    background: rgba(28, 17, 7, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: var(--radius-xl);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 -32px 64px rgba(10, 4, 0, 0.60);
+    padding: 1.3rem 1.3rem 1.2rem;
+  }
+
+  /* ── Typography inside tray ──────────────────────────────────── */
+  .team-copy .eyebrow { margin-bottom: 0.6rem; }
+
+  .team-copy h2 {
+    font-size: clamp(1.55rem, 5.5vw, 1.9rem);
+    line-height: 1.0;
+    max-width: none;   /* let it wrap naturally in the tray width */
+  }
+
+  .team-copy p {
+    font-size: 0.86rem;
+    color: rgba(245, 240, 232, 0.80);  /* was 0.60 — now readable */
+    margin-top: 0.55rem;
+    line-height: 1.5;
+  }
+
+  .team-cta { margin-top: 0.85rem; }
+
+  /* ── Stats: 2×2 grid inside the tray ───────────────────────── */
+  .team-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    margin-top: 0.1rem;
+  }
+
+  .team-point {
+    padding: 0.75rem 0;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.14rem;
+    align-items: flex-start;
+  }
+
+  /* Left column: right divider */
+  .team-point:nth-child(odd) {
+    padding-right: 0.9rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  /* Right column: left indent */
+  .team-point:nth-child(even) {
+    padding-left: 0.9rem;
+  }
+
+  /* Top row: bottom divider */
+  .team-point:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  /* Reset border overrides from base styles */
+  .team-point:first-child { border-top: none; }
+
+  .team-point strong { font-size: 0.88rem; }
+  .team-point span   { font-size: 0.78rem; color: rgba(245, 240, 232, 0.52); }
+}
+
+/* ── SECTION PHOTOS ──────────────────────────────────────────── */
+
+/* Shared base for all inline section photos */
+.trust-photo,
+.testi-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* Per-image fine-tuning */
+.trust-photo { object-position: center 38%; }  /* lat pulldown — center the two people */
+.testi-photo { object-position: center 40%; height: 220px; } /* laughing — faces in center */
+
+/* Quiz interstitial photo */
+.interstitial-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: var(--radius-xl);
+  display: block;
+  margin-bottom: 1.6rem;
+}
+
+/* Closing CTA photo — overlaps the dark card from above */
+.closing-visual {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 28%;  /* boxing shot — keep both people in frame */
+  border-radius: var(--radius-xl);
+  display: block;
+  margin-bottom: -3rem;
+  position: relative;
+  z-index: 0;
+}
+
+.closing-panel { position: relative; }
+
+.closing-core {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── TRAINERS SECTION ────────────────────────────────────────── */
+.trainers-section { padding-top: 2.4rem; }
+
+.trainers-header { margin-bottom: 1.6rem; }
+.trainers-header .eyebrow { margin-bottom: 0.8rem; }
+.trainers-header h2 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  max-width: 20ch;
+}
+
+/* 3 equal portrait cards — same size always */
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.trainer-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  transition: transform 400ms var(--ease), box-shadow 400ms var(--ease);
+}
+
+.trainer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(47, 32, 18, 0.10);
+}
+
+.trainer-card-img-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.trainer-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 600ms var(--ease);
+}
+
+.trainer-card:hover .trainer-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.trainer-card-info {
+  padding: 0.75rem 0.9rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.trainer-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.trainer-role {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .trainers-grid { gap: 1rem; }
+  .trainers-section { padding-top: 3rem; }
+  .trainer-card-info { padding: 1rem 1.1rem 1.1rem; }
+  .trainer-name { font-size: 1rem; }
+  .trainer-role { font-size: 0.82rem; }
+  .trust-photo  { height: 340px; }
+  .testi-photo  { height: 280px; }
+  .closing-visual { height: 320px; }
+  .interstitial-photo { height: 280px; }
 }

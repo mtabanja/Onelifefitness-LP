@@ -8,3 +8,4 @@ tmp_avatars/
 
 # macOS
 .DS_Store
+.vercel
