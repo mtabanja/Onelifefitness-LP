@@ -1,0 +1,10 @@
+# Claude & local tooling
+.claude/
+.skills/
+.mcp.json
+
+# Temp files
+tmp_avatars/
+
+# macOS
+.DS_Store

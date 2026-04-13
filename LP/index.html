@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Life Fitness | Persoonlijke coaching in Utrecht</title>
+    <meta name="description" content="1-op-1 personal coaching in Utrecht. Gratis eerste sessie, geen contract. Ontdek wat bij jou past in 60 seconden." />
+    <meta property="og:title" content="One Life Fitness | 1-op-1 coaching Utrecht" />
+    <meta property="og:description" content="Strak worden, meer energie, meer zelfvertrouwen — met coaching die echt bij jou past." />
+    <meta property="og:type" content="website" />
+
+    <!-- LCP: preload logo so it renders immediately -->
+    <link rel="preload" href="../ASSETS/logo.avif" as="image" type="image/avif" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="page-noise" aria-hidden="true"></div>
+
+      <!-- ── HEADER ───────────────────────────────────────────── -->
+      <header class="site-header reveal" id="siteHeader">
+        <div class="brand-shell">
+          <div class="brand-core">
+            <img src="../ASSETS/logo.avif" alt="One Life Fitness" class="brand-logo" fetchpriority="high" />
+          </div>
+        </div>
+
+        <!-- Desktop nav links / Mobile dropdown panel -->
+        <nav class="site-nav" id="siteNav" aria-label="Paginanavigatie">
+          <a href="#aanpak"     class="nav-link">Aanpak</a>
+          <a href="#ervaringen" class="nav-link">Ervaringen</a>
+          <a href="#werkwijze"  class="nav-link">Werkwijze</a>
+          <a href="#team"       class="nav-link">Over ons</a>
+          <a href="#faq"        class="nav-link">FAQ</a>
+        </nav>
+
+        <!-- Hamburger (mobile) + CTA -->
+        <div class="header-actions">
+          <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+            <span class="nt-bar" aria-hidden="true"></span>
+            <span class="nt-bar" aria-hidden="true"></span>
+          </button>
+          <button class="nav-cta" data-open-quiz id="headerCta">
+            Start de test
+            <span class="nav-cta-icon">↗</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- ── HERO ─────────────────────────────────────────────── -->
+        <section class="hero">
+          <div class="hero-stage reveal">
+            <div class="hero-media">
+              <!-- Layer 1 (bottom): gradient fallback shown if video fails -->
+              <div class="hero-media-fallback" aria-hidden="true"></div>
+              <!-- Layer 2: video covers fallback when loaded -->
+              <video class="hero-video" autoplay muted loop playsinline preload="none" aria-hidden="true">
+                <source src="../ASSETS/YTDown.com_YouTube_Promo_Media_-PkQ4PQY87U_001_1080p.mp4" type="video/mp4" />
+              </video>
+              <!-- Layer 3: darkening scrim over video -->
+              <div class="hero-scrim" aria-hidden="true"></div>
+              <!-- Layer 4: large background wordmark -->
+              <div class="hero-wordmark" aria-hidden="true">ONE LIFE</div>
+            </div>
+
+            <div class="hero-copy reveal">
+              <span class="eyebrow hero-eyebrow">Utrecht · 1-op-1 coaching</span>
+              <h1>
+                <span class="line-1">Eindelijk fit,</span>
+                <span class="line-2">op jouw tempo.</span>
+              </h1>
+              <p class="hero-text">
+                Geen groepslessen, geen standaard schema's. Jij krijgt een trainer die echt naar jou kijkt.
+              </p>
+
+              <div class="cta-row">
+                <button class="primary-cta hero-primary" data-open-quiz id="heroCta">
+                  Doe de gratis test
+                  <span class="primary-cta-icon">↗</span>
+                </button>
+                <button class="secondary-cta" data-open-quiz>
+                  Hoe werkt het?
+                </button>
+              </div>
+
+              <div class="hero-meta">
+                <span>Gratis kennismaking</span>
+                <span>Geen contract</span>
+                <span>1-op-1 aandacht</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── PROOF BAR ─────────────────────────────────────────── -->
+        <div class="proof-bar reveal">
+          <div class="proof-item">
+            <strong class="proof-num">99<span class="proof-unit">%</span></strong>
+            <span class="proof-label">Sluit aan na de eerste sessie</span>
+          </div>
+          <div class="proof-divider" aria-hidden="true"></div>
+          <div class="proof-item">
+            <strong class="proof-num">3</strong>
+            <span class="proof-label">Locaties in Utrecht</span>
+          </div>
+          <div class="proof-divider" aria-hidden="true"></div>
+          <div class="proof-item">
+            <strong class="proof-num">1-op-1</strong>
+            <span class="proof-label">Altijd persoonlijk</span>
+          </div>
+        </div>
+
+        <!-- ── TRUST / FEATURES ──────────────────────────────────── -->
+        <section class="trust-section" id="aanpak">
+          <article class="trust-intro reveal">
+            <span class="eyebrow">Waarom mensen beginnen</span>
+            <h2>Coaching die aanvoelt als steun, niet als druk.</h2>
+            <p class="trust-sub">
+              Of je nu nog nooit gesport hebt, eerder gestopt bent, of gewoon meer uit jezelf wilt halen — hier begin je altijd op jouw eigen niveau.
+            </p>
+          </article>
+
+          <div class="feature-list reveal">
+            <div class="feature-item">
+              <div class="feature-number">99<span>%</span></div>
+              <div class="feature-text">
+                <h3>Gaat door na de eerste sessie</h3>
+                <p>De eerste sessie maakt direct duidelijk of het klikt. Bijna iedereen die langskomt, blijft.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">1<span class="feature-sub">-op-1</span></div>
+              <div class="feature-text">
+                <h3>Coaching op jouw ritme</h3>
+                <p>Geen groepslessen. Geen wachten. Jij krijgt de volledige aandacht van jouw trainer.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">0</div>
+              <div class="feature-text">
+                <h3>Contracten of verplichtingen</h3>
+                <p>Je start wanneer je wilt. Stop wanneer je wilt. Geen handtekening die je vasthoudt.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── FOR WHO ────────────────────────────────────────────── -->
+        <section class="forwho-section reveal">
+          <div class="forwho-header">
+            <span class="eyebrow">Is dit voor mij?</span>
+            <h2>Dit klinkt waarschijnlijk bekend.</h2>
+          </div>
+          <div class="forwho-grid">
+            <article class="forwho-card">
+              <span class="forwho-tag">Beginners</span>
+              <blockquote class="forwho-quote">"Ik weet niet waar ik moet beginnen."</blockquote>
+              <p>Je hoeft niks te weten. Jouw trainer begint exact waar jij nu staat — en legt alles uit.</p>
+            </article>
+            <article class="forwho-card forwho-card--accent">
+              <span class="forwho-tag">Herstart</span>
+              <blockquote class="forwho-quote">"Ik ben eerder gestopt en wil het nu echt volhouden."</blockquote>
+              <p>Structuur, persoonlijke begeleiding en iemand die je bijhoudt. Dat maakt het verschil deze keer.</p>
+            </article>
+            <article class="forwho-card">
+              <span class="forwho-tag">Doorgroeiers</span>
+              <blockquote class="forwho-quote">"Ik sport al, maar zie geen resultaat meer."</blockquote>
+              <p>Gerichter trainen, slimmer progressie opbouwen. Ook daarvoor ben je welkom.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── TESTIMONIALS ──────────────────────────────────────── -->
+        <section class="testimonials-section reveal" id="ervaringen">
+          <div class="testi-header">
+            <span class="eyebrow">Ervaringen</span>
+            <h2>Wat vrouwen zeggen na hun eerste sessie.</h2>
+          </div>
+          <div class="testi-track">
+
+            <article class="testi-card">
+              <div class="card-shell">
+                <div class="card-core testi-core">
+                  <div class="testi-top">
+                    <img
+                      src="../ASSETS/uifaces-human-avatar.jpg"
+                      alt="Portret van Anouk"
+                      class="avatar-photo"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Anouk, 25</strong>
+                      <span class="testi-meta">Utrecht · Strakker worden</span>
+                    </div>
+                  </div>
+                  <p class="testi-quote">"Voor het eerst voelde het haalbaar in plaats van zwaar. Na twee weken merkte ik al verschil."</p>
+                  <span class="testi-badge">4 kg afgevallen in 6 weken</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="card-shell">
+                <div class="card-core testi-core">
+                  <div class="testi-top">
+                    <img
+                      src="../ASSETS/uifaces-human-avatar (1).jpg"
+                      alt="Portret van Roos"
+                      class="avatar-photo"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Roos, 28</strong>
+                      <span class="testi-meta">Utrecht · Meer energie</span>
+                    </div>
+                  </div>
+                  <p class="testi-quote">"Ik had al drie keer eerder geprobeerd te starten. Dit is de eerste keer dat ik het echt volhoud."</p>
+                  <span class="testi-badge">Al 4 maanden actief</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="card-shell">
+                <div class="card-core testi-core">
+                  <div class="testi-top">
+                    <img
+                      src="../ASSETS/uifaces-human-avatar (2).jpg"
+                      alt="Portret van Floor"
+                      class="avatar-photo"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Floor, 27</strong>
+                      <span class="testi-meta">Utrecht · Zelfvertrouwen</span>
+                    </div>
+                  </div>
+                  <p class="testi-quote">"De gym voelde eerst als iets voor anderen. Nu kijk ik er elke week naar uit."</p>
+                  <span class="testi-badge">Van nul naar 3× per week</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ── PROCESS ───────────────────────────────────────────── -->
+        <section class="process-section reveal" id="werkwijze">
+          <div class="process-shell">
+            <div class="process-copy">
+              <span class="eyebrow">Hoe werkt het</span>
+              <h2>Van test naar eerste sessie in drie stappen.</h2>
+            </div>
+
+            <div class="process-steps">
+              <article>
+                <span class="step-num">01</span>
+                <h3>Doe de korte test</h3>
+                <p>Vier vragen over jouw doel en wat je tegenhoudt. Duurt 60 seconden.</p>
+              </article>
+              <article>
+                <span class="step-num">02</span>
+                <h3>Ontvang jouw persoonlijk advies</h3>
+                <p>Je ziet direct welke aanpak het beste bij jou past — afgestemd op jouw antwoorden.</p>
+              </article>
+              <article>
+                <span class="step-num">03</span>
+                <h3>Plan je gratis sessie</h3>
+                <p>Kies een moment, kom langs, en voel zelf of het klopt. Zonder verplichting.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── TRAINER / BRAND SECTION ──────────────────────────── -->
+        <section class="team-section reveal" id="team">
+          <!--
+            ════════════════════════════════════════════════════════
+            TRAINER FOTO / VIDEO ACHTERGROND — HOGE IMPACT
+            ════════════════════════════════════════════════════════
+            Optie A — Achtergrondafbeelding:
+            Voeg toe aan .team-section via inline style of CSS:
+            background-image: url('../ASSETS/trainer-nour.jpg')
+            Aanbevolen: portretfoto van Nour of de trainers in de gym.
+            De bestaande donkere overlay zorgt voor leesbaarheid.
+
+            Optie B — Backgroundvideo (hoge impact):
+            Voeg een <video> element toe als eerste kind van .team-shell
+            met class="team-bg-video" (styled in CSS).
+          -->
+          <div class="team-shell">
+            <div class="team-copy">
+              <span class="eyebrow eyebrow-light">One Life Fitness · Utrecht</span>
+              <h2>Persoonlijk. Lokaal. Zonder opgeblazen fitnesspraat.</h2>
+              <p>We werken met een klein team op meerdere locaties in Utrecht. Je start met een gratis sessie — we luisteren, geen verkooppraatje. Daarna kies jij.</p>
+              <button class="primary-cta primary-cta-light team-cta" data-open-quiz>
+                Plan de gratis sessie
+                <span class="primary-cta-icon">↗</span>
+              </button>
+            </div>
+
+            <div class="team-points">
+              <div class="team-point">
+                <strong>3 locaties in Utrecht</strong>
+                <span>Altijd dichtbij</span>
+              </div>
+              <div class="team-point">
+                <strong>1-op-1 sessies</strong>
+                <span>Altijd persoonlijk</span>
+              </div>
+              <div class="team-point">
+                <strong>60 minuten</strong>
+                <span>Volledig op jou gericht</span>
+              </div>
+              <div class="team-point">
+                <strong>Gratis start</strong>
+                <span>Geen verplichtingen</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── FAQ / OBJECTION HANDLER ──────────────────────────── -->
+        <section class="faq-section reveal" id="faq">
+          <div class="faq-header">
+            <span class="eyebrow">Veelgestelde vragen</span>
+            <h2>Wat mensen zich afvragen voor ze beginnen.</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-q">
+                "Ik heb nog nooit gesport — is dit voor mij?"
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">Absoluut. Sterker nog: beginners halen het meeste uit 1-op-1 coaching. Je leert alles goed, zonder slechte gewoontes aan te leren.</p>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                "Wat kost het?"
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">De eerste sessie is volledig gratis, zonder verplichting. Daarna bespreken we samen wat past bij jouw doelen en situatie.</p>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                "Ik heb nauwelijks tijd — gaat dat wel werken?"
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">Eén sessie per week is genoeg om resultaat te zien. We bouwen een schema dat in jouw leven past — niet andersom.</p>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                "Ik ben eerder gestopt — hoe is dit anders?"
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">Omdat je nu niet alleen bent. Je hebt iemand die met je meekijkt, bijstuurt en je structuur geeft. Dat is precies het verschil.</p>
+            </details>
+          </div>
+        </section>
+
+        <!-- ── CLOSING CTA ───────────────────────────────────────── -->
+        <section class="closing-panel reveal">
+          <div class="closing-core">
+            <div class="closing-copy">
+              <span class="eyebrow">Gratis eerste stap</span>
+              <h2>Klaar om te zien wat bij jou past?</h2>
+              <p class="closing-sub">Doe de test in 60 seconden. Geen verplichtingen, geen contracten.</p>
+            </div>
+            <button class="primary-cta" data-open-quiz id="closingCta">
+              Doe de gratis test
+              <span class="primary-cta-icon">↗</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- ── FOOTER ────────────────────────────────────────────── -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <p class="footer-kicker">One Life Fitness</p>
+            <p class="footer-note">Persoonlijke 1-op-1 coaching in Utrecht. Gratis kennismakingssessie, geen contract.</p>
+          </div>
+          <div class="footer-actions">
+            <a href="https://wa.me/31612345678" class="footer-wa" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.553 4.107 1.523 5.832L0 24l6.335-1.493A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.802 9.802 0 01-5.001-1.372l-.36-.214-3.732.879.894-3.687-.235-.381A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+              WhatsApp ons
+            </a>
+          </div>
+          <p class="footer-meta">© 2025 One Life Fitness · Utrecht · <a href="/privacybeleid" class="footer-link">Privacybeleid</a></p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ── MOBILE STICKY CTA ────────────────────────────────── -->
+    <div class="mobile-sticky-cta">
+      <button class="mobile-sticky-button" data-open-quiz>
+        Doe de gratis test
+        <span class="mobile-sticky-icon">↗</span>
+      </button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════ -->
+    <!--                     QUIZ OVERLAY                       -->
+    <!-- ════════════════════════════════════════════════════════ -->
+    <div class="quiz-overlay" id="quizOverlay" aria-hidden="true">
+      <div class="quiz-backdrop" data-close-quiz></div>
+      <section class="quiz-panel" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+
+        <div class="quiz-header">
+          <div>
+            <span class="eyebrow">One Life Fitness</span>
+            <h2 id="quizTitle">Jouw gratis sessie test</h2>
+          </div>
+          <button class="quiz-close" aria-label="Sluiten" data-close-quiz>
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="quiz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+
+        <!-- Step 1: Goal -->
+        <div class="quiz-step is-active" data-step="1">
+          <span class="quiz-kicker">Vraag 1 van 4</span>
+          <h3>Wat wil je anders zien over 3 maanden?</h3>
+          <div class="answer-grid">
+            <button class="answer" data-field="goal" data-value="Strakker worden">Strakker worden</button>
+            <button class="answer" data-field="goal" data-value="Afvallen en meer energie">Afvallen</button>
+            <button class="answer" data-field="goal" data-value="Sterker worden">Sterker worden</button>
+            <button class="answer" data-field="goal" data-value="Meer zelfvertrouwen">Meer zelfvertrouwen</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Interstitial trust slide -->
+        <div class="quiz-step" data-step="2">
+          <div class="interstitial-shell">
+            <span class="quiz-kicker">Even tussendoor</span>
+            <h3>Jij bent niet de enige die een frisse start zoekt.</h3>
+            <p>De meeste vrouwen die bij ons komen, hebben het eerder geprobeerd. Het verschil: nu heb je iemand die écht met je meedenkt.</p>
+            <div class="interstitial-metrics">
+              <span>Persoonlijk plan</span>
+              <span>Rustig opgebouwd</span>
+              <span>Geen contractdruk</span>
+            </div>
+            <button class="primary-cta" data-next-step>
+              Ga verder
+              <span class="primary-cta-icon">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Level -->
+        <div class="quiz-step" data-step="3">
+          <span class="quiz-kicker">Vraag 2 van 4</span>
+          <h3>Hoe zou je jezelf nu omschrijven?</h3>
+          <div class="answer-grid">
+            <button class="answer" data-field="level" data-value="Complete beginner">Ik sport bijna nooit</button>
+            <button class="answer" data-field="level" data-value="Ik heb eerder gesport maar ben gestopt">Eerder gestopt</button>
+            <button class="answer" data-field="level" data-value="Ik sport af en toe">Ik sport af en toe</button>
+            <button class="answer" data-field="level" data-value="Ik sport regelmatig maar wil meer">Ik sport regelmatig</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Obstacle -->
+        <div class="quiz-step" data-step="4">
+          <span class="quiz-kicker">Vraag 3 van 4</span>
+          <h3>Wat houdt je het meest tegen?</h3>
+          <div class="answer-grid">
+            <button class="answer" data-field="obstacle" data-value="Ik heb geen tijd">Te druk, geen tijd</button>
+            <button class="answer" data-field="obstacle" data-value="Ik weet niet waar ik moet beginnen">Weet niet hoe beginnen</button>
+            <button class="answer" data-field="obstacle" data-value="Ik ben eerder begonnen maar gestopt">Eerder gestopt</button>
+            <button class="answer" data-field="obstacle" data-value="Ik voel me onzeker in een sportschool">Onzeker in de gym</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Timeline -->
+        <div class="quiz-step" data-step="5">
+          <span class="quiz-kicker">Vraag 4 van 4</span>
+          <h3>Wanneer wil je beginnen?</h3>
+          <div class="answer-grid">
+            <button class="answer" data-field="timeline" data-value="Deze week">Deze week nog</button>
+            <button class="answer" data-field="timeline" data-value="Binnen 2 weken">Binnen 2 weken</button>
+            <button class="answer" data-field="timeline" data-value="Ik oriënteer me nog">Ik oriënteer me nog</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Lead form -->
+        <div class="quiz-step" data-step="6">
+          <span class="quiz-kicker">Laatste stap</span>
+          <h3>Vul je gegevens in voor jouw persoonlijk resultaat.</h3>
+          <form id="leadForm" class="lead-form">
+            <label>
+              Voornaam
+              <input type="text" name="name" placeholder="Bijv. Sara" required autocomplete="given-name" />
+            </label>
+            <label>
+              Telefoonnummer
+              <input type="tel" name="phone" placeholder="06 12 34 56 78" required autocomplete="tel" />
+            </label>
+            <button type="submit" class="primary-cta form-cta">
+              Bekijk mijn resultaat
+              <span class="primary-cta-icon">↗</span>
+            </button>
+            <p class="form-note">We bellen je eenmalig om jouw gratis sessie in te plannen. Geen spam, geen abonnementen.</p>
+          </form>
+        </div>
+
+        <!-- Step 7: Typing indicator -->
+        <div class="quiz-step" data-step="7">
+          <span class="quiz-kicker">Even geduld…</span>
+          <h3>We analyseren jouw antwoorden</h3>
+          <div class="typing-shell">
+            <div class="typing-bubble">
+              <div class="typing-dots">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <p class="typing-note">Jouw persoonlijk profiel wordt opgesteld…</p>
+          </div>
+        </div>
+
+        <!-- Step 8: Result -->
+        <div class="quiz-step" data-step="8">
+          <span class="quiz-kicker">Jouw profiel</span>
+          <h3 id="resultTitle">We maken jouw richting klaar…</h3>
+          <p id="resultText" class="result-text"></p>
+          <div class="result-card">
+            <span class="result-label">Jouw aanbevolen eerste stap</span>
+            <p>Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.</p>
+          </div>
+          <div class="result-actions">
+            <a class="primary-cta" href="https://cal.com/" id="bookingLink" target="_blank" rel="noopener noreferrer">
+              Boek je gratis sessie
+              <span class="primary-cta-icon">↗</span>
+            </a>
+            <button class="secondary-link" data-close-quiz>Misschien later</button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
