@@ -558,6 +558,9 @@ h1, h2, h3 {
   line-height: 0.86;
   pointer-events: none;
   user-select: none;
+  /* Promote to GPU layer — prevents jitter during Android URL-bar scroll */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .hero-copy {
@@ -637,6 +640,8 @@ h1, h2, h3 {
   margin-top: 1rem;
   opacity: 0;
   transition: opacity 700ms var(--ease);
+  /* Prevent tags from breaking out of their container */
+  overflow: visible;
 }
 .hero-copy.is-visible .hero-meta { opacity: 1; transition-delay: 0.62s; }
 
@@ -2115,4 +2120,18 @@ h1, h2, h3 {
   .testi-photo  { height: 280px; }
   .closing-visual { height: 320px; }
   .interstitial-photo { height: 280px; }
+}
+
+/* ── NARROW PHONE FIX (< 425px) ──────────────────────────────
+   Scale hero meta tags down so all 3 fit on one line.
+   flex-wrap: wrap as last-resort safety for truly tiny screens. */
+@media (max-width: 424px) {
+  .hero-meta {
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+  .hero-meta span {
+    font-size: 0.62rem;
+    padding: 0.28rem 0.55rem;
+  }
 }
