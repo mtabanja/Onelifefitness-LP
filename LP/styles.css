@@ -809,6 +809,13 @@ h1, h2, h3 {
   border-color: rgba(180, 84, 39, 0.18);
 }
 
+/* Weight-loss card — warm amber tint, slightly stronger presence */
+.forwho-card--weight {
+  background: rgba(180, 84, 39, 0.08);
+  border-color: rgba(180, 84, 39, 0.22);
+  border-width: 1.5px;
+}
+
 .forwho-tag {
   display: inline-flex;
   padding: 0.3rem 0.65rem;

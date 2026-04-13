@@ -27,6 +27,9 @@ const i18n = {
     'forwho.c2.p': 'Structuur, persoonlijke begeleiding en iemand die je bijhoudt. Dat maakt het verschil deze keer.',
     'forwho.c3.tag': 'Doorgroeiers', 'forwho.c3.quote': '"Ik sport al, maar zie geen resultaat meer."',
     'forwho.c3.p': 'Gerichter trainen, slimmer progressie opbouwen. Ook daarvoor ben je welkom.',
+    'forwho.c4.tag': 'Afvallen',
+    'forwho.c4.quote': '"Ik doe echt mijn best, maar het lukt gewoon niet."',
+    'forwho.c4.p': 'Afvallen heeft niks te maken met harder je best doen. Het heeft alles te maken met de juiste aanpak voor jóuw lijf. Je trainer kijkt mee, past aan en zorgt dat je dit keer wél resultaat ziet.',
     'testi.eyebrow': 'Ervaringen', 'testi.h2': 'Wat vrouwen zeggen na hun eerste sessie.',
     'testi.stars.aria': '5 uit 5 sterren',
     'testi.anouk.meta': 'Utrecht · Strakker worden',
@@ -62,6 +65,10 @@ const i18n = {
     'faq.a3': 'Eén sessie per week is genoeg om resultaat te zien. We bouwen een schema dat in jouw leven past — niet andersom.',
     'faq.q4': '"Ik ben eerder gestopt — hoe is dit anders?"',
     'faq.a4': 'Omdat je nu niet alleen bent. Je hebt iemand die met je meekijkt, bijstuurt en je structuur geeft. Dat is precies het verschil.',
+    'faq.q5': '"Ik heb van alles geprobeerd om af te vallen — waarom zou dit anders zijn?"',
+    'faq.a5': 'Omdat we niet beginnen met een standaard plan. We beginnen met jou — jouw lichaam, jouw schema en wat eerder niet werkte. 1-op-1 coaching betekent dat je trainer ziet wat er misgaat en het direct aanpast. Dat is iets wat een app, een dieet of een groepsles nooit voor je kan doen.',
+    'faq.q6': '"Zie ik echt resultaat met maar één sessie per week?"',
+    'faq.a6': 'Ja — als die ene sessie slim is opgebouwd voor jouw doel. We trainen gericht, geven je handvatten voor buiten de gym en bouwen progressie die zichtbaar blijft. De meeste cliënten merken al snel dat consistent één keer per week meer doet dan ze hadden verwacht.',
     'closing.eyebrow': 'Gratis eerste stap', 'closing.h2': 'Klaar om te zien wat bij jou past?',
     'closing.p': 'Doe de test in 60 seconden. Geen verplichtingen, geen contracten.',
     'closing.cta': 'Doe de gratis test',
@@ -117,6 +124,9 @@ const i18n = {
     'forwho.c2.p': "Structure, personal guidance, and someone who keeps you accountable. That's what makes it different this time.",
     'forwho.c3.tag': 'Ready to Level Up', 'forwho.c3.quote': '"I already work out, but I\'ve hit a wall."',
     'forwho.c3.p': "Train smarter, build progress that actually shows. You're welcome here too.",
+    'forwho.c4.tag': 'Losing weight',
+    'forwho.c4.quote': '"I\'m genuinely putting in the effort — it just isn\'t working."',
+    'forwho.c4.p': "Losing weight isn't about trying harder. It's about the right approach for your specific body. Your trainer watches, adjusts, and makes sure this time you actually see results.",
     'testi.eyebrow': 'Reviews', 'testi.h2': 'What women say after their first session.',
     'testi.stars.aria': '5 out of 5 stars',
     'testi.anouk.meta': 'Utrecht · Toning up',
@@ -152,6 +162,10 @@ const i18n = {
     'faq.a3': "One session a week is enough to see real results. We build a schedule that fits around your life — not the other way around.",
     'faq.q4': '"I\'ve quit before — how is this any different?"',
     'faq.a4': "Because this time you're not doing it alone. Someone's watching your progress, adjusting your plan, and keeping you on track. That's the actual difference.",
+    'faq.q5': '"I\'ve tried everything to lose weight — why would this be different?"',
+    'faq.a5': "Because we don't start with a standard plan. We start with you — your body, your schedule, and what hasn't worked before. 1-on-1 coaching means your trainer sees what's going wrong and adjusts it on the spot. That's something no app, diet, or group class can ever do.",
+    'faq.q6': '"Can I actually see results with just one session a week?"',
+    'faq.a6': "Yes — if that one session is built around your goal. We train with purpose, give you tools to use outside the gym, and build progress that holds. Most clients find that one consistent session a week does more than they expected.",
     'closing.eyebrow': 'Free first step', 'closing.h2': 'Ready to find out what works for you?',
     'closing.p': 'Take the quiz in 60 seconds. No obligations, no contracts.',
     'closing.cta': 'Take the free quiz',
@@ -212,6 +226,8 @@ function setLang(lang) {
 
   // Re-render result if user is already on the result step
   if (currentStep === RESULT_STEP && quizState.name) buildResult();
+  // Re-apply interstitial personalisation if on step 2
+  if (currentStep === 2) updateInterstitialForGoal();
 }
 
 // ── UTM / CLICK-ID CAPTURE ────────────────────────────────────
@@ -309,6 +325,31 @@ const fallbackProfile = {
   body:  "Op basis van jouw antwoorden is persoonlijke begeleiding de snelste weg naar het resultaat dat jij wilt. De gratis kennismakingssessie is er om precies dat plan samen scherp te maken — zonder druk.",
 };
 
+// ── INTERSTITIAL PERSONALISATION ─────────────────────────────
+// When goal = "Afvallen", swap the interstitial copy to speak
+// directly to the "tried everything" weight-loss persona.
+// Called from showStep(2) and setLang() so language toggling works.
+function updateInterstitialForGoal() {
+  if (currentStep !== 2) return;
+  const isEn = currentLang === 'en';
+  const h3 = document.querySelector('.quiz-step[data-step="2"] h3');
+  const p  = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
+  if (!h3 || !p) return;
+
+  if (quizState.goal === 'Afvallen en meer energie') {
+    h3.textContent = isEn
+      ? "Losing weight has nothing to do with willpower."
+      : "Afvallen heeft niks te maken met wilskracht.";
+    p.textContent = isEn
+      ? "Most of the women who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start."
+      : "De meeste vrouwen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen.";
+  } else {
+    // Reset to default i18n copy in case user navigates back and picks a different goal
+    h3.textContent = isEn ? i18n.en['quiz.s2.h3'] : i18n.nl['quiz.s2.h3'];
+    p.textContent  = isEn ? i18n.en['quiz.s2.p']  : i18n.nl['quiz.s2.p'];
+  }
+}
+
 // ── QUIZ OPEN / CLOSE ─────────────────────────────────────────
 function openQuiz() {
   quizOverlay.classList.add("is-open");
@@ -345,6 +386,9 @@ function showStep(stepNumber) {
   // Progress bar counts steps 1–5 (the actual questions)
   const progressStep = Math.min(stepNumber, QUIZ_QUESTION_STEPS);
   progressBar.style.width = `${(progressStep / QUIZ_QUESTION_STEPS) * 100}%`;
+
+  // Personalise interstitial copy for weight-loss goal
+  if (stepNumber === 2) updateInterstitialForGoal();
 }
 
 function handleAnswer(button) {
@@ -384,7 +428,14 @@ function buildResult() {
           ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
           : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
 
-  resultText.textContent = `${profile.body} ${readiness}`;
+  // Weight-loss goal — append specific extra copy to result body
+  const weightSuffix = quizState.goal === 'Afvallen en meer energie'
+    ? (isEn
+        ? " For weight loss specifically: no crash plans, no one-size-fits-all schedules. We build something that fits your life and actually lasts."
+        : " Specifiek voor afvallen: geen crash-schema's en geen standaardlijstjes. We bouwen iets op dat bij jóuw leven past — en dat ook blijft.")
+    : '';
+
+  resultText.textContent = `${profile.body}${weightSuffix} ${readiness}`;
 }
 
 // ── EVENT LISTENERS ───────────────────────────────────────────
