@@ -2123,8 +2123,13 @@ h1, h2, h3 {
 }
 
 /* ── NARROW PHONE FIX (< 425px) ──────────────────────────────
-   Scale hero meta tags down so all 3 fit on one line.
+   Scale hero meta tags down so all 3 fit on one line, centered
+   under the full-width CTA button above them.
    flex-wrap: wrap as last-resort safety for truly tiny screens. */
+@media (max-width: 767px) {
+  .hero-meta { justify-content: center; }
+}
+
 @media (max-width: 424px) {
   .hero-meta {
     gap: 0.25rem;
