@@ -424,39 +424,55 @@ function updateInterstitialForGoal() {
   if (currentStep !== 2) return;
   const isEn = currentLang === 'en';
   const h3 = document.querySelector('.quiz-step[data-step="2"] h3');
-  const p  = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
+  const p = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
   if (!h3 || !p) return;
 
   const copy = {
     'Strakker worden': isEn
-      ? { h: "Getting toned isn't about training harder — it's about training right.",
-          p: "Most people who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session." }
-      : { h: "Strakker worden heeft alles te maken met de juiste aanpak — niet met harder trainen.",
-          p: "De meeste mensen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie." },
+      ? {
+        h: "Getting toned isn't about training harder — it's about training right.",
+        p: "Most people who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session."
+      }
+      : {
+        h: "Strakker worden heeft alles te maken met de juiste aanpak — niet met harder trainen.",
+        p: "De meeste mensen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie."
+      },
     'Meer zelfvertrouwen': isEn
-      ? { h: "Confidence in your body isn't built in the mirror — it's built by doing.",
-          p: "Almost everyone who starts with us feels like the gym isn't for them. A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows." }
-      : { h: "Vertrouwen in je lichaam bouw je niet voor de spiegel — je bouwt het door te doen.",
-          p: "Bijna iedereen die bij ons begint, voelt zich eerst niet op zijn plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt." },
+      ? {
+        h: "Confidence in your body isn't built in the mirror — it's built by doing.",
+        p: "Almost everyone who starts with us feels like the gym isn't for them. A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows."
+      }
+      : {
+        h: "Vertrouwen in je lichaam bouw je niet voor de spiegel — je bouwt het door te doen.",
+        p: "Bijna iedereen die bij ons begint, voelt zich eerst niet op zijn plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt."
+      },
     'Afvallen en meer energie': isEn
-      ? { h: "Losing weight has nothing to do with willpower.",
-          p: "Most people who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start." }
-      : { h: "Afvallen heeft niks te maken met wilskracht.",
-          p: "De meeste mensen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen." },
+      ? {
+        h: "Losing weight has nothing to do with willpower.",
+        p: "Most people who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start."
+      }
+      : {
+        h: "Afvallen heeft niks te maken met wilskracht.",
+        p: "De meeste mensen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen."
+      },
     'Sterker worden': isEn
-      ? { h: "Getting fitter doesn't start with training more — it starts with training smarter.",
-          p: "Most people who come to us have already tried doing more. The problem was almost never effort. It was structure. We fix that together, starting in the very first session." }
-      : { h: "Fitter worden begint niet bij meer trainen — het begint bij slimmer trainen.",
-          p: "De meeste mensen die bij ons komen, hebben al geprobeerd om meer te doen. Het probleem was bijna nooit de inzet. Het was de structuur. Dat lossen we samen op, al in de eerste sessie." },
+      ? {
+        h: "Getting fitter doesn't start with training more — it starts with training smarter.",
+        p: "Most people who come to us have already tried doing more. The problem was almost never effort. It was structure. We fix that together, starting in the very first session."
+      }
+      : {
+        h: "Fitter worden begint niet bij meer trainen — het begint bij slimmer trainen.",
+        p: "De meeste mensen die bij ons komen, hebben al geprobeerd om meer te doen. Het probleem was bijna nooit de inzet. Het was de structuur. Dat lossen we samen op, al in de eerste sessie."
+      },
   };
 
   const match = copy[quizState.goal];
   if (match) {
     h3.textContent = match.h;
-    p.textContent  = match.p;
+    p.textContent = match.p;
   } else {
     h3.textContent = isEn ? i18n.en['quiz.s2.h3'] : i18n.nl['quiz.s2.h3'];
-    p.textContent  = isEn ? i18n.en['quiz.s2.p']  : i18n.nl['quiz.s2.p'];
+    p.textContent = isEn ? i18n.en['quiz.s2.p'] : i18n.nl['quiz.s2.p'];
   }
 }
 
@@ -485,21 +501,21 @@ function updateObstacleForLevel() {
 
     const opts = isEn
       ? [
-          { value: 'Geen resultaat meer',           text: 'I train hard but see no results' },
-          { value: 'Weet niet wat ik verkeerd doe',  text: "I don't know what I'm doing wrong" },
-          { value: 'Mis een echt plan',               text: 'I train without a real plan' },
-          { value: 'Iemand die meekijkt',             text: 'I need someone to coach me' },
-        ]
+        { value: 'Geen resultaat meer', text: 'I train hard but see no results' },
+        { value: 'Weet niet wat ik verkeerd doe', text: "I don't know what I'm doing wrong" },
+        { value: 'Mis een echt plan', text: 'I train without a real plan' },
+        { value: 'Iemand die meekijkt', text: 'I need someone to coach me' },
+      ]
       : [
-          { value: 'Geen resultaat meer',           text: 'Ik train, maar zie geen resultaat' },
-          { value: 'Weet niet wat ik verkeerd doe',  text: 'Ik weet niet wat ik verkeerd doe' },
-          { value: 'Mis een echt plan',               text: 'Ik train zonder echt plan' },
-          { value: 'Iemand die meekijkt',             text: 'Ik mis iemand die meekijkt' },
-        ];
+        { value: 'Geen resultaat meer', text: 'Ik train, maar zie geen resultaat' },
+        { value: 'Weet niet wat ik verkeerd doe', text: 'Ik weet niet wat ik verkeerd doe' },
+        { value: 'Mis een echt plan', text: 'Ik train zonder echt plan' },
+        { value: 'Iemand die meekijkt', text: 'Ik mis iemand die meekijkt' },
+      ];
 
     buttons.forEach((btn, i) => {
       btn.dataset.value = opts[i].value;
-      btn.textContent   = opts[i].text;
+      btn.textContent = opts[i].text;
     });
 
   } else if (level === 'Ik heb eerder gesport maar ben gestopt') {
@@ -510,21 +526,21 @@ function updateObstacleForLevel() {
 
     const opts = isEn
       ? [
-          { value: 'Geen resultaat gezien',   text: "I didn't see any results" },
-          { value: 'Te druk geworden',         text: 'Life got too busy' },
-          { value: 'Motivatie weggevallen',    text: 'I lost motivation along the way' },
-          { value: 'Onzeker gevoel',           text: 'I felt out of place or insecure' },
-        ]
+        { value: 'Geen resultaat gezien', text: "I didn't see any results" },
+        { value: 'Te druk geworden', text: 'Life got too busy' },
+        { value: 'Motivatie weggevallen', text: 'I lost motivation along the way' },
+        { value: 'Onzeker gevoel', text: 'I felt out of place or insecure' },
+      ]
       : [
-          { value: 'Geen resultaat gezien',   text: 'Ik zag geen resultaat' },
-          { value: 'Te druk geworden',         text: 'Het leven werd te druk' },
-          { value: 'Motivatie weggevallen',    text: 'Mijn motivatie viel weg' },
-          { value: 'Onzeker gevoel',           text: 'Ik voelde me onzeker of niet op m\'n plek' },
-        ];
+        { value: 'Geen resultaat gezien', text: 'Ik zag geen resultaat' },
+        { value: 'Te druk geworden', text: 'Het leven werd te druk' },
+        { value: 'Motivatie weggevallen', text: 'Mijn motivatie viel weg' },
+        { value: 'Onzeker gevoel', text: 'Ik voelde me onzeker of niet op m\'n plek' },
+      ];
 
     buttons.forEach((btn, i) => {
       btn.dataset.value = opts[i].value;
-      btn.textContent   = opts[i].text;
+      btn.textContent = opts[i].text;
     });
 
   } else {
@@ -533,14 +549,14 @@ function updateObstacleForLevel() {
 
     const lang = isEn ? i18n.en : i18n.nl;
     const defaultOpts = [
-      { value: 'Ik heb geen tijd',                       key: 'quiz.s4.a1' },
-      { value: 'Ik weet niet waar ik moet beginnen',     key: 'quiz.s4.a2' },
-      { value: 'Ik zie het niet volhouden',              key: 'quiz.s4.a3' },
-      { value: 'Ik voel me onzeker in een sportschool',  key: 'quiz.s4.a4' },
+      { value: 'Ik heb geen tijd', key: 'quiz.s4.a1' },
+      { value: 'Ik weet niet waar ik moet beginnen', key: 'quiz.s4.a2' },
+      { value: 'Ik zie het niet volhouden', key: 'quiz.s4.a3' },
+      { value: 'Ik voel me onzeker in een sportschool', key: 'quiz.s4.a4' },
     ];
     buttons.forEach((btn, i) => {
       btn.dataset.value = defaultOpts[i].value;
-      btn.textContent   = lang[defaultOpts[i].key];
+      btn.textContent = lang[defaultOpts[i].key];
     });
   }
 }
@@ -631,7 +647,7 @@ function buildResult() {
     const isEnCard = currentLang === 'en';
     let cardText;
 
-    const obs  = quizState.obstacle;
+    const obs = quizState.obstacle;
     const goal = quizState.goal;
 
     if (obs === 'Ik voel me onzeker in een sportschool' || obs === 'Onzeker gevoel') {
@@ -700,11 +716,11 @@ leadForm.addEventListener("submit", event => {
   setTimeout(() => showStep(RESULT_STEP), 1700);
 
   // ── WEBHOOK ───────────────────────────────────────────────────
-  // TEST  → http://localhost:5678/webhook-test/form  (n8n test trigger)
-  // PROD  → http://localhost:5678/webhook/form       (n8n production trigger)
-  // Switch the constant below when going live:
-  // const WEBHOOK_URL = "http://localhost:5678/webhook-test/form";
-  const WEBHOOK_URL = "http://localhost:5678/webhook/form";
+  // TEST  → http://178.104.174.166:5678/webhook-test/form  (n8n test trigger)
+  // PROD  → http://178.104.174.166:5678/webhook/form       (n8n production trigger)
+  // Switch the constant below when testing:
+  // const WEBHOOK_URL = "http://178.104.174.166:5678/webhook-test/form";
+  const WEBHOOK_URL = "http://178.104.174.166:5678/webhook/form";
 
   fetch(WEBHOOK_URL, {
     method: "POST",
