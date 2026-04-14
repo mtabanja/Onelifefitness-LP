@@ -228,101 +228,139 @@ function setLang(lang) {
   if (currentStep === RESULT_STEP && quizState.name) buildResult();
   // Re-apply interstitial personalisation if on step 2
   if (currentStep === 2) updateInterstitialForGoal();
+  // Re-apply obstacle personalisation if on step 4
+  if (currentStep === 4) updateObstacleForLevel();
 }
 
 // ── UTM / CLICK-ID CAPTURE ────────────────────────────────────
 // Grab attribution params from URL once; persist across SPA-style nav
 const _urlParams = new URLSearchParams(window.location.search);
 const utmData = {
-  utm_source:   _urlParams.get("utm_source")   || "",
-  utm_medium:   _urlParams.get("utm_medium")   || "",
+  utm_source: _urlParams.get("utm_source") || "",
+  utm_medium: _urlParams.get("utm_medium") || "",
   utm_campaign: _urlParams.get("utm_campaign") || "",
-  utm_content:  _urlParams.get("utm_content")  || "",
-  utm_term:     _urlParams.get("utm_term")     || "",
-  gclid:        _urlParams.get("gclid")        || "",
-  fbclid:       _urlParams.get("fbclid")       || "",
-  ttclid:       _urlParams.get("ttclid")       || "",
-  msclkid:      _urlParams.get("msclkid")      || "",
+  utm_content: _urlParams.get("utm_content") || "",
+  utm_term: _urlParams.get("utm_term") || "",
+  gclid: _urlParams.get("gclid") || "",
+  fbclid: _urlParams.get("fbclid") || "",
+  ttclid: _urlParams.get("ttclid") || "",
+  msclkid: _urlParams.get("msclkid") || "",
 };
 
 // ── DOM REFS ─────────────────────────────────────────────────
-const quizOverlay  = document.getElementById("quizOverlay");
-const progressBar  = document.getElementById("quizProgressBar");
-const steps        = Array.from(document.querySelectorAll(".quiz-step"));
-const openButtons  = document.querySelectorAll("[data-open-quiz]");
+const quizOverlay = document.getElementById("quizOverlay");
+const progressBar = document.getElementById("quizProgressBar");
+const steps = Array.from(document.querySelectorAll(".quiz-step"));
+const openButtons = document.querySelectorAll("[data-open-quiz]");
 const closeButtons = document.querySelectorAll("[data-close-quiz]");
-const nextButtons  = document.querySelectorAll("[data-next-step]");
+const nextButtons = document.querySelectorAll("[data-next-step]");
 const answerButtons = document.querySelectorAll(".answer");
-const leadForm     = document.getElementById("leadForm");
-const resultTitle  = document.getElementById("resultTitle");
-const resultText   = document.getElementById("resultText");
-const bookingLink  = document.getElementById("bookingLink");
+const leadForm = document.getElementById("leadForm");
+const resultTitle = document.getElementById("resultTitle");
+const resultText = document.getElementById("resultText");
+const bookingLink = document.getElementById("bookingLink");
 
 const bookingUrl = "https://cal.com/mouaz-tabanja-7ubxvb/gratis-1-op-1-gesprek-met-jouw-personal-trainer";
 
-const TOTAL_STEPS        = steps.length;  // 8
-const TYPING_STEP        = TOTAL_STEPS - 1; // 7
-const RESULT_STEP        = TOTAL_STEPS;     // 8
+const TOTAL_STEPS = steps.length;  // 8
+const TYPING_STEP = TOTAL_STEPS - 1; // 7
+const RESULT_STEP = TOTAL_STEPS;     // 8
 const QUIZ_QUESTION_STEPS = 5;
 
 let currentStep = 1;
 
 const quizState = {
-  goal:     "",
-  level:    "",
+  goal: "",
+  level: "",
   obstacle: "",
   timeline: "",
-  name:     "",
-  phone:    "",
+  name: "",
+  phone: "",
 };
 
 // ── RESULT PROFILES ───────────────────────────────────────────
 const resultProfilesEn = {
+  // ── Beginner / returning profiles ────────────────────────────
   "Ik weet niet waar ik moet beginnen": {
     title: "you need direction, not just motivation.",
-    body:  "Your answers show the first step is the hardest part — not keeping it up. Having someone stand next to you makes that first step a whole lot smaller. Your trainer explains everything, step by step, no judgment.",
+    body: "Your answers show the first step is the hardest part — not keeping it up. Having someone stand next to you makes that first step a whole lot smaller. Your trainer explains everything, step by step, no judgment.",
   },
   "Ik heb geen tijd": {
     title: "you need a plan that fits around your life.",
-    body:  "You don't need a marathon training schedule. One session a week, when it works for you, is enough to see real results. We build the plan around you — not the other way around.",
+    body: "You don't need a marathon training schedule. One session a week, when it works for you, is enough to see real results. We build the plan around you — not the other way around.",
   },
   "Ik ben eerder begonnen maar gestopt": {
     title: "you don't need willpower — you need structure.",
-    body:  "Quitting before says nothing about you. It says something about the approach. With a regular trainer who knows you, tracks your progress, and shows up when it gets tough — the odds of sticking with it this time are so much higher.",
+    body: "Quitting before says nothing about you. It says something about the approach. With a regular trainer who knows you, tracks your progress, and shows up when it gets tough — the odds of sticking with it this time are so much higher.",
   },
   "Ik voel me onzeker in een sportschool": {
     title: "the start needs to feel safe for you — and we'll make it that way.",
-    body:  "Feeling out of place in a gym is completely normal, and no one should make you feel judged for it. With 1-on-1 coaching there's no audience. It's just you and your trainer, in a comfortable setting, at your own pace. That's how you build real confidence.",
+    body: "Feeling out of place in a gym is completely normal, and no one should make you feel judged for it. With 1-on-1 coaching there's no audience. It's just you and your trainer, in a comfortable setting, at your own pace. That's how you build real confidence.",
+  },
+  // ── Regular trainer profiles (already going to the gym) ──────
+  "Geen resultaat meer": {
+    title: "you're already doing the work — now it's the approach that needs to change.",
+    body: "A plateau isn't a sign you're not doing enough. It's a signal your body needs something more specific. A trainer spots in one session exactly where the gains are hiding and adjusts immediately. No starting over — just training smarter.",
+  },
+  "Weet niet wat ik verkeerd doe": {
+    title: "training alone means nobody sees what you can't see yourself.",
+    body: "A small flaw in technique, training load, or recovery can quietly block results for months — and you'd never know. A trainer watches, identifies it exactly, and fixes it. That's the difference 1-on-1 makes.",
+  },
+  "Mis een echt plan": {
+    title: "moving is good — but without structure you'll stay stuck at the same level.",
+    body: "Random training gives random results. A program built around your body, your goal, and your pace gives you something that actually compounds over time. You build that together with your trainer — starting in the very first session.",
+  },
+  "Iemand die meekijkt": {
+    title: "you know how to train — you need someone to train alongside you.",
+    body: "Knowledge is half of it. The other half is someone who watches, corrects, and challenges you every single session. A trainer who knows you is the person who turns effort into real progress.",
   },
 };
 
 const fallbackProfileEn = {
   title: "you need a plan built around you.",
-  body:  "Based on your answers, personal coaching is the fastest route to the result you're after. The free intro session is exactly the place to build that plan together — no pressure.",
+  body: "Based on your answers, personal coaching is the fastest route to the result you're after. The free intro session is exactly the place to build that plan together — no pressure.",
 };
 
 const resultProfiles = {
+  // ── Beginner / returning profiles ────────────────────────────
   "Ik weet niet waar ik moet beginnen": {
     title: "je hebt richting nodig, geen extra motivatie.",
-    body:  "Uit jouw antwoorden blijkt dat de eerste stap het moeilijkst is — niet het volhouden. Met iemand die naast je staat, wordt die eerste stap een stuk kleiner. Jouw trainer legt alles uit, stap voor stap, zonder oordeel.",
+    body: "Uit jouw antwoorden blijkt dat de eerste stap het moeilijkst is — niet het volhouden. Met iemand die naast je staat, wordt die eerste stap een stuk kleiner. Jouw trainer legt alles uit, stap voor stap, zonder oordeel.",
   },
   "Ik heb geen tijd": {
     title: "je hebt een plan nodig dat in jouw leven past.",
-    body:  "Jij hebt geen marathonschema nodig. Eén sessie per week op een moment dat past bij jouw agenda is genoeg om zichtbaar resultaat te zien. We bouwen het plan om jou heen — niet andersom.",
+    body: "Jij hebt geen marathonschema nodig. Eén sessie per week op een moment dat past bij jouw agenda is genoeg om zichtbaar resultaat te zien. We bouwen het plan om jou heen — niet andersom.",
   },
   "Ik ben eerder begonnen maar gestopt": {
     title: "je hebt geen wilskracht nodig — je hebt structuur nodig.",
-    body:  "Dat je eerder bent gestopt zegt niks over jou. Het zegt iets over de aanpak. Met een vaste trainer die jou kent, die bijhoudt hoe je progressie maakt en die er is wanneer het moeilijk wordt, is de kans enorm veel groter dat je het nu wél volhoudt.",
+    body: "Dat je eerder bent gestopt zegt niks over jou. Het zegt iets over de aanpak. Met een vaste trainer die jou kent, die bijhoudt hoe je progressie maakt en die er is wanneer het moeilijk wordt, is de kans enorm veel groter dat je het nu wél volhoudt.",
   },
   "Ik voel me onzeker in een sportschool": {
     title: "voor jou moet de start veilig voelen — en dat gaan we zo maken.",
-    body:  "Onzekerheid in een sportschool is normaal, en niemand hoort je daarvoor te oordelen. Bij 1-op-1 coaching is er geen publiek. Het is jij en jouw trainer, in een veilige setting, op jouw tempo. Zodat je langzaam maar zeker vertrouwen opbouwt.",
+    body: "Onzekerheid in een sportschool is normaal, en niemand hoort je daarvoor te oordelen. Bij 1-op-1 coaching is er geen publiek. Het is jij en jouw trainer, in een veilige setting, op jouw tempo. Zodat je langzaam maar zeker vertrouwen opbouwt.",
+  },
+  // ── Regular trainer profiles (already going to the gym) ──────
+  "Geen resultaat meer": {
+    title: "je doet het werk al — nu is de aanpak aan de beurt.",
+    body: "Een plateau is geen teken dat jij niet genoeg doet. Het is een signaal dat jouw lichaam iets specifieks nodig heeft. Een trainer ziet in één sessie precies waar de winst zit en past het direct aan. Geen reset — gewoon slimmer trainen.",
+  },
+  "Weet niet wat ik verkeerd doe": {
+    title: "alleen trainen betekent dat niemand ziet wat jij zelf niet ziet.",
+    body: "Een kleine fout in techniek, belasting of herstel kan maandenlang resultaat blokkeren — zonder dat je het doorhebt. Een trainer kijkt mee, identificeert het precies en lost het op. Dat is wat 1-op-1 anders maakt.",
+  },
+  "Mis een echt plan": {
+    title: "bewegen is goed — maar zonder structuur blijf je op hetzelfde niveau hangen.",
+    body: "Willekeurig trainen geeft willekeurige resultaten. Een programma dat is opgebouwd op jóuw lichaam, jóuw doel en jóuw tempo — dat is wat écht opbouwt. Dat maak je samen met je trainer, al in de eerste sessie.",
+  },
+  "Iemand die meekijkt": {
+    title: "je weet hoe je moet trainen — je hebt iemand nodig die het samen met je doet.",
+    body: "Kennis is de helft. De andere helft is iemand die kijkt, corrigeert en je elke sessie uitdaagt. Een trainer die jou kent is degene die het verschil maakt tussen goed trainen en echt vooruitgaan.",
   },
 };
 
 const fallbackProfile = {
   title: "je hebt een plan nodig dat bij jóu past.",
-  body:  "Op basis van jouw antwoorden is persoonlijke begeleiding de snelste weg naar het resultaat dat jij wilt. De gratis kennismakingssessie is er om precies dat plan samen scherp te maken — zonder druk.",
+  body: "Op basis van jouw antwoorden is persoonlijke begeleiding de snelste weg naar het resultaat dat jij wilt. De gratis kennismakingssessie is er om precies dat plan samen scherp te maken — zonder druk.",
 };
 
 // ── INTERSTITIAL PERSONALISATION ─────────────────────────────
@@ -333,7 +371,7 @@ function updateInterstitialForGoal() {
   if (currentStep !== 2) return;
   const isEn = currentLang === 'en';
   const h3 = document.querySelector('.quiz-step[data-step="2"] h3');
-  const p  = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
+  const p = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
   if (!h3 || !p) return;
 
   if (quizState.goal === 'Afvallen en meer energie') {
@@ -346,7 +384,65 @@ function updateInterstitialForGoal() {
   } else {
     // Reset to default i18n copy in case user navigates back and picks a different goal
     h3.textContent = isEn ? i18n.en['quiz.s2.h3'] : i18n.nl['quiz.s2.h3'];
-    p.textContent  = isEn ? i18n.en['quiz.s2.p']  : i18n.nl['quiz.s2.p'];
+    p.textContent = isEn ? i18n.en['quiz.s2.p'] : i18n.nl['quiz.s2.p'];
+  }
+}
+
+// ── OBSTACLE PERSONALISATION FOR REGULAR ATHLETES ────────────
+// When level = "Ik sport regelmatig maar wil meer" the default
+// beginner obstacles don't resonate. Swap the entire step-4
+// question + 4 answers to speak to someone already training
+// but stuck at a plateau or missing expert guidance.
+// Called from showStep(4) and setLang() so language toggle works.
+function updateObstacleForLevel() {
+  if (currentStep !== 4) return;
+  const isEn = currentLang === 'en';
+  const isRegular = quizState.level === 'Ik sport regelmatig maar wil meer';
+
+  const h3 = document.querySelector('.quiz-step[data-step="4"] h3');
+  const buttons = Array.from(
+    document.querySelectorAll('.quiz-step[data-step="4"] .answer[data-field="obstacle"]')
+  );
+  if (!h3 || buttons.length < 4) return;
+
+  if (isRegular) {
+    h3.textContent = isEn
+      ? "What's holding back your progress?"
+      : "Wat houdt jouw vooruitgang tegen?";
+
+    const opts = isEn
+      ? [
+          { value: 'Geen resultaat meer',           text: 'I train hard but see no results' },
+          { value: 'Weet niet wat ik verkeerd doe',  text: "I don't know what I'm doing wrong" },
+          { value: 'Mis een echt plan',               text: 'I train without a real plan' },
+          { value: 'Iemand die meekijkt',             text: 'I need someone to coach me' },
+        ]
+      : [
+          { value: 'Geen resultaat meer',           text: 'Ik train, maar zie geen resultaat' },
+          { value: 'Weet niet wat ik verkeerd doe',  text: 'Ik weet niet wat ik verkeerd doe' },
+          { value: 'Mis een echt plan',               text: 'Ik train zonder echt plan' },
+          { value: 'Iemand die meekijkt',             text: 'Ik mis iemand die meekijkt' },
+        ];
+
+    buttons.forEach((btn, i) => {
+      btn.dataset.value = opts[i].value;
+      btn.textContent   = opts[i].text;
+    });
+  } else {
+    // Reset to default question + answers
+    h3.textContent = isEn ? i18n.en['quiz.s4.h3'] : i18n.nl['quiz.s4.h3'];
+
+    const lang = isEn ? i18n.en : i18n.nl;
+    const defaultOpts = [
+      { value: 'Ik heb geen tijd',                       key: 'quiz.s4.a1' },
+      { value: 'Ik weet niet waar ik moet beginnen',     key: 'quiz.s4.a2' },
+      { value: 'Ik ben eerder begonnen maar gestopt',    key: 'quiz.s4.a3' },
+      { value: 'Ik voel me onzeker in een sportschool',  key: 'quiz.s4.a4' },
+    ];
+    buttons.forEach((btn, i) => {
+      btn.dataset.value = defaultOpts[i].value;
+      btn.textContent   = lang[defaultOpts[i].key];
+    });
   }
 }
 
@@ -389,6 +485,8 @@ function showStep(stepNumber) {
 
   // Personalise interstitial copy for weight-loss goal
   if (stepNumber === 2) updateInterstitialForGoal();
+  // Swap obstacle options for regular athletes
+  if (stepNumber === 4) updateObstacleForLevel();
 }
 
 function handleAnswer(button) {
@@ -407,10 +505,10 @@ function handleAnswer(button) {
 }
 
 function buildResult() {
-  const isEn     = currentLang === 'en';
+  const isEn = currentLang === 'en';
   const profiles = isEn ? resultProfilesEn : resultProfiles;
   const fallback = isEn ? fallbackProfileEn : fallbackProfile;
-  const profile  = profiles[quizState.obstacle] || fallback;
+  const profile = profiles[quizState.obstacle] || fallback;
 
   const firstName = quizState.name.trim().split(" ")[0] || (isEn ? "You" : "Je");
   const titleCapitalised = profile.title.charAt(0).toUpperCase() + profile.title.slice(1);
@@ -418,30 +516,30 @@ function buildResult() {
 
   const readiness = isEn
     ? (quizState.timeline === "Deze week"
-        ? "You said you want to start soon — now's the moment to lock in a session."
-        : quizState.timeline === "Binnen 2 weken"
-          ? "Good timing: booking something now means you'll actually follow through."
-          : "Even if you're still exploring, a free session is the best way to feel it out without any pressure.")
+      ? "You said you want to start soon — now's the moment to lock in a session."
+      : quizState.timeline === "Binnen 2 weken"
+        ? "Good timing: booking something now means you'll actually follow through."
+        : "Even if you're still exploring, a free session is the best way to feel it out without any pressure.")
     : (quizState.timeline === "Deze week"
-        ? "Je gaf aan dat je snel wilt starten — dit is het moment om direct een sessie vast te leggen."
-        : quizState.timeline === "Binnen 2 weken"
-          ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
-          : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
+      ? "Je gaf aan dat je snel wilt starten — dit is het moment om direct een sessie vast te leggen."
+      : quizState.timeline === "Binnen 2 weken"
+        ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
+        : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
 
   // Weight-loss goal — append specific extra copy to result body
   const weightSuffix = quizState.goal === 'Afvallen en meer energie'
     ? (isEn
-        ? " For weight loss specifically: no crash plans, no one-size-fits-all schedules. We build something that fits your life and actually lasts."
-        : " Specifiek voor afvallen: geen crash-schema's en geen standaardlijstjes. We bouwen iets op dat bij jóuw leven past — en dat ook blijft.")
+      ? " For weight loss specifically: no crash plans, no one-size-fits-all schedules. We build something that fits your life and actually lasts."
+      : " Specifiek voor afvallen: geen crash-schema's en geen standaardlijstjes. We bouwen iets op dat bij jóuw leven past — en dat ook blijft.")
     : '';
 
   resultText.textContent = `${profile.body}${weightSuffix} ${readiness}`;
 }
 
 // ── EVENT LISTENERS ───────────────────────────────────────────
-openButtons.forEach(btn  => btn.addEventListener("click", openQuiz));
+openButtons.forEach(btn => btn.addEventListener("click", openQuiz));
 closeButtons.forEach(btn => btn.addEventListener("click", closeQuiz));
-nextButtons.forEach(btn  =>
+nextButtons.forEach(btn =>
   btn.addEventListener("click", () => showStep(Math.min(currentStep + 1, TOTAL_STEPS)))
 );
 answerButtons.forEach(btn => btn.addEventListener("click", () => handleAnswer(btn)));
@@ -449,8 +547,8 @@ answerButtons.forEach(btn => btn.addEventListener("click", () => handleAnswer(bt
 leadForm.addEventListener("submit", event => {
   event.preventDefault();
 
-  const formData  = new FormData(leadForm);
-  quizState.name  = String(formData.get("name")  || "").trim();
+  const formData = new FormData(leadForm);
+  quizState.name = String(formData.get("name") || "").trim();
   quizState.phone = String(formData.get("phone") || "").trim();
 
   buildResult();
@@ -462,22 +560,22 @@ leadForm.addEventListener("submit", event => {
   // TEST  → http://localhost:5678/webhook-test/form  (n8n test trigger)
   // PROD  → http://localhost:5678/webhook/form       (n8n production trigger)
   // Switch the constant below when going live:
-  const WEBHOOK_URL = "http://localhost:5678/webhook-test/form";
-  // const WEBHOOK_URL = "http://localhost:5678/webhook/form";
+  // const WEBHOOK_URL = "http://localhost:5678/webhook-test/form";
+  const WEBHOOK_URL = "http://localhost:5678/webhook/form";
 
   fetch(WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      name:     quizState.name,
-      phone:    quizState.phone,
-      goal:     quizState.goal,
-      level:    quizState.level,
+      name: quizState.name,
+      phone: quizState.phone,
+      goal: quizState.goal,
+      level: quizState.level,
       obstacle: quizState.obstacle,
       timeline: quizState.timeline,
       ...utmData,
     }),
-  }).catch(() => {});
+  }).catch(() => { });
 });
 
 bookingLink.addEventListener("click", event => {
@@ -494,8 +592,8 @@ document.addEventListener("keydown", event => {
 
 // ── NAV TOGGLE (mobile hamburger) ────────────────────────────
 const siteHeader = document.getElementById("siteHeader");
-const navToggle  = document.getElementById("navToggle");
-const navLinks   = document.querySelectorAll(".nav-link");
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.querySelectorAll(".nav-link");
 
 if (navToggle) {
   navToggle.addEventListener("click", () => {
@@ -520,7 +618,7 @@ document.addEventListener("click", e => {
 
 // ── ACTIVE NAV SECTION HIGHLIGHT ─────────────────────────────
 const sectionIds = ["aanpak", "ervaringen", "werkwijze", "team", "faq"];
-const navLinkMap  = {};
+const navLinkMap = {};
 sectionIds.forEach(id => {
   const el = document.getElementById(id);
   const link = document.querySelector(`.nav-link[href="#${id}"]`);
@@ -558,27 +656,27 @@ document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
 // ── DIRECTION-AWARE HOVER ON ANSWER BUTTONS ───────────────────
 function getHoverEdge(event, element) {
-  const rect   = element.getBoundingClientRect();
-  const x      = event.clientX - rect.left;
-  const y      = event.clientY - rect.top;
-  const top    = y;
+  const rect = element.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const top = y;
   const bottom = rect.height - y;
-  const left   = x;
-  const right  = rect.width - x;
-  const min    = Math.min(top, bottom, left, right);
+  const left = x;
+  const right = rect.width - x;
+  const min = Math.min(top, bottom, left, right);
 
-  if (min === top)    return "from-top";
-  if (min === left)   return "from-left";
-  if (min === right)  return "from-right";
+  if (min === top) return "from-top";
+  if (min === left) return "from-left";
+  if (min === right) return "from-right";
   return "from-bottom";
 }
 
 document.querySelectorAll(".answer").forEach(btn => {
-  btn.addEventListener("mouseenter", function(e) {
+  btn.addEventListener("mouseenter", function (e) {
     this.classList.remove("from-top", "from-bottom", "from-left", "from-right");
     this.classList.add(getHoverEdge(e, this));
   });
-  btn.addEventListener("mouseleave", function() {
+  btn.addEventListener("mouseleave", function () {
     this.classList.remove("from-top", "from-bottom", "from-left", "from-right");
   });
 });
