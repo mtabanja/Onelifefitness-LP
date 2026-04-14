@@ -458,8 +458,14 @@ leadForm.addEventListener("submit", event => {
 
   setTimeout(() => showStep(RESULT_STEP), 1700);
 
-  // Webhook to n8n — silent fail (n8n handles errors)
-  fetch("http://localhost:5678/webhook-test/form", {
+  // ── WEBHOOK ───────────────────────────────────────────────────
+  // TEST  → http://localhost:5678/webhook-test/form  (n8n test trigger)
+  // PROD  → http://localhost:5678/webhook/form       (n8n production trigger)
+  // Switch the constant below when going live:
+  const WEBHOOK_URL = "http://localhost:5678/webhook-test/form";
+  // const WEBHOOK_URL = "http://localhost:5678/webhook/form";
+
+  fetch(WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
