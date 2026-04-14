@@ -12,14 +12,14 @@ const i18n = {
     'hero.text': "Geen groepslessen, geen standaard schema's. Jij krijgt een trainer die echt naar jou kijkt.",
     'hero.cta.primary': 'Doe de gratis test', 'hero.cta.secondary': 'Hoe werkt het?',
     'hero.meta.1': 'Gratis kennismaking', 'hero.meta.2': 'Geen contract', 'hero.meta.3': '1-op-1 aandacht',
-    'proof.1on1': '1-op-1', 'proof.label.1': 'Sluit aan na de eerste sessie',
+    'proof.1on1': '1-op-1', 'proof.label.1': 'Komt terug na de eerste sessie',
     'proof.label.2': 'Locaties in Utrecht', 'proof.label.3': 'Altijd persoonlijk',
     'trust.eyebrow': 'Waarom mensen beginnen',
     'trust.h2': 'Coaching die aanvoelt als steun, niet als druk.',
     'trust.p': 'Of je nu nog nooit gesport hebt, eerder gestopt bent, of gewoon meer uit jezelf wilt halen — hier begin je altijd op jouw eigen niveau.',
     'trust.f1.h3': 'Gaat door na de eerste sessie', 'trust.f1.p': 'De eerste sessie maakt direct duidelijk of het klikt. Bijna iedereen die langskomt, blijft.',
     'trust.f2.h3': 'Coaching op jouw ritme', 'trust.f2.p': 'Geen groepslessen. Geen wachten. Jij krijgt de volledige aandacht van jouw trainer.',
-    'trust.f3.h3': 'Contracten of verplichtingen', 'trust.f3.p': "Je start wanneer je wilt. Stop wanneer je wilt. Geen handtekening die je vasthoudt.",
+    'trust.f3.h3': 'Geen contracten, geen verplichtingen', 'trust.f3.p': "Je start wanneer je wilt. Stop wanneer je wilt. Geen handtekening die je vasthoudt.",
     'forwho.eyebrow': 'Is dit voor mij?', 'forwho.h2': 'Dit klinkt waarschijnlijk bekend.',
     'forwho.c1.tag': 'Beginners', 'forwho.c1.quote': '"Ik weet niet waar ik moet beginnen."',
     'forwho.c1.p': 'Je hoeft niks te weten. Jouw trainer begint exact waar jij nu staat — en legt alles uit.',
@@ -69,31 +69,33 @@ const i18n = {
     'faq.a5': 'Omdat we niet beginnen met een standaard plan. We beginnen met jou — jouw lichaam, jouw schema en wat eerder niet werkte. 1-op-1 coaching betekent dat je trainer ziet wat er misgaat en het direct aanpast. Dat is iets wat een app, een dieet of een groepsles nooit voor je kan doen.',
     'faq.q6': '"Zie ik echt resultaat met maar één sessie per week?"',
     'faq.a6': 'Ja — als die ene sessie slim is opgebouwd voor jouw doel. We trainen gericht, geven je handvatten voor buiten de gym en bouwen progressie die zichtbaar blijft. De meeste cliënten merken al snel dat consistent één keer per week meer doet dan ze hadden verwacht.',
+    'faq.q7': '"Wat gebeurt er precies in de gratis kennismakingssessie?"',
+    'faq.a7': 'Je komt langs, we leren je kennen en bespreken je doel. We kijken samen welke aanpak bij je past. Geen fitnesstests, geen verkooppraatje, geen verplichtingen — gewoon een eerlijk gesprek en een eerste indruk. Daarna kies jij.',
     'closing.eyebrow': 'Gratis eerste stap', 'closing.h2': 'Klaar om te zien wat bij jou past?',
     'closing.p': 'Doe de test in 60 seconden. Geen verplichtingen, geen contracten.',
     'closing.cta': 'Doe de gratis test',
     'footer.note': 'Persoonlijke 1-op-1 coaching in Utrecht. Gratis kennismakingssessie, geen contract.',
     'footer.wa': 'WhatsApp ons', 'footer.privacy': 'Privacybeleid',
     'mobile.sticky': 'Doe de gratis test',
-    'quiz.title': 'Jouw gratis sessie test', 'quiz.close.aria': 'Sluiten',
-    'quiz.s1.kicker': 'Vraag 1 van 4', 'quiz.s1.h3': 'Wat wil je anders zien over 3 maanden?',
-    'quiz.s1.a1': 'Strakker worden', 'quiz.s1.a2': 'Afvallen', 'quiz.s1.a3': 'Sterker worden', 'quiz.s1.a4': 'Meer zelfvertrouwen',
+    'quiz.title': 'Ontdek jouw aanpak', 'quiz.close.aria': 'Sluiten',
+    'quiz.s1.kicker': 'Vraag 1 van 4', 'quiz.s1.h3': 'Wat wil je bereiken?',
+    'quiz.s1.a1': 'Strakker worden', 'quiz.s1.a2': 'Afvallen en meer energie', 'quiz.s1.a3': 'Fitter en sterker worden', 'quiz.s1.a4': 'Zelfverzekerder voelen in mijn lijf',
     'quiz.s2.kicker': 'Even tussendoor', 'quiz.s2.h3': 'Jij bent niet de enige die een frisse start zoekt.',
     'quiz.s2.p': 'De meeste vrouwen die bij ons komen, hebben het eerder geprobeerd. Het verschil: nu heb je iemand die écht met je meedenkt.',
-    'quiz.s2.m1': 'Persoonlijk plan', 'quiz.s2.m2': 'Rustig opgebouwd', 'quiz.s2.m3': 'Geen contractdruk', 'quiz.s2.btn': 'Ga verder',
+    'quiz.s2.m1': 'Persoonlijk plan', 'quiz.s2.m2': 'Rustig opgebouwd', 'quiz.s2.m3': 'Altijd op jouw tempo', 'quiz.s2.btn': 'Ga verder',
     'quiz.s3.kicker': 'Vraag 2 van 4', 'quiz.s3.h3': 'Hoe zou je jezelf nu omschrijven?',
-    'quiz.s3.a1': 'Ik sport bijna nooit', 'quiz.s3.a2': 'Eerder gestopt', 'quiz.s3.a3': 'Ik sport af en toe', 'quiz.s3.a4': 'Ik sport regelmatig',
+    'quiz.s3.a1': 'Ik sport bijna nooit', 'quiz.s3.a2': 'Eerder begonnen, nu een nieuwe start', 'quiz.s3.a3': 'Ik sport af en toe', 'quiz.s3.a4': 'Ik sport regelmatig',
     'quiz.s4.kicker': 'Vraag 3 van 4', 'quiz.s4.h3': 'Wat houdt je het meest tegen?',
-    'quiz.s4.a1': 'Te druk, geen tijd', 'quiz.s4.a2': 'Weet niet hoe beginnen', 'quiz.s4.a3': 'Eerder gestopt', 'quiz.s4.a4': 'Onzeker in de gym',
-    'quiz.s5.kicker': 'Vraag 4 van 4', 'quiz.s5.h3': 'Wanneer wil je beginnen?',
-    'quiz.s5.a1': 'Deze week nog', 'quiz.s5.a2': 'Binnen 2 weken', 'quiz.s5.a3': 'Ik oriënteer me nog',
-    'quiz.s6.kicker': 'Laatste stap', 'quiz.s6.h3': 'Vul je gegevens in voor jouw persoonlijk resultaat.',
-    'quiz.s6.labelname': 'Voornaam', 'quiz.s6.labelphone': 'Telefoonnummer',
+    'quiz.s4.a1': 'Te druk, geen tijd', 'quiz.s4.a2': 'Weet niet hoe beginnen', 'quiz.s4.a3': 'Ik zie het niet volhouden', 'quiz.s4.a4': 'Ik voel me niet op m\'n gemak in de gym',
+    'quiz.s5.kicker': 'Vraag 4 van 4', 'quiz.s5.h3': 'Hoe snel wil je resultaat zien?',
+    'quiz.s5.a1': 'Zo snel mogelijk', 'quiz.s5.a2': 'Ik wil het rustig opbouwen', 'quiz.s5.a3': 'Ik oriënteer me nog',
+    'quiz.s6.kicker': 'Laatste stap', 'quiz.s6.h3': 'Bijna klaar — voor wie maken we dit plan op?',
+    'quiz.s6.labelname': 'Voornaam', 'quiz.s6.labelphone': 'WhatsApp-nummer',
     'quiz.input.name': 'Bijv. Sara', 'quiz.input.phone': '06 12 34 56 78',
     'quiz.s6.submit': 'Bekijk mijn resultaat',
-    'quiz.s6.note': 'We bellen je eenmalig om jouw gratis sessie in te plannen. Geen spam, geen abonnementen.',
+    'quiz.s6.note': 'Jouw trainer neemt persoonlijk contact op via WhatsApp om een moment af te spreken.',
     'quiz.s7.kicker': 'Even geduld\u2026', 'quiz.s7.h3': 'We analyseren jouw antwoorden',
-    'quiz.s7.note': 'Jouw persoonlijk profiel wordt opgesteld\u2026',
+    'quiz.s7.note': 'Jouw persoonlijk plan wordt samengesteld\u2026',
     'quiz.s8.kicker': 'Jouw profiel',
     'quiz.result.label': 'Jouw aanbevolen eerste stap',
     'quiz.result.p': 'Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.',
@@ -109,7 +111,7 @@ const i18n = {
     'hero.text': "No group classes, no cookie-cutter plans. You get a trainer who actually pays attention.",
     'hero.cta.primary': 'Take the free quiz', 'hero.cta.secondary': 'How does it work?',
     'hero.meta.1': 'Free intro session', 'hero.meta.2': 'No contract', 'hero.meta.3': '1-on-1 attention',
-    'proof.1on1': '1-on-1', 'proof.label.1': 'Continue after their first session',
+    'proof.1on1': '1-on-1', 'proof.label.1': 'Come back after their first session',
     'proof.label.2': 'Locations in Utrecht', 'proof.label.3': 'Always personal',
     'trust.eyebrow': 'Why people start',
     'trust.h2': 'Coaching that feels like support, not pressure.',
@@ -166,31 +168,33 @@ const i18n = {
     'faq.a5': "Because we don't start with a standard plan. We start with you — your body, your schedule, and what hasn't worked before. 1-on-1 coaching means your trainer sees what's going wrong and adjusts it on the spot. That's something no app, diet, or group class can ever do.",
     'faq.q6': '"Can I actually see results with just one session a week?"',
     'faq.a6': "Yes — if that one session is built around your goal. We train with purpose, give you tools to use outside the gym, and build progress that holds. Most clients find that one consistent session a week does more than they expected.",
+    'faq.q7': '"What exactly happens in the free intro session?"',
+    'faq.a7': "You come in, we get to know you and talk through your goal. Together we look at which approach fits you best. No fitness tests, no sales pitch, no obligations — just an honest conversation and a first impression. Then you decide.",
     'closing.eyebrow': 'Free first step', 'closing.h2': 'Ready to find out what works for you?',
     'closing.p': 'Take the quiz in 60 seconds. No obligations, no contracts.',
     'closing.cta': 'Take the free quiz',
     'footer.note': 'Personal 1-on-1 coaching in Utrecht. Free intro session, no contract.',
     'footer.wa': 'WhatsApp us', 'footer.privacy': 'Privacy Policy',
     'mobile.sticky': 'Take the free quiz',
-    'quiz.title': 'Your free session quiz', 'quiz.close.aria': 'Close',
-    'quiz.s1.kicker': 'Question 1 of 4', 'quiz.s1.h3': 'What do you want to see different in 3 months?',
-    'quiz.s1.a1': 'Get more toned', 'quiz.s1.a2': 'Lose weight', 'quiz.s1.a3': 'Get stronger', 'quiz.s1.a4': 'Build confidence',
+    'quiz.title': 'Discover your approach', 'quiz.close.aria': 'Close',
+    'quiz.s1.kicker': 'Question 1 of 4', 'quiz.s1.h3': 'What do you want to achieve?',
+    'quiz.s1.a1': 'Get more toned', 'quiz.s1.a2': 'Lose weight and get more energy', 'quiz.s1.a3': 'Get fitter and stronger', 'quiz.s1.a4': 'Feel more confident in my body',
     'quiz.s2.kicker': 'Just so you know', 'quiz.s2.h3': "You're not the only one looking for a fresh start.",
     'quiz.s2.p': "Most of the women who come to us have tried before. The difference: now you have someone who's actually in your corner.",
-    'quiz.s2.m1': 'Personal plan', 'quiz.s2.m2': 'Built around you', 'quiz.s2.m3': 'No contract pressure', 'quiz.s2.btn': 'Keep going',
+    'quiz.s2.m1': 'Personal plan', 'quiz.s2.m2': 'Built around you', 'quiz.s2.m3': 'Always at your pace', 'quiz.s2.btn': 'Keep going',
     'quiz.s3.kicker': 'Question 2 of 4', 'quiz.s3.h3': "How would you describe where you're at?",
-    'quiz.s3.a1': 'Barely exercise', 'quiz.s3.a2': 'Used to, but quit', 'quiz.s3.a3': 'Occasionally active', 'quiz.s3.a4': 'I work out regularly',
+    'quiz.s3.a1': 'Barely exercise', 'quiz.s3.a2': 'Started before — ready to try again', 'quiz.s3.a3': 'Occasionally active', 'quiz.s3.a4': 'I work out regularly',
     'quiz.s4.kicker': 'Question 3 of 4', 'quiz.s4.h3': "What's your biggest obstacle?",
-    'quiz.s4.a1': 'Too busy, no time', 'quiz.s4.a2': "Don't know where to start", 'quiz.s4.a3': 'I always end up quitting', 'quiz.s4.a4': 'I feel out of place at the gym',
-    'quiz.s5.kicker': 'Question 4 of 4', 'quiz.s5.h3': 'When do you want to get started?',
-    'quiz.s5.a1': 'This week', 'quiz.s5.a2': 'Within 2 weeks', 'quiz.s5.a3': 'Still looking around',
-    'quiz.s6.kicker': 'Last step', 'quiz.s6.h3': 'Enter your details to see your personal result.',
-    'quiz.s6.labelname': 'First name', 'quiz.s6.labelphone': 'Phone number',
+    'quiz.s4.a1': 'Too busy, no time', 'quiz.s4.a2': "Don't know where to start", 'quiz.s4.a3': "I can't see myself sticking with it", 'quiz.s4.a4': "I don't feel comfortable at the gym",
+    'quiz.s5.kicker': 'Question 4 of 4', 'quiz.s5.h3': 'How quickly do you want to see results?',
+    'quiz.s5.a1': 'As soon as possible', 'quiz.s5.a2': 'I want to build gradually', 'quiz.s5.a3': 'Still exploring my options',
+    'quiz.s6.kicker': 'Last step', 'quiz.s6.h3': 'Almost there — who are we making this plan for?',
+    'quiz.s6.labelname': 'First name', 'quiz.s6.labelphone': 'WhatsApp number',
     'quiz.input.name': 'e.g. Sara', 'quiz.input.phone': '07700 900000',
     'quiz.s6.submit': 'See my result',
-    'quiz.s6.note': "We'll call you once to schedule your free session. No spam, no subscriptions.",
+    'quiz.s6.note': "Your trainer will reach out personally via WhatsApp to set up a time.",
     'quiz.s7.kicker': 'Just a moment\u2026', 'quiz.s7.h3': 'Looking at your answers',
-    'quiz.s7.note': 'Building your personal profile\u2026',
+    'quiz.s7.note': 'Putting together your personal plan\u2026',
     'quiz.s8.kicker': 'Your profile',
     'quiz.result.label': 'Your recommended first step',
     'quiz.result.p': "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan — no commitment.",
@@ -297,6 +301,27 @@ const resultProfilesEn = {
     title: "the start needs to feel safe for you — and we'll make it that way.",
     body: "Feeling out of place in a gym is completely normal, and no one should make you feel judged for it. With 1-on-1 coaching there's no audience. It's just you and your trainer, in a comfortable setting, at your own pace. That's how you build real confidence.",
   },
+  "Ik zie het niet volhouden": {
+    title: "you don't need willpower — you need someone who's there for you.",
+    body: "That doubt about whether you'll stick with it isn't your fault — it's what happens when you do it alone. With a regular trainer who knows you, who's there every week, and who tracks your progress, staying consistent isn't about discipline anymore. It just becomes the natural thing.",
+  },
+  // ── "Eerder gestopt" level — why they stopped last time ──────
+  "Geen resultaat gezien": {
+    title: "last time it was the approach that was missing, not the effort.",
+    body: "Not seeing results when you're doing everything right is the most frustrating thing. That says nothing about you — it says everything about whether the approach actually fit your body. We find that mismatch and fix it, starting in the very first session.",
+  },
+  "Te druk geworden": {
+    title: "life got in the way — this time we build around it.",
+    body: "Getting too busy isn't something to feel bad about. What can be different: a plan built around your actual schedule, so one session a week is enough to keep moving forward — even in the hectic weeks.",
+  },
+  "Motivatie weggevallen": {
+    title: "motivation fades for everyone — structure and accountability don't.",
+    body: "Everyone loses motivation at some point. That's just how it works. The difference: when a trainer is waiting for you, you show up anyway. When a program continues after a rough week, you continue too. That's what we build together.",
+  },
+  "Onzeker gevoel": {
+    title: "that insecurity was a sign about the environment, not about you.",
+    body: "Feeling out of place last time makes complete sense. The environment wasn't right for you. Here it's different: 1-on-1, no big group, no unfamiliar stares. Just you and your trainer, in a space where you can actually focus.",
+  },
   // ── Regular trainer profiles (already going to the gym) ──────
   "Geen resultaat meer": {
     title: "you're already doing the work — now it's the approach that needs to change.",
@@ -322,6 +347,23 @@ const fallbackProfileEn = {
 };
 
 const resultProfiles = {
+  // ── "Eerder gestopt" level — why they stopped last time ──────
+  "Geen resultaat gezien": {
+    title: "de vorige keer was het de aanpak die ontbrak, niet de inzet.",
+    body: "Geen resultaat zien terwijl je je best doet is het meest frustrerende wat er is. Dat zegt niks over jou — het zegt alles over of de aanpak bij jóuw lichaam paste. We vinden die mismatch en lossen het op, al in de eerste sessie.",
+  },
+  "Te druk geworden": {
+    title: "het leven liep ertussen — deze keer bouwen we er omheen.",
+    body: "Te druk worden is niks om je voor te schamen. Wat wel anders kan: een schema dat echt om jóuw agenda heen gebouwd wordt, zodat één sessie per week genoeg is om door te gaan — ook in drukke periodes.",
+  },
+  "Motivatie weggevallen": {
+    title: "motivatie verdwijnt — structuur en iemand die op je wacht, niet.",
+    body: "Iedereen verliest motivatie — dat is gewoon menselijk. Het verschil: als er iemand op je wacht, ga je toch. Als er een programma is dat na een moeilijke week gewoon doorgaat, ga jij ook door. Dat bouwt One Life voor je op.",
+  },
+  "Onzeker gevoel": {
+    title: "die onzekerheid zei iets over de omgeving, niet over jou.",
+    body: "Dat je je de vorige keer niet op je plek voelde, is heel begrijpelijk. De omgeving was niet de juiste voor jou. Hier is het anders: 1-op-1, geen grote zaal, geen onbekende blikken. Gewoon jij en jouw trainer, in een setting waar je jezelf kunt zijn.",
+  },
   // ── Beginner / returning profiles ────────────────────────────
   "Ik weet niet waar ik moet beginnen": {
     title: "je hebt richting nodig, geen extra motivatie.",
@@ -338,6 +380,10 @@ const resultProfiles = {
   "Ik voel me onzeker in een sportschool": {
     title: "voor jou moet de start veilig voelen — en dat gaan we zo maken.",
     body: "Onzekerheid in een sportschool is normaal, en niemand hoort je daarvoor te oordelen. Bij 1-op-1 coaching is er geen publiek. Het is jij en jouw trainer, in een veilige setting, op jouw tempo. Zodat je langzaam maar zeker vertrouwen opbouwt.",
+  },
+  "Ik zie het niet volhouden": {
+    title: "je hebt geen wilskracht nodig — je hebt iemand nodig die er voor je is.",
+    body: "Die twijfel of je het volhoudt is niet jóuw schuld — het is wat er bijna altijd gebeurt als je het alleen doet. Met een vaste trainer die jou kent, die elke week voor je klaarstaat en bijhoudt hoe je groeit, is volhouden niet langer een kwestie van discipline. Het wordt gewoon logisch.",
   },
   // ── Regular trainer profiles (already going to the gym) ──────
   "Geen resultaat meer": {
@@ -364,27 +410,45 @@ const fallbackProfile = {
 };
 
 // ── INTERSTITIAL PERSONALISATION ─────────────────────────────
-// When goal = "Afvallen", swap the interstitial copy to speak
-// directly to the "tried everything" weight-loss persona.
-// Called from showStep(2) and setLang() so language toggling works.
+// Personalise step-2 interstitial for every goal selection.
+// Called from showStep(2) and setLang() so language toggle works.
 function updateInterstitialForGoal() {
   if (currentStep !== 2) return;
   const isEn = currentLang === 'en';
   const h3 = document.querySelector('.quiz-step[data-step="2"] h3');
-  const p = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
+  const p  = document.querySelector('.quiz-step[data-step="2"] .interstitial-shell > p');
   if (!h3 || !p) return;
 
-  if (quizState.goal === 'Afvallen en meer energie') {
-    h3.textContent = isEn
-      ? "Losing weight has nothing to do with willpower."
-      : "Afvallen heeft niks te maken met wilskracht.";
-    p.textContent = isEn
-      ? "Most of the women who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start."
-      : "De meeste vrouwen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen.";
+  const copy = {
+    'Strakker worden': isEn
+      ? { h: "Getting toned isn't about training harder — it's about training right.",
+          p: "Most women who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session." }
+      : { h: "Strakker worden heeft alles te maken met de juiste aanpak — niet met harder trainen.",
+          p: "De meeste vrouwen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie." },
+    'Meer zelfvertrouwen': isEn
+      ? { h: "Confidence in your body isn't built in the mirror — it's built by doing.",
+          p: "Almost every woman who starts with us feels like the gym 'isn't for her.' A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows." }
+      : { h: "Vertrouwen in je lichaam bouw je niet voor de spiegel — je bouwt het door te doen.",
+          p: "Bijna elke vrouw die bij ons begint, voelt zich eerst niet op haar plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt." },
+    'Afvallen en meer energie': isEn
+      ? { h: "Losing weight has nothing to do with willpower.",
+          p: "Most of the women who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start." }
+      : { h: "Afvallen heeft niks te maken met wilskracht.",
+          p: "De meeste vrouwen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen." },
+    'Sterker worden': isEn
+      ? { h: "Getting fitter doesn't start with training more — it starts with training smarter.",
+          p: "Most people who come to us have already tried doing more. The problem was almost never effort. It was structure. We fix that together, starting in the very first session." }
+      : { h: "Fitter worden begint niet bij meer trainen — het begint bij slimmer trainen.",
+          p: "De meeste mensen die bij ons komen, hebben al geprobeerd om meer te doen. Het probleem was bijna nooit de inzet. Het was de structuur. Dat lossen we samen op, al in de eerste sessie." },
+  };
+
+  const match = copy[quizState.goal];
+  if (match) {
+    h3.textContent = match.h;
+    p.textContent  = match.p;
   } else {
-    // Reset to default i18n copy in case user navigates back and picks a different goal
     h3.textContent = isEn ? i18n.en['quiz.s2.h3'] : i18n.nl['quiz.s2.h3'];
-    p.textContent = isEn ? i18n.en['quiz.s2.p'] : i18n.nl['quiz.s2.p'];
+    p.textContent  = isEn ? i18n.en['quiz.s2.p']  : i18n.nl['quiz.s2.p'];
   }
 }
 
@@ -397,7 +461,7 @@ function updateInterstitialForGoal() {
 function updateObstacleForLevel() {
   if (currentStep !== 4) return;
   const isEn = currentLang === 'en';
-  const isRegular = quizState.level === 'Ik sport regelmatig maar wil meer';
+  const level = quizState.level;
 
   const h3 = document.querySelector('.quiz-step[data-step="4"] h3');
   const buttons = Array.from(
@@ -405,7 +469,8 @@ function updateObstacleForLevel() {
   );
   if (!h3 || buttons.length < 4) return;
 
-  if (isRegular) {
+  if (level === 'Ik sport regelmatig maar wil meer') {
+    // Already active gym-goer — plateau / coaching focus
     h3.textContent = isEn
       ? "What's holding back your progress?"
       : "Wat houdt jouw vooruitgang tegen?";
@@ -428,15 +493,41 @@ function updateObstacleForLevel() {
       btn.dataset.value = opts[i].value;
       btn.textContent   = opts[i].text;
     });
+
+  } else if (level === 'Ik heb eerder gesport maar ben gestopt') {
+    // Previously active — ask WHY they stopped (avoids duplicate "Eerder gestopt" answer)
+    h3.textContent = isEn
+      ? "What made it hard to keep going last time?"
+      : "Wat maakte het de vorige keer moeilijk?";
+
+    const opts = isEn
+      ? [
+          { value: 'Geen resultaat gezien',   text: "I didn't see any results" },
+          { value: 'Te druk geworden',         text: 'Life got too busy' },
+          { value: 'Motivatie weggevallen',    text: 'I lost motivation along the way' },
+          { value: 'Onzeker gevoel',           text: 'I felt out of place or insecure' },
+        ]
+      : [
+          { value: 'Geen resultaat gezien',   text: 'Ik zag geen resultaat' },
+          { value: 'Te druk geworden',         text: 'Het leven werd te druk' },
+          { value: 'Motivatie weggevallen',    text: 'Mijn motivatie viel weg' },
+          { value: 'Onzeker gevoel',           text: 'Ik voelde me onzeker of niet op m\'n plek' },
+        ];
+
+    buttons.forEach((btn, i) => {
+      btn.dataset.value = opts[i].value;
+      btn.textContent   = opts[i].text;
+    });
+
   } else {
-    // Reset to default question + answers
+    // Default — beginner / occasionally active
     h3.textContent = isEn ? i18n.en['quiz.s4.h3'] : i18n.nl['quiz.s4.h3'];
 
     const lang = isEn ? i18n.en : i18n.nl;
     const defaultOpts = [
       { value: 'Ik heb geen tijd',                       key: 'quiz.s4.a1' },
       { value: 'Ik weet niet waar ik moet beginnen',     key: 'quiz.s4.a2' },
-      { value: 'Ik ben eerder begonnen maar gestopt',    key: 'quiz.s4.a3' },
+      { value: 'Ik zie het niet volhouden',              key: 'quiz.s4.a3' },
       { value: 'Ik voel me onzeker in een sportschool',  key: 'quiz.s4.a4' },
     ];
     buttons.forEach((btn, i) => {
@@ -525,6 +616,36 @@ function buildResult() {
       : quizState.timeline === "Binnen 2 weken"
         ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
         : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
+
+  // ── Personalise result card text ─────────────────────────────
+  const resultCardEl = document.querySelector('.result-card p[data-i18n="quiz.result.p"]');
+  if (resultCardEl) {
+    const level    = quizState.level;
+    const obstacle = quizState.obstacle;
+    const goal     = quizState.goal;
+
+    let cardText;
+    if (level === 'Ik heb eerder gesport maar ben gestopt') {
+      cardText = isEn
+        ? "Plan your free session. We'll start by talking through what made it hard last time — then build something that actually works this time. No contract, no pressure."
+        : "Plan je gratis sessie. We beginnen met wat het de vorige keer moeilijk maakte — en bouwen dan iets dat dit keer wél werkt. Geen contract, geen druk.";
+    } else if (obstacle === 'Ik voel me onzeker in een sportschool') {
+      cardText = isEn
+        ? "Come in for a free session. No big gym floor, no unfamiliar faces — just you and your trainer. We start exactly where you are right now."
+        : "Kom langs voor een gratis sessie. Geen grote zaal, geen onbekende blikken — alleen jij en jouw trainer. We beginnen precies waar jij nu staat.";
+    } else if (obstacle === 'Geen resultaat meer') {
+      cardText = isEn
+        ? "Come in and let us look at what you're already doing. One session is enough to see where the gains are hiding."
+        : "Kom langs en laat ons een blik werpen op wat je al doet. Eén sessie is genoeg om te zien waar de winst zit.";
+    } else if (goal === 'Afvallen en meer energie' && obstacle === 'Ik heb geen tijd') {
+      cardText = isEn
+        ? "Plan your free session. Sixty minutes is enough to see if this works for you — and to build an approach that fits around your busy life."
+        : "Plan je gratis sessie. Zestig minuten is genoeg om te zien of dit bij je past — en om een aanpak te bouwen die past bij jóuw drukke leven.";
+    } else {
+      cardText = isEn ? i18n.en['quiz.result.p'] : i18n.nl['quiz.result.p'];
+    }
+    resultCardEl.textContent = cardText;
+  }
 
   // Weight-loss goal — append specific extra copy to result body
   const weightSuffix = quizState.goal === 'Afvallen en meer energie'
