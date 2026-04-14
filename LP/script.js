@@ -30,7 +30,7 @@ const i18n = {
     'forwho.c4.tag': 'Afvallen',
     'forwho.c4.quote': '"Ik doe echt mijn best, maar het lukt gewoon niet."',
     'forwho.c4.p': 'Afvallen heeft niks te maken met harder je best doen. Het heeft alles te maken met de juiste aanpak voor jóuw lijf. Je trainer kijkt mee, past aan en zorgt dat je dit keer wél resultaat ziet.',
-    'testi.eyebrow': 'Ervaringen', 'testi.h2': 'Wat vrouwen zeggen na hun eerste sessie.',
+    'testi.eyebrow': 'Ervaringen', 'testi.h2': 'Wat onze cliënten zeggen na hun eerste sessie.',
     'testi.stars.aria': '5 uit 5 sterren',
     'testi.anouk.meta': 'Utrecht · Strakker worden',
     'testi.anouk.quote': '"Voor het eerst voelde het haalbaar in plaats van zwaar. Na twee weken merkte ik al verschil."',
@@ -129,7 +129,7 @@ const i18n = {
     'forwho.c4.tag': 'Losing weight',
     'forwho.c4.quote': '"I\'m genuinely putting in the effort — it just isn\'t working."',
     'forwho.c4.p': "Losing weight isn't about trying harder. It's about the right approach for your specific body. Your trainer watches, adjusts, and makes sure this time you actually see results.",
-    'testi.eyebrow': 'Reviews', 'testi.h2': 'What women say after their first session.',
+    'testi.eyebrow': 'Reviews', 'testi.h2': 'What our clients say after their first session.',
     'testi.stars.aria': '5 out of 5 stars',
     'testi.anouk.meta': 'Utrecht · Toning up',
     'testi.anouk.quote': '"For the first time it felt doable, not daunting. Two weeks in and I was already noticing a difference."',
@@ -293,10 +293,6 @@ const resultProfilesEn = {
     title: "you need a plan that fits around your life.",
     body: "You don't need a marathon training schedule. One session a week, when it works for you, is enough to see real results. We build the plan around you — not the other way around.",
   },
-  "Ik ben eerder begonnen maar gestopt": {
-    title: "you don't need willpower — you need structure.",
-    body: "Quitting before says nothing about you. It says something about the approach. With a regular trainer who knows you, tracks your progress, and shows up when it gets tough — the odds of sticking with it this time are so much higher.",
-  },
   "Ik voel me onzeker in een sportschool": {
     title: "the start needs to feel safe for you — and we'll make it that way.",
     body: "Feeling out of place in a gym is completely normal, and no one should make you feel judged for it. With 1-on-1 coaching there's no audience. It's just you and your trainer, in a comfortable setting, at your own pace. That's how you build real confidence.",
@@ -372,10 +368,6 @@ const resultProfiles = {
   "Ik heb geen tijd": {
     title: "je hebt een plan nodig dat in jouw leven past.",
     body: "Jij hebt geen marathonschema nodig. Eén sessie per week op een moment dat past bij jouw agenda is genoeg om zichtbaar resultaat te zien. We bouwen het plan om jou heen — niet andersom.",
-  },
-  "Ik ben eerder begonnen maar gestopt": {
-    title: "je hebt geen wilskracht nodig — je hebt structuur nodig.",
-    body: "Dat je eerder bent gestopt zegt niks over jou. Het zegt iets over de aanpak. Met een vaste trainer die jou kent, die bijhoudt hoe je progressie maakt en die er is wanneer het moeilijk wordt, is de kans enorm veel groter dat je het nu wél volhoudt.",
   },
   "Ik voel me onzeker in een sportschool": {
     title: "voor jou moet de start veilig voelen — en dat gaan we zo maken.",
@@ -606,45 +598,49 @@ function buildResult() {
   resultTitle.textContent = `${firstName}, ${titleCapitalised}`;
 
   const readiness = isEn
-    ? (quizState.timeline === "Deze week"
+    ? (quizState.timeline === "Zo snel mogelijk"
       ? "You said you want to start soon — now's the moment to lock in a session."
-      : quizState.timeline === "Binnen 2 weken"
+      : quizState.timeline === "Rustig opbouwen"
         ? "Good timing: booking something now means you'll actually follow through."
         : "Even if you're still exploring, a free session is the best way to feel it out without any pressure.")
-    : (quizState.timeline === "Deze week"
+    : (quizState.timeline === "Zo snel mogelijk"
       ? "Je gaf aan dat je snel wilt starten — dit is het moment om direct een sessie vast te leggen."
-      : quizState.timeline === "Binnen 2 weken"
+      : quizState.timeline === "Rustig opbouwen"
         ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
         : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
 
-  // ── Personalise result card text ─────────────────────────────
-  const resultCardEl = document.querySelector('.result-card p[data-i18n="quiz.result.p"]');
-  if (resultCardEl) {
-    const level    = quizState.level;
-    const obstacle = quizState.obstacle;
-    const goal     = quizState.goal;
-
+  // ── PERSONALISE RESULT CARD ───────────────────────────────────
+  const resultCardP = document.querySelector('.result-card p');
+  if (resultCardP) {
+    const isEnCard = currentLang === 'en';
     let cardText;
-    if (level === 'Ik heb eerder gesport maar ben gestopt') {
-      cardText = isEn
-        ? "Plan your free session. We'll start by talking through what made it hard last time — then build something that actually works this time. No contract, no pressure."
-        : "Plan je gratis sessie. We beginnen met wat het de vorige keer moeilijk maakte — en bouwen dan iets dat dit keer wél werkt. Geen contract, geen druk.";
-    } else if (obstacle === 'Ik voel me onzeker in een sportschool') {
-      cardText = isEn
-        ? "Come in for a free session. No big gym floor, no unfamiliar faces — just you and your trainer. We start exactly where you are right now."
-        : "Kom langs voor een gratis sessie. Geen grote zaal, geen onbekende blikken — alleen jij en jouw trainer. We beginnen precies waar jij nu staat.";
-    } else if (obstacle === 'Geen resultaat meer') {
-      cardText = isEn
-        ? "Come in and let us look at what you're already doing. One session is enough to see where the gains are hiding."
+
+    const obs  = quizState.obstacle;
+    const goal = quizState.goal;
+
+    if (obs === 'Ik voel me onzeker in een sportschool' || obs === 'Onzeker gevoel') {
+      cardText = isEnCard
+        ? "Come in for a free session. No big group, no unfamiliar faces — just you and your trainer. We start exactly where you are now, at a pace that feels right."
+        : "Kom langs voor een gratis sessie. Geen grote zaal, geen onbekende blikken — gewoon jij en jouw trainer. We beginnen precies waar jij nu staat, op een tempo dat goed voelt.";
+    } else if (obs === 'Ik ben eerder begonnen maar gestopt' || obs === 'Ik zie het niet volhouden' || obs === 'Motivatie weggevallen' || obs === 'Te druk geworden') {
+      cardText = isEnCard
+        ? "Book your free session. We start with what made it hard last time — and build something that actually works this time. No contract, no pressure."
+        : "Plan je gratis sessie. We beginnen met wat het de vorige keer moeilijk maakte — en bouwen iets op dat dit keer wél werkt. Geen contract, geen druk.";
+    } else if (obs === 'Ik heb geen tijd') {
+      cardText = isEnCard
+        ? "Book your free session. 60 minutes is all it takes to see if this works for you — and to build a plan that fits around your busy life."
+        : "Plan je gratis sessie. 60 minuten is genoeg om te zien of dit bij jou past — en om een aanpak te bouwen die past bij jouw drukke agenda.";
+    } else if ((obs === 'Geen resultaat meer' || obs === 'Geen resultaat gezien' || obs === 'Weet niet wat ik verkeerd doe') && goal !== 'Afvallen en meer energie') {
+      cardText = isEnCard
+        ? "Come in and let us take a look at what you're already doing. One session is enough to find where the progress is hiding."
         : "Kom langs en laat ons een blik werpen op wat je al doet. Eén sessie is genoeg om te zien waar de winst zit.";
-    } else if (goal === 'Afvallen en meer energie' && obstacle === 'Ik heb geen tijd') {
-      cardText = isEn
-        ? "Plan your free session. Sixty minutes is enough to see if this works for you — and to build an approach that fits around your busy life."
-        : "Plan je gratis sessie. Zestig minuten is genoeg om te zien of dit bij je past — en om een aanpak te bouwen die past bij jóuw drukke leven.";
     } else {
-      cardText = isEn ? i18n.en['quiz.result.p'] : i18n.nl['quiz.result.p'];
+      cardText = isEnCard
+        ? "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan — no commitment."
+        : "Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.";
     }
-    resultCardEl.textContent = cardText;
+
+    resultCardP.textContent = cardText;
   }
 
   // Weight-loss goal — append specific extra copy to result body
@@ -664,6 +660,16 @@ nextButtons.forEach(btn =>
   btn.addEventListener("click", () => showStep(Math.min(currentStep + 1, TOTAL_STEPS)))
 );
 answerButtons.forEach(btn => btn.addEventListener("click", () => handleAnswer(btn)));
+
+// ── QUIZ BACK NAVIGATION ──────────────────────────────────────
+document.querySelectorAll('[data-back-step]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentStep <= 1) return;
+    // Step 3 goes back to step 1 (skips interstitial on back)
+    const prevStep = currentStep === 3 ? 1 : currentStep - 1;
+    showStep(prevStep);
+  });
+});
 
 leadForm.addEventListener("submit", event => {
   event.preventDefault();
