@@ -1,5 +1,19 @@
 // ── LANGUAGE / i18n ──────────────────────────────────────────
-let currentLang = localStorage.getItem('olf-lang') || 'nl';
+// Priority 1 — URL param: ?lang=nl or ?lang=en (used in Meta ad links)
+// Priority 2 — localStorage: visitor previously chose manually
+// Priority 3 — Browser language: silent auto-detect on first visit
+// Priority 4 — Fallback to Dutch (primary market)
+const _langParam = new URLSearchParams(window.location.search).get('lang');
+let currentLang;
+if (_langParam === 'nl' || _langParam === 'en') {
+  currentLang = _langParam;
+  localStorage.setItem('olf-lang', currentLang); // persist so toggle still works
+} else if (localStorage.getItem('olf-lang')) {
+  currentLang = localStorage.getItem('olf-lang');
+} else {
+  const _browser = (navigator.language || 'nl').toLowerCase();
+  currentLang = _browser.startsWith('nl') ? 'nl' : 'en';
+}
 
 const i18n = {
   nl: {
