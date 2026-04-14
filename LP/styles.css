@@ -1499,6 +1499,34 @@ h1, h2, h3 {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 0 0 2px rgba(180, 84, 39, 0.12);
 }
 
+/* ── BACK BUTTON ─────────────────────────────────────────────── */
+.quiz-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1.1rem;
+  padding: 0.45rem 0.65rem;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--muted-light);
+  border-radius: var(--radius-md);
+  transition:
+    color       220ms var(--ease),
+    background  220ms var(--ease),
+    transform   220ms var(--ease);
+}
+.quiz-back:hover {
+  color: var(--muted);
+  background: rgba(44, 35, 24, 0.055);
+  transform: translateX(-2px);
+}
+.quiz-back:active {
+  transform: translateX(-3px) scale(0.97);
+  transition-duration: 80ms;
+}
+
 /* ── INTERSTITIAL ────────────────────────────────────────────── */
 .interstitial-shell { padding: 0.5rem 0; }
 

@@ -81,7 +81,7 @@ const i18n = {
     'quiz.s1.kicker': 'Vraag 1 van 4', 'quiz.s1.h3': 'Wat wil je bereiken?',
     'quiz.s1.a1': 'Strakker worden', 'quiz.s1.a2': 'Afvallen en meer energie', 'quiz.s1.a3': 'Fitter en sterker worden', 'quiz.s1.a4': 'Zelfverzekerder voelen in mijn lijf',
     'quiz.s2.kicker': 'Even tussendoor', 'quiz.s2.h3': 'Jij bent niet de enige die een frisse start zoekt.',
-    'quiz.s2.p': 'De meeste vrouwen die bij ons komen, hebben het eerder geprobeerd. Het verschil: nu heb je iemand die écht met je meedenkt.',
+    'quiz.s2.p': 'De meeste mensen die bij ons komen, hebben het eerder geprobeerd. Het verschil: nu heb je iemand die écht met je meedenkt.',
     'quiz.s2.m1': 'Persoonlijk plan', 'quiz.s2.m2': 'Rustig opgebouwd', 'quiz.s2.m3': 'Altijd op jouw tempo', 'quiz.s2.btn': 'Ga verder',
     'quiz.s3.kicker': 'Vraag 2 van 4', 'quiz.s3.h3': 'Hoe zou je jezelf nu omschrijven?',
     'quiz.s3.a1': 'Ik sport bijna nooit', 'quiz.s3.a2': 'Eerder begonnen, nu een nieuwe start', 'quiz.s3.a3': 'Ik sport af en toe', 'quiz.s3.a4': 'Ik sport regelmatig',
@@ -100,6 +100,7 @@ const i18n = {
     'quiz.result.label': 'Jouw aanbevolen eerste stap',
     'quiz.result.p': 'Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.',
     'quiz.result.book': 'Boek je gratis sessie', 'quiz.result.later': 'Misschien later',
+    'quiz.back': '← Terug',
   },
   en: {
     'doc.title': 'One Life Fitness | Personal coaching in Utrecht',
@@ -180,7 +181,7 @@ const i18n = {
     'quiz.s1.kicker': 'Question 1 of 4', 'quiz.s1.h3': 'What do you want to achieve?',
     'quiz.s1.a1': 'Get more toned', 'quiz.s1.a2': 'Lose weight and get more energy', 'quiz.s1.a3': 'Get fitter and stronger', 'quiz.s1.a4': 'Feel more confident in my body',
     'quiz.s2.kicker': 'Just so you know', 'quiz.s2.h3': "You're not the only one looking for a fresh start.",
-    'quiz.s2.p': "Most of the women who come to us have tried before. The difference: now you have someone who's actually in your corner.",
+    'quiz.s2.p': "Most people who come to us have tried before. The difference: now you have someone who's actually in your corner.",
     'quiz.s2.m1': 'Personal plan', 'quiz.s2.m2': 'Built around you', 'quiz.s2.m3': 'Always at your pace', 'quiz.s2.btn': 'Keep going',
     'quiz.s3.kicker': 'Question 2 of 4', 'quiz.s3.h3': "How would you describe where you're at?",
     'quiz.s3.a1': 'Barely exercise', 'quiz.s3.a2': 'Started before — ready to try again', 'quiz.s3.a3': 'Occasionally active', 'quiz.s3.a4': 'I work out regularly',
@@ -199,6 +200,7 @@ const i18n = {
     'quiz.result.label': 'Your recommended first step',
     'quiz.result.p': "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan — no commitment.",
     'quiz.result.book': 'Book your free session', 'quiz.result.later': 'Maybe later',
+    'quiz.back': '← Back',
   },
 };
 
@@ -414,19 +416,19 @@ function updateInterstitialForGoal() {
   const copy = {
     'Strakker worden': isEn
       ? { h: "Getting toned isn't about training harder — it's about training right.",
-          p: "Most women who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session." }
+          p: "Most people who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session." }
       : { h: "Strakker worden heeft alles te maken met de juiste aanpak — niet met harder trainen.",
-          p: "De meeste vrouwen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie." },
+          p: "De meeste mensen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie." },
     'Meer zelfvertrouwen': isEn
       ? { h: "Confidence in your body isn't built in the mirror — it's built by doing.",
-          p: "Almost every woman who starts with us feels like the gym 'isn't for her.' A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows." }
+          p: "Almost everyone who starts with us feels like the gym isn't for them. A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows." }
       : { h: "Vertrouwen in je lichaam bouw je niet voor de spiegel — je bouwt het door te doen.",
-          p: "Bijna elke vrouw die bij ons begint, voelt zich eerst niet op haar plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt." },
+          p: "Bijna iedereen die bij ons begint, voelt zich eerst niet op zijn plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt." },
     'Afvallen en meer energie': isEn
       ? { h: "Losing weight has nothing to do with willpower.",
-          p: "Most of the women who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start." }
+          p: "Most people who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start." }
       : { h: "Afvallen heeft niks te maken met wilskracht.",
-          p: "De meeste vrouwen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen." },
+          p: "De meeste mensen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen." },
     'Sterker worden': isEn
       ? { h: "Getting fitter doesn't start with training more — it starts with training smarter.",
           p: "Most people who come to us have already tried doing more. The problem was almost never effort. It was structure. We fix that together, starting in the very first session." }
