@@ -280,7 +280,7 @@ const resultTitle = document.getElementById("resultTitle");
 const resultText = document.getElementById("resultText");
 const bookingLink = document.getElementById("bookingLink");
 
-const bookingUrl = "https://cal.com/mouaz-tabanja-7ubxvb/gratis-1-op-1-gesprek-met-jouw-personal-trainer";
+const bookingUrl = "https://cal.com/one-life-fitness/gratis-1-op-1-gesprek-met-jouw-personal-trainer";
 
 const TOTAL_STEPS = steps.length;  // 8
 const TYPING_STEP = TOTAL_STEPS - 1; // 7
