@@ -716,12 +716,10 @@ leadForm.addEventListener("submit", event => {
   setTimeout(() => showStep(RESULT_STEP), 1700);
 
   // ── WEBHOOK ───────────────────────────────────────────────────
-  // TEST  → http://178.104.174.166:5678/webhook-test/form  (n8n test trigger)
-  // PROD  → http://178.104.174.166:5678/webhook/form       (n8n production trigger)
-  // TEMP  → https://female-more-earl-kinda.trycloudflare.com/webhook/form (Cloudflare tunnel)
+  // TEST → http://178.104.174.166:5678/webhook-test/form  (n8n test trigger)
+  // PROD → https://n8n.onelifefitness.nl/webhook/form     (permanent production)
   // const WEBHOOK_URL = "http://178.104.174.166:5678/webhook-test/form";
-  // const WEBHOOK_URL = "http://178.104.174.166:5678/webhook/form";
-  const WEBHOOK_URL = "https://female-more-earl-kinda.trycloudflare.com/webhook/form";
+  const WEBHOOK_URL = "https://n8n.onelifefitness.nl/webhook/form";
 
   fetch(WEBHOOK_URL, {
     method: "POST",
