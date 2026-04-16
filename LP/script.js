@@ -1,18 +1,8 @@
 // ── LANGUAGE / i18n ──────────────────────────────────────────
-// Priority 1 — URL param: ?lang=nl or ?lang=en (used in ad links)
-// Priority 2 — localStorage: visitor previously chose manually via toggle
-// Priority 3 — Default to Dutch (primary market — browser detect removed:
-//              too many Dutch users have en-US browser lang and got wrong version)
+// Default NL. Only switches to EN via URL param (?lang=en) or manual toggle.
+// No browser auto-detect, no localStorage persistence.
 const _langParam = new URLSearchParams(window.location.search).get('lang');
-let currentLang;
-if (_langParam === 'nl' || _langParam === 'en') {
-  currentLang = _langParam;
-  localStorage.setItem('olf-lang', currentLang);
-} else if (localStorage.getItem('olf-lang')) {
-  currentLang = localStorage.getItem('olf-lang');
-} else {
-  currentLang = 'nl'; // Default NL — Dutch business, Dutch market
-}
+let currentLang = (_langParam === 'en') ? 'en' : 'nl';
 
 const i18n = {
   nl: {
@@ -219,7 +209,6 @@ const i18n = {
 
 function setLang(lang) {
   currentLang = lang;
-  localStorage.setItem('olf-lang', lang);
   document.documentElement.lang = lang;
   document.title = i18n[lang]['doc.title'];
 
