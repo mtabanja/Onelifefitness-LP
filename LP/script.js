@@ -68,7 +68,7 @@ const i18n = {
     'team.p4.strong': 'Gratis start', 'team.p4.span': 'Geen verplichtingen',
     'trainers.eyebrow': 'Ons team', 'trainers.h2': 'De mensen achter jouw sessie.',
     'trainer.1.name': 'Nour', 'trainer.1.role': 'Kracht & conditie',
-    'trainer.2.name': 'Anna', 'trainer.2.role': 'Beginners & herstel',
+    'trainer.2.name': 'Erik', 'trainer.2.role': 'Beginners & herstel',
     'trainer.3.name': 'Aria', 'trainer.3.role': 'Vrouwenkracht',
     'faq.eyebrow': 'Veelgestelde vragen', 'faq.h2': 'Wat mensen zich afvragen voor ze beginnen.',
     'faq.q1': '"Ik heb nog nooit gesport — is dit voor mij?"',
@@ -168,7 +168,7 @@ const i18n = {
     'team.p4.strong': 'Free start', 'team.p4.span': 'No obligations',
     'trainers.eyebrow': 'Our team', 'trainers.h2': 'The people behind your session.',
     'trainer.1.name': 'Nour', 'trainer.1.role': 'Strength & conditioning',
-    'trainer.2.name': 'Anna', 'trainer.2.role': 'Beginners & recovery',
+    'trainer.2.name': 'Erik', 'trainer.2.role': 'Beginners & recovery',
     'trainer.3.name': 'Aria', 'trainer.3.role': "Women's training",
     'faq.eyebrow': 'Common questions', 'faq.h2': 'What people wonder before they sign up.',
     'faq.q1': '"I\'ve never really worked out — is this for me?"',
@@ -738,7 +738,11 @@ leadForm.addEventListener("submit", event => {
 
 bookingLink.addEventListener("click", event => {
   event.preventDefault();
-  window.open(bookingUrl, "_blank", "noopener,noreferrer");
+  const normalizedPhone = quizState.phone.replace(/^0/, '31').replace(/[\s\-]/g, '');
+  const urlWithMeta = normalizedPhone
+    ? `${bookingUrl}?metadata[phone]=${normalizedPhone}`
+    : bookingUrl;
+  window.open(urlWithMeta, "_blank", "noopener,noreferrer");
 });
 
 // ── KEYBOARD ESCAPE ───────────────────────────────────────────
