@@ -29,21 +29,24 @@ const i18n = {
     'forwho.c2.tag': 'Herstart', 'forwho.c2.quote': '"Ik ben eerder gestopt en wil het nu echt volhouden."',
     'forwho.c2.p': 'Structuur, persoonlijke begeleiding en iemand die je bijhoudt. Dat maakt het verschil deze keer.',
     'forwho.c3.tag': 'Doorgroeiers', 'forwho.c3.quote': '"Ik sport al, maar zie geen resultaat meer."',
-    'forwho.c3.p': 'Gerichter trainen, slimmer progressie opbouwen. Ook daarvoor ben je welkom.',
+    'forwho.c3.p': 'Je doet het werk al. Maar de schaal beweegt niet meer, of het voelt alsof je vastloopt. Een trainer ziet in één sessie precies waar het hapert en past het direct aan. Niet opnieuw beginnen, gewoon slimmer verder.',
     'forwho.c4.tag': 'Afvallen',
     'forwho.c4.quote': '"Ik doe echt mijn best, maar het lukt gewoon niet."',
     'forwho.c4.p': 'Afvallen heeft niks te maken met harder je best doen. Het heeft alles te maken met de juiste aanpak voor jóuw lijf. Je trainer kijkt mee, past aan en zorgt dat je dit keer wél resultaat ziet.',
     'testi.eyebrow': 'Ervaringen', 'testi.h2': 'Wat onze cliënten zeggen na hun eerste sessie.',
     'testi.stars.aria': '5 uit 5 sterren',
-    'testi.anouk.meta': 'Utrecht · Strakker worden',
-    'testi.anouk.quote': '"Voor het eerst voelde het haalbaar in plaats van zwaar. Na twee weken merkte ik al verschil."',
+    'testi.anouk.meta': 'Utrecht · Afvallen',
+    'testi.anouk.quote': '"Begin dit jaar begonnen met één doel: afvallen. Na zes weken was ik al 4 kilo kwijt. Ik snap zelf niet precies hoe het deze keer wel werkte maar ik doe het gewoon."',
     'testi.anouk.badge': '4 kg afgevallen in 6 weken',
     'testi.roos.meta': 'Utrecht · Meer energie',
-    'testi.roos.quote': '"Ik had al drie keer eerder geprobeerd te starten. Dit is de eerste keer dat ik het echt volhoud."',
+    'testi.roos.quote': '"Ben al drie keer eerder gestopt met sporten. Dacht eerlijk gezegd niet dat het deze keer anders zou zijn. Maar vier maanden later ben ik er nog steeds. Mijn trainer wacht gewoon op je, dat helpt echt."',
     'testi.roos.badge': 'Al 4 maanden actief',
     'testi.floor.meta': 'Utrecht · Zelfvertrouwen',
-    'testi.floor.quote': '"De gym voelde eerst als iets voor anderen. Nu kijk ik er elke week naar uit."',
+    'testi.floor.quote': '"Ik vond de gym altijd een beetje eng, echt waar. Maar 1-op-1 is gewoon anders, er is niemand die kijkt. Nu ga ik drie keer per week en het voelt inmiddels bijna normaal."',
     'testi.floor.badge': 'Van nul naar 3× per week',
+    'testi.sander.meta': 'Utrecht · Sterker worden',
+    'testi.sander.quote': '"Ik sportte al jaren zelf en dacht dat ik het wel wist. Mijn trainer zag in de eerste sessie al wat er fout zat. Sindsdien is mijn bench met 10 kilo omhoog gegaan. Eerder had ik dat in drie jaar niet voor elkaar gekregen."',
+    'testi.sander.badge': '+10 kg bench in 3 maanden',
     'process.eyebrow': 'Hoe werkt het', 'process.h2': 'Van test naar eerste sessie in drie stappen.',
     'process.s1.h3': 'Doe de korte test', 'process.s1.p': 'Vier vragen over jouw doel en wat je tegenhoudt. Duurt 60 seconden.',
     'process.s2.h3': 'Ontvang jouw persoonlijk advies', 'process.s2.p': 'Je ziet direct welke aanpak het beste bij jou past — afgestemd op jouw antwoorden.',
@@ -94,7 +97,7 @@ const i18n = {
     'quiz.s5.a1': 'Zo snel mogelijk', 'quiz.s5.a2': 'Ik wil het rustig opbouwen', 'quiz.s5.a3': 'Ik oriënteer me nog',
     'quiz.s6.kicker': 'Laatste stap', 'quiz.s6.h3': 'Bijna klaar — voor wie maken we dit plan op?',
     'quiz.s6.labelname': 'Voornaam', 'quiz.s6.labelphone': 'WhatsApp-nummer',
-    'quiz.input.name': 'Bijv. Sara', 'quiz.input.phone': '06 12 34 56 78',
+    'quiz.input.name': 'Bijv. Sara', 'quiz.input.phone': '06 29 47 18 53',
     'quiz.s6.submit': 'Bekijk mijn resultaat',
     'quiz.s6.note': 'Jouw trainer neemt persoonlijk contact op via WhatsApp om een moment af te spreken.',
     'quiz.s7.kicker': 'Even geduld\u2026', 'quiz.s7.h3': 'We analyseren jouw antwoorden',
@@ -129,21 +132,24 @@ const i18n = {
     'forwho.c2.tag': 'Coming Back', 'forwho.c2.quote': '"I\'ve quit before — this time I want it to stick."',
     'forwho.c2.p': "Structure, personal guidance, and someone who keeps you accountable. That's what makes it different this time.",
     'forwho.c3.tag': 'Ready to Level Up', 'forwho.c3.quote': '"I already work out, but I\'ve hit a wall."',
-    'forwho.c3.p': "Train smarter, build progress that actually shows. You're welcome here too.",
+    'forwho.c3.p': "You're already putting in the work. But the scale isn't moving, or progress has just stopped. A trainer spots in one session exactly where you're stuck and adjusts straight away. No starting over, just training smarter.",
     'forwho.c4.tag': 'Losing weight',
     'forwho.c4.quote': '"I\'m genuinely putting in the effort — it just isn\'t working."',
     'forwho.c4.p': "Losing weight isn't about trying harder. It's about the right approach for your specific body. Your trainer watches, adjusts, and makes sure this time you actually see results.",
     'testi.eyebrow': 'Reviews', 'testi.h2': 'What our clients say after their first session.',
     'testi.stars.aria': '5 out of 5 stars',
-    'testi.anouk.meta': 'Utrecht · Toning up',
-    'testi.anouk.quote': '"For the first time it felt doable, not daunting. Two weeks in and I was already noticing a difference."',
-    'testi.anouk.badge': '9 lbs down in 6 weeks',
+    'testi.anouk.meta': 'Utrecht · Weight loss',
+    'testi.anouk.quote': '"Started this year with one goal: lose weight. Six weeks in I was already 4 kilos down. Honestly don\'t know exactly why it worked this time but it did."',
+    'testi.anouk.badge': '4 kg down in 6 weeks',
     'testi.roos.meta': 'Utrecht · More energy',
-    'testi.roos.quote': '"I\'d tried starting three times before. This is the first time it\'s actually stuck."',
-    'testi.roos.badge': '4 months and still going',
+    'testi.roos.quote': '"Quit working out three times before. Honestly didn\'t think this time would be different. Four months later I\'m still here. Having a trainer who\'s actually waiting for you makes a real difference."',
+    'testi.roos.badge': '4 months in and still going',
     'testi.floor.meta': 'Utrecht · Confidence',
-    'testi.floor.quote': '"The gym used to feel like it was for other people. Now I look forward to it every week."',
-    'testi.floor.badge': 'Zero to 3 times a week',
+    'testi.floor.quote': '"Honestly the gym used to freak me out a bit. Not even joking. But 1-on-1 is just different, no one watching. Now I go three times a week and it almost feels normal."',
+    'testi.floor.badge': 'From zero to 3× a week',
+    'testi.sander.meta': 'Utrecht · Getting stronger',
+    'testi.sander.quote': '"Been training on my own for years. Thought I knew what I was doing. My trainer spotted what was wrong in the first session. Since then my bench went up 10 kilos. In three years on my own I hadn\'t managed that."',
+    'testi.sander.badge': '+10 kg on bench in 3 months',
     'process.eyebrow': 'How it works', 'process.h2': 'From quiz to your first session in three steps.',
     'process.s1.h3': 'Take the quick quiz', 'process.s1.p': "Four questions about your goal and what's getting in the way. Takes 60 seconds.",
     'process.s2.h3': 'Get your personal recommendation', 'process.s2.p': "You'll immediately see which approach fits you best — based on exactly what you told us.",
@@ -194,7 +200,7 @@ const i18n = {
     'quiz.s5.a1': 'As soon as possible', 'quiz.s5.a2': 'I want to build gradually', 'quiz.s5.a3': 'Still exploring my options',
     'quiz.s6.kicker': 'Last step', 'quiz.s6.h3': 'Almost there — who are we making this plan for?',
     'quiz.s6.labelname': 'First name', 'quiz.s6.labelphone': 'WhatsApp number',
-    'quiz.input.name': 'e.g. Sara', 'quiz.input.phone': '07700 900000',
+    'quiz.input.name': 'e.g. Sara', 'quiz.input.phone': '07922 481 307',
     'quiz.s6.submit': 'See my result',
     'quiz.s6.note': "Your trainer will reach out personally via WhatsApp to set up a time.",
     'quiz.s7.kicker': 'Just a moment\u2026', 'quiz.s7.h3': 'Looking at your answers',
@@ -291,31 +297,31 @@ const resultProfilesEn = {
   // ── Beginner / returning profiles ────────────────────────────
   "Ik weet niet waar ik moet beginnen": {
     title: "you need direction, not just motivation.",
-    body: "Your answers show the first step is the hardest part — not keeping it up. Having someone stand next to you makes that first step a whole lot smaller. Your trainer explains everything, step by step, no judgment.",
+    body: "Your answers show the first step is the hardest part. Not keeping it up. Having someone stand next to you makes that first step a whole lot smaller. Your trainer explains everything, step by step, no judgment.",
   },
   "Ik heb geen tijd": {
     title: "you need a plan that fits around your life.",
-    body: "You don't need a marathon training schedule. One session a week, when it works for you, is enough to see real results. We build the plan around you — not the other way around.",
+    body: "You don't need a marathon training schedule. One session a week, when it works for you, is enough to see real results. We build the plan around you. Not the other way around.",
   },
   "Ik voel me onzeker in een sportschool": {
-    title: "the start needs to feel safe for you — and we'll make it that way.",
+    title: "the start needs to feel safe for you. We'll make it that way.",
     body: "Feeling out of place in a gym is completely normal, and no one should make you feel judged for it. With 1-on-1 coaching there's no audience. It's just you and your trainer, in a comfortable setting, at your own pace. That's how you build real confidence.",
   },
   "Ik zie het niet volhouden": {
-    title: "you don't need willpower — you need someone who's there for you.",
-    body: "That doubt about whether you'll stick with it isn't your fault — it's what happens when you do it alone. With a regular trainer who knows you, who's there every week, and who tracks your progress, staying consistent isn't about discipline anymore. It just becomes the natural thing.",
+    title: "you don't need willpower. You need someone who's there for you.",
+    body: "That doubt about whether you'll stick with it isn't your fault. It's what happens when you do it alone. With a regular trainer who knows you, who's there every week, and who tracks your progress, staying consistent isn't about discipline anymore. It just becomes the natural thing.",
   },
   // ── "Eerder gestopt" level — why they stopped last time ──────
   "Geen resultaat gezien": {
     title: "last time it was the approach that was missing, not the effort.",
-    body: "Not seeing results when you're doing everything right is the most frustrating thing. That says nothing about you — it says everything about whether the approach actually fit your body. We find that mismatch and fix it, starting in the very first session.",
+    body: "Not seeing results when you're doing everything right is the most frustrating thing. That says nothing about you. It says everything about whether the approach actually fit your body. We find that mismatch and fix it, starting in the very first session.",
   },
   "Te druk geworden": {
-    title: "life got in the way — this time we build around it.",
-    body: "Getting too busy isn't something to feel bad about. What can be different: a plan built around your actual schedule, so one session a week is enough to keep moving forward — even in the hectic weeks.",
+    title: "life got in the way. This time we build around it.",
+    body: "Getting too busy isn't something to feel bad about. What can be different: a plan built around your actual schedule, so one session a week is enough to keep moving forward. Even in the hectic weeks.",
   },
   "Motivatie weggevallen": {
-    title: "motivation fades for everyone — structure and accountability don't.",
+    title: "motivation fades for everyone. Structure and accountability don't.",
     body: "Everyone loses motivation at some point. That's just how it works. The difference: when a trainer is waiting for you, you show up anyway. When a program continues after a rough week, you continue too. That's what we build together.",
   },
   "Onzeker gevoel": {
@@ -324,41 +330,41 @@ const resultProfilesEn = {
   },
   // ── Regular trainer profiles (already going to the gym) ──────
   "Geen resultaat meer": {
-    title: "you're already doing the work — now it's the approach that needs to change.",
-    body: "A plateau isn't a sign you're not doing enough. It's a signal your body needs something more specific. A trainer spots in one session exactly where the gains are hiding and adjusts immediately. No starting over — just training smarter.",
+    title: "you're already doing the work. Now it's the approach that needs to change.",
+    body: "A plateau isn't a sign you're not doing enough. It's a signal your body needs something more specific. A trainer spots in one session exactly where the gains are hiding and adjusts immediately. No starting over. Just training smarter.",
   },
   "Weet niet wat ik verkeerd doe": {
     title: "training alone means nobody sees what you can't see yourself.",
-    body: "A small flaw in technique, training load, or recovery can quietly block results for months — and you'd never know. A trainer watches, identifies it exactly, and fixes it. That's the difference 1-on-1 makes.",
+    body: "A small flaw in technique, training load, or recovery can quietly block results for months and you'd never know. A trainer watches, identifies it exactly, and fixes it. That's the difference 1-on-1 makes.",
   },
   "Mis een echt plan": {
-    title: "moving is good — but without structure you'll stay stuck at the same level.",
-    body: "Random training gives random results. A program built around your body, your goal, and your pace gives you something that actually compounds over time. You build that together with your trainer — starting in the very first session.",
+    title: "moving is good. Without structure you'll stay stuck at the same level.",
+    body: "Random training gives random results. A program built around your body, your goal, and your pace gives you something that actually compounds over time. You build that together with your trainer, starting in the very first session.",
   },
   "Iemand die meekijkt": {
-    title: "you know how to train — you need someone to train alongside you.",
+    title: "you know how to train. You need someone to train alongside you.",
     body: "Knowledge is half of it. The other half is someone who watches, corrects, and challenges you every single session. A trainer who knows you is the person who turns effort into real progress.",
   },
 };
 
 const fallbackProfileEn = {
   title: "you need a plan built around you.",
-  body: "Based on your answers, personal coaching is the fastest route to the result you're after. The free intro session is exactly the place to build that plan together — no pressure.",
+  body: "Based on your answers, personal coaching is the fastest route to the result you're after. The free intro session is exactly the place to build that plan together. No pressure.",
 };
 
 const resultProfiles = {
   // ── "Eerder gestopt" level — why they stopped last time ──────
   "Geen resultaat gezien": {
     title: "de vorige keer was het de aanpak die ontbrak, niet de inzet.",
-    body: "Geen resultaat zien terwijl je je best doet is het meest frustrerende wat er is. Dat zegt niks over jou — het zegt alles over of de aanpak bij jóuw lichaam paste. We vinden die mismatch en lossen het op, al in de eerste sessie.",
+    body: "Geen resultaat zien terwijl je je best doet is het meest frustrerende wat er is. Dat zegt niks over jou. Het zegt alles over of de aanpak bij jóuw lichaam paste. We vinden die mismatch en lossen het op, al in de eerste sessie.",
   },
   "Te druk geworden": {
-    title: "het leven liep ertussen — deze keer bouwen we er omheen.",
-    body: "Te druk worden is niks om je voor te schamen. Wat wel anders kan: een schema dat echt om jóuw agenda heen gebouwd wordt, zodat één sessie per week genoeg is om door te gaan — ook in drukke periodes.",
+    title: "het leven liep ertussen. Deze keer bouwen we er omheen.",
+    body: "Te druk worden is niks om je voor te schamen. Wat wel anders kan: een schema dat echt om jóuw agenda heen gebouwd wordt, zodat één sessie per week genoeg is om door te gaan. Ook in drukke periodes.",
   },
   "Motivatie weggevallen": {
-    title: "motivatie verdwijnt — structuur en iemand die op je wacht, niet.",
-    body: "Iedereen verliest motivatie — dat is gewoon menselijk. Het verschil: als er iemand op je wacht, ga je toch. Als er een programma is dat na een moeilijke week gewoon doorgaat, ga jij ook door. Dat bouwt One Life voor je op.",
+    title: "motivatie verdwijnt. Structuur en iemand die op je wacht, niet.",
+    body: "Iedereen verliest motivatie. Dat is gewoon menselijk. Het verschil: als er iemand op je wacht, ga je toch. Als er een programma is dat na een moeilijke week gewoon doorgaat, ga jij ook door. Dat bouwt One Life voor je op.",
   },
   "Onzeker gevoel": {
     title: "die onzekerheid zei iets over de omgeving, niet over jou.",
@@ -367,42 +373,42 @@ const resultProfiles = {
   // ── Beginner / returning profiles ────────────────────────────
   "Ik weet niet waar ik moet beginnen": {
     title: "je hebt richting nodig, geen extra motivatie.",
-    body: "Uit jouw antwoorden blijkt dat de eerste stap het moeilijkst is — niet het volhouden. Met iemand die naast je staat, wordt die eerste stap een stuk kleiner. Jouw trainer legt alles uit, stap voor stap, zonder oordeel.",
+    body: "Uit jouw antwoorden blijkt dat de eerste stap het moeilijkst is. Niet het volhouden. Met iemand die naast je staat, wordt die eerste stap een stuk kleiner. Jouw trainer legt alles uit, stap voor stap, zonder oordeel.",
   },
   "Ik heb geen tijd": {
     title: "je hebt een plan nodig dat in jouw leven past.",
-    body: "Jij hebt geen marathonschema nodig. Eén sessie per week op een moment dat past bij jouw agenda is genoeg om zichtbaar resultaat te zien. We bouwen het plan om jou heen — niet andersom.",
+    body: "Jij hebt geen marathonschema nodig. Eén sessie per week op een moment dat past bij jouw agenda is genoeg om zichtbaar resultaat te zien. We bouwen het plan om jou heen. Niet andersom.",
   },
   "Ik voel me onzeker in een sportschool": {
-    title: "voor jou moet de start veilig voelen — en dat gaan we zo maken.",
+    title: "voor jou moet de start veilig voelen. Dat gaan we zo maken.",
     body: "Onzekerheid in een sportschool is normaal, en niemand hoort je daarvoor te oordelen. Bij 1-op-1 coaching is er geen publiek. Het is jij en jouw trainer, in een veilige setting, op jouw tempo. Zodat je langzaam maar zeker vertrouwen opbouwt.",
   },
   "Ik zie het niet volhouden": {
-    title: "je hebt geen wilskracht nodig — je hebt iemand nodig die er voor je is.",
-    body: "Die twijfel of je het volhoudt is niet jóuw schuld — het is wat er bijna altijd gebeurt als je het alleen doet. Met een vaste trainer die jou kent, die elke week voor je klaarstaat en bijhoudt hoe je groeit, is volhouden niet langer een kwestie van discipline. Het wordt gewoon logisch.",
+    title: "je hebt geen wilskracht nodig. Je hebt iemand nodig die er voor je is.",
+    body: "Die twijfel of je het volhoudt is niet jóuw schuld. Het is wat er bijna altijd gebeurt als je het alleen doet. Met een vaste trainer die jou kent, die elke week voor je klaarstaat en bijhoudt hoe je groeit, is volhouden niet langer een kwestie van discipline. Het wordt gewoon logisch.",
   },
   // ── Regular trainer profiles (already going to the gym) ──────
   "Geen resultaat meer": {
-    title: "je doet het werk al — nu is de aanpak aan de beurt.",
-    body: "Een plateau is geen teken dat jij niet genoeg doet. Het is een signaal dat jouw lichaam iets specifieks nodig heeft. Een trainer ziet in één sessie precies waar de winst zit en past het direct aan. Geen reset — gewoon slimmer trainen.",
+    title: "je doet het werk al. Nu is de aanpak aan de beurt.",
+    body: "Een plateau is geen teken dat jij niet genoeg doet. Het is een signaal dat jouw lichaam iets specifieks nodig heeft. Een trainer ziet in één sessie precies waar de winst zit en past het direct aan. Geen reset. Gewoon slimmer trainen.",
   },
   "Weet niet wat ik verkeerd doe": {
     title: "alleen trainen betekent dat niemand ziet wat jij zelf niet ziet.",
-    body: "Een kleine fout in techniek, belasting of herstel kan maandenlang resultaat blokkeren — zonder dat je het doorhebt. Een trainer kijkt mee, identificeert het precies en lost het op. Dat is wat 1-op-1 anders maakt.",
+    body: "Een kleine fout in techniek, belasting of herstel kan maandenlang resultaat blokkeren zonder dat je het doorhebt. Een trainer kijkt mee, identificeert het precies en lost het op. Dat is wat 1-op-1 anders maakt.",
   },
   "Mis een echt plan": {
-    title: "bewegen is goed — maar zonder structuur blijf je op hetzelfde niveau hangen.",
-    body: "Willekeurig trainen geeft willekeurige resultaten. Een programma dat is opgebouwd op jóuw lichaam, jóuw doel en jóuw tempo — dat is wat écht opbouwt. Dat maak je samen met je trainer, al in de eerste sessie.",
+    title: "bewegen is goed. Zonder structuur blijf je op hetzelfde niveau hangen.",
+    body: "Willekeurig trainen geeft willekeurige resultaten. Een programma dat is opgebouwd op jóuw lichaam, jóuw doel en jóuw tempo, dat is wat écht opbouwt. Dat maak je samen met je trainer, al in de eerste sessie.",
   },
   "Iemand die meekijkt": {
-    title: "je weet hoe je moet trainen — je hebt iemand nodig die het samen met je doet.",
+    title: "je weet hoe je moet trainen. Je hebt iemand nodig die het samen met je doet.",
     body: "Kennis is de helft. De andere helft is iemand die kijkt, corrigeert en je elke sessie uitdaagt. Een trainer die jou kent is degene die het verschil maakt tussen goed trainen en echt vooruitgaan.",
   },
 };
 
 const fallbackProfile = {
   title: "je hebt een plan nodig dat bij jóu past.",
-  body: "Op basis van jouw antwoorden is persoonlijke begeleiding de snelste weg naar het resultaat dat jij wilt. De gratis kennismakingssessie is er om precies dat plan samen scherp te maken — zonder druk.",
+  body: "Op basis van jouw antwoorden is persoonlijke begeleiding de snelste weg naar het resultaat dat jij wilt. De gratis kennismakingssessie is er om precies dat plan samen scherp te maken. Zonder druk.",
 };
 
 // ── INTERSTITIAL PERSONALISATION ─────────────────────────────

@@ -160,34 +160,38 @@ img { display: block; max-width: 100%; }
 .lang-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.28rem;
-  padding: 0.28rem 0.5rem;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
+  gap: 0;
+  padding: 0.22rem 0.3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2rem;
   cursor: pointer;
-  transition: border-color 220ms var(--ease);
+  transition: border-color 220ms var(--ease), background 220ms var(--ease);
   flex-shrink: 0;
 }
-.lang-toggle:hover { border-color: rgba(255, 255, 255, 0.22); }
+.lang-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.08);
+}
 
 .lang-opt {
   font-family: "Manrope", sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  transition: color 200ms var(--ease);
+  color: rgba(255, 255, 255, 0.45);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2rem;
+  transition: color 200ms var(--ease), background 200ms var(--ease);
   line-height: 1;
 }
-.lang-opt.is-active { color: rgba(255, 255, 255, 0.90); }
+.lang-opt.is-active {
+  color: rgba(44, 35, 24, 0.92);
+  background: rgba(255, 255, 255, 0.88);
+}
 
-.lang-sep {
-  font-size: 0.58rem;
-  color: rgba(255, 255, 255, 0.20);
-  line-height: 1;
-}
+.lang-sep { display: none; }
 
 /* ── NAVIGATION ──────────────────────────────────────────────── */
 
@@ -919,6 +923,22 @@ h1, h2, h3 {
   object-position: center top;
   filter: saturate(0.88) contrast(1.04);
   flex-shrink: 0;
+}
+
+/* Initials fallback when no photo is available */
+.avatar-initials {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.4rem;
+  background: var(--accent-light);
+  color: var(--accent-warm);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0;
 }
 
 /* Avatar image styling — src loaded from randomuser.me or real client photos */
