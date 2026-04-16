@@ -1,18 +1,17 @@
 // ── LANGUAGE / i18n ──────────────────────────────────────────
-// Priority 1 — URL param: ?lang=nl or ?lang=en (used in Meta ad links)
-// Priority 2 — localStorage: visitor previously chose manually
-// Priority 3 — Browser language: silent auto-detect on first visit
-// Priority 4 — Fallback to Dutch (primary market)
+// Priority 1 — URL param: ?lang=nl or ?lang=en (used in ad links)
+// Priority 2 — localStorage: visitor previously chose manually via toggle
+// Priority 3 — Default to Dutch (primary market — browser detect removed:
+//              too many Dutch users have en-US browser lang and got wrong version)
 const _langParam = new URLSearchParams(window.location.search).get('lang');
 let currentLang;
 if (_langParam === 'nl' || _langParam === 'en') {
   currentLang = _langParam;
-  localStorage.setItem('olf-lang', currentLang); // persist so toggle still works
+  localStorage.setItem('olf-lang', currentLang);
 } else if (localStorage.getItem('olf-lang')) {
   currentLang = localStorage.getItem('olf-lang');
 } else {
-  const _browser = (navigator.language || 'nl').toLowerCase();
-  currentLang = _browser.startsWith('nl') ? 'nl' : 'en';
+  currentLang = 'nl'; // Default NL — Dutch business, Dutch market
 }
 
 const i18n = {
@@ -731,6 +730,7 @@ leadForm.addEventListener("submit", event => {
       level: quizState.level,
       obstacle: quizState.obstacle,
       timeline: quizState.timeline,
+      language: currentLang,
       ...utmData,
     }),
   }).catch(() => { });
