@@ -1780,7 +1780,8 @@ h1, h2, h3 {
   }
 
   .nav-cta { width: auto; }
-  .header-actions { order: 3; } /* push CTA to far right after nav links */
+  .lang-toggle { order: 3; }    /* sits between nav links and CTA */
+  .header-actions { order: 4; } /* push CTA to far right */
 
   /* Desktop nav: horizontal, inline, no collapse */
   .nav-toggle { display: none; }
@@ -1955,6 +1956,15 @@ h1, h2, h3 {
   .site-header.nav-open .header-actions {
     top: 0.55rem;
     transform: none;
+  }
+  /* Lang toggle mirrors hamburger on the left — plenty of space, no crowding */
+  .lang-toggle {
+    position: absolute;
+    left: 0.6rem;
+    top: 0.55rem;
+  }
+  .site-header.nav-open .lang-toggle {
+    top: 0.55rem;
   }
   .brand-logo { width: 120px; }
 
