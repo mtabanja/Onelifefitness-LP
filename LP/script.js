@@ -738,10 +738,12 @@ leadForm.addEventListener("submit", event => {
 
 bookingLink.addEventListener("click", event => {
   event.preventDefault();
-  const normalizedPhone = quizState.phone.replace(/^0/, '31').replace(/[\s\-]/g, '');
-  const urlWithMeta = normalizedPhone
-    ? `${bookingUrl}?metadata[phone]=${normalizedPhone}`
-    : bookingUrl;
+  let p = quizState.phone.replace(/[\s\-\(\)\.]/g, '');
+  if (p.startsWith('+31')) p = p.slice(1);       // +31... → 31...
+  else if (p.startsWith('00')) p = p.slice(2);    // 0031... → 31...
+  else if (p.startsWith('0')) p = '31' + p.slice(1); // 06... → 316...
+  else if (!p.startsWith('31')) p = '31' + p;     // 6... → 316...
+  const urlWithMeta = p ? `${bookingUrl}?metadata[phone]=${p}` : bookingUrl;
   window.open(urlWithMeta, "_blank", "noopener,noreferrer");
 });
 
