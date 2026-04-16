@@ -19,13 +19,13 @@ const i18n = {
     'proof.label.2': 'Locaties in Utrecht', 'proof.label.3': 'Altijd persoonlijk',
     'trust.eyebrow': 'Waarom mensen beginnen',
     'trust.h2': 'Coaching die aanvoelt als steun, niet als druk.',
-    'trust.p': 'Of je nu nog nooit gesport hebt, eerder gestopt bent, of gewoon meer uit jezelf wilt halen — hier begin je altijd op jouw eigen niveau.',
+    'trust.p': 'Of je nu nog nooit gesport hebt, eerder gestopt bent, of gewoon meer uit jezelf wilt halen. Hier begin je altijd op jouw eigen niveau.',
     'trust.f1.h3': 'Gaat door na de eerste sessie', 'trust.f1.p': 'De eerste sessie maakt direct duidelijk of het klikt. Bijna iedereen die langskomt, blijft.',
     'trust.f2.h3': 'Coaching op jouw ritme', 'trust.f2.p': 'Geen groepslessen. Geen wachten. Jij krijgt de volledige aandacht van jouw trainer.',
     'trust.f3.h3': 'Geen contracten, geen verplichtingen', 'trust.f3.p': "Je start wanneer je wilt. Stop wanneer je wilt. Geen handtekening die je vasthoudt.",
     'forwho.eyebrow': 'Is dit voor mij?', 'forwho.h2': 'Dit klinkt waarschijnlijk bekend.',
     'forwho.c1.tag': 'Beginners', 'forwho.c1.quote': '"Ik weet niet waar ik moet beginnen."',
-    'forwho.c1.p': 'Je hoeft niks te weten. Jouw trainer begint exact waar jij nu staat — en legt alles uit.',
+    'forwho.c1.p': 'Je hoeft niks te weten. Jouw trainer begint exact waar jij nu staat, en legt alles uit.',
     'forwho.c2.tag': 'Herstart', 'forwho.c2.quote': '"Ik ben eerder gestopt en wil het nu echt volhouden."',
     'forwho.c2.p': 'Structuur, persoonlijke begeleiding en iemand die je bijhoudt. Dat maakt het verschil deze keer.',
     'forwho.c3.tag': 'Doorgroeiers', 'forwho.c3.quote': '"Ik sport al, maar zie geen resultaat meer."',
@@ -49,10 +49,10 @@ const i18n = {
     'testi.sander.badge': '+10 kg bench in 3 maanden',
     'process.eyebrow': 'Hoe werkt het', 'process.h2': 'Van test naar eerste sessie in drie stappen.',
     'process.s1.h3': 'Doe de korte test', 'process.s1.p': 'Vier vragen over jouw doel en wat je tegenhoudt. Duurt 60 seconden.',
-    'process.s2.h3': 'Ontvang jouw persoonlijk advies', 'process.s2.p': 'Je ziet direct welke aanpak het beste bij jou past — afgestemd op jouw antwoorden.',
+    'process.s2.h3': 'Ontvang jouw persoonlijk advies', 'process.s2.p': 'Je ziet direct welke aanpak het beste bij jou past, afgestemd op jouw antwoorden.',
     'process.s3.h3': 'Plan je gratis sessie', 'process.s3.p': 'Kies een moment, kom langs, en voel zelf of het klopt. Zonder verplichting.',
     'team.h2': 'Persoonlijk. Lokaal. Zonder opgeblazen fitnesspraat.',
-    'team.p': 'We werken met een klein team op meerdere locaties in Utrecht. Je start met een gratis sessie — we luisteren, geen verkooppraatje. Daarna kies jij.',
+    'team.p': 'We werken met een klein team op meerdere locaties in Utrecht. Je start met een gratis sessie, we luisteren, geen verkooppraatje. Daarna kies jij.',
     'team.cta': 'Plan de gratis sessie',
     'team.p1.strong': '3 locaties in Utrecht', 'team.p1.span': 'Altijd dichtbij',
     'team.p2.strong': '1-op-1 sessies', 'team.p2.span': 'Altijd persoonlijk',
@@ -63,20 +63,20 @@ const i18n = {
     'trainer.2.name': 'Erik', 'trainer.2.role': 'Beginners & herstel',
     'trainer.3.name': 'Aria', 'trainer.3.role': 'Vrouwenkracht',
     'faq.eyebrow': 'Veelgestelde vragen', 'faq.h2': 'Wat mensen zich afvragen voor ze beginnen.',
-    'faq.q1': '"Ik heb nog nooit gesport — is dit voor mij?"',
+    'faq.q1': '"Ik heb nog nooit gesport, is dit voor mij?"',
     'faq.a1': 'Absoluut. Sterker nog: beginners halen het meeste uit 1-op-1 coaching. Je leert alles goed, zonder slechte gewoontes aan te leren.',
     'faq.q2': '"Wat kost het?"',
     'faq.a2': 'De eerste sessie is volledig gratis, zonder verplichting. Daarna bespreken we samen wat past bij jouw doelen en situatie.',
-    'faq.q3': '"Ik heb nauwelijks tijd — gaat dat wel werken?"',
-    'faq.a3': 'Eén sessie per week is genoeg om resultaat te zien. We bouwen een schema dat in jouw leven past — niet andersom.',
-    'faq.q4': '"Ik ben eerder gestopt — hoe is dit anders?"',
+    'faq.q3': '"Ik heb nauwelijks tijd, gaat dat wel werken?"',
+    'faq.a3': 'Eén sessie per week is genoeg om resultaat te zien. We bouwen een schema dat in jouw leven past, niet andersom.',
+    'faq.q4': '"Ik ben eerder gestopt, hoe is dit anders?"',
     'faq.a4': 'Omdat je nu niet alleen bent. Je hebt iemand die met je meekijkt, bijstuurt en je structuur geeft. Dat is precies het verschil.',
-    'faq.q5': '"Ik heb van alles geprobeerd om af te vallen — waarom zou dit anders zijn?"',
-    'faq.a5': 'Omdat we niet beginnen met een standaard plan. We beginnen met jou — jouw lichaam, jouw schema en wat eerder niet werkte. 1-op-1 coaching betekent dat je trainer ziet wat er misgaat en het direct aanpast. Dat is iets wat een app, een dieet of een groepsles nooit voor je kan doen.',
+    'faq.q5': '"Ik heb van alles geprobeerd om af te vallen, waarom zou dit anders zijn?"',
+    'faq.a5': 'Omdat we niet beginnen met een standaard plan. We beginnen met jou: jouw lichaam, jouw schema en wat eerder niet werkte. 1-op-1 coaching betekent dat je trainer ziet wat er misgaat en het direct aanpast. Dat is iets wat een app, een dieet of een groepsles nooit voor je kan doen.',
     'faq.q6': '"Zie ik echt resultaat met maar één sessie per week?"',
-    'faq.a6': 'Ja — als die ene sessie slim is opgebouwd voor jouw doel. We trainen gericht, geven je handvatten voor buiten de gym en bouwen progressie die zichtbaar blijft. De meeste cliënten merken al snel dat consistent één keer per week meer doet dan ze hadden verwacht.',
+    'faq.a6': 'Ja, als die ene sessie slim is opgebouwd voor jouw doel. We trainen gericht, geven je handvatten voor buiten de gym en bouwen progressie die zichtbaar blijft. De meeste cliënten merken al snel dat consistent één keer per week meer doet dan ze hadden verwacht.',
     'faq.q7': '"Wat gebeurt er precies in de gratis kennismakingssessie?"',
-    'faq.a7': 'Je komt langs, we leren je kennen en bespreken je doel. We kijken samen welke aanpak bij je past. Geen fitnesstests, geen verkooppraatje, geen verplichtingen — gewoon een eerlijk gesprek en een eerste indruk. Daarna kies jij.',
+    'faq.a7': 'Je komt langs, we leren je kennen en bespreken je doel. We kijken samen welke aanpak bij je past. Geen fitnesstests, geen verkooppraatje, geen verplichtingen, gewoon een eerlijk gesprek en een eerste indruk. Daarna kies jij.',
     'closing.eyebrow': 'Gratis eerste stap', 'closing.h2': 'Klaar om te zien wat bij jou past?',
     'closing.p': 'Doe de test in 60 seconden. Geen verplichtingen, geen contracten.',
     'closing.cta': 'Doe de gratis test',
@@ -95,7 +95,8 @@ const i18n = {
     'quiz.s4.a1': 'Te druk, geen tijd', 'quiz.s4.a2': 'Weet niet hoe beginnen', 'quiz.s4.a3': 'Ik zie het niet volhouden', 'quiz.s4.a4': 'Ik voel me niet op m\'n gemak in de gym',
     'quiz.s5.kicker': 'Vraag 4 van 4', 'quiz.s5.h3': 'Hoe snel wil je resultaat zien?',
     'quiz.s5.a1': 'Zo snel mogelijk', 'quiz.s5.a2': 'Ik wil het rustig opbouwen', 'quiz.s5.a3': 'Ik oriënteer me nog',
-    'quiz.s6.kicker': 'Laatste stap', 'quiz.s6.h3': 'Bijna klaar — voor wie maken we dit plan op?',
+    'quiz.s6.kicker': 'Laatste stap', 'quiz.s6.h3': 'Bijna klaar. Voor wie maken we dit plan op?',
+    'trust.f2.sub': '-op-1',
     'quiz.s6.labelname': 'Voornaam', 'quiz.s6.labelphone': 'WhatsApp-nummer',
     'quiz.input.name': 'Bijv. Sara', 'quiz.input.phone': '06 29 47 18 53',
     'quiz.s6.submit': 'Bekijk mijn resultaat',
@@ -104,7 +105,7 @@ const i18n = {
     'quiz.s7.note': 'Jouw persoonlijk plan wordt samengesteld\u2026',
     'quiz.s8.kicker': 'Jouw profiel',
     'quiz.result.label': 'Jouw aanbevolen eerste stap',
-    'quiz.result.p': 'Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.',
+    'quiz.result.p': 'Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan, zonder verplichting.',
     'quiz.result.book': 'Boek je gratis sessie', 'quiz.result.later': 'Misschien later',
     'quiz.back': '← Terug',
   },
@@ -122,19 +123,19 @@ const i18n = {
     'proof.label.2': 'Locations in Utrecht', 'proof.label.3': 'Always personal',
     'trust.eyebrow': 'Why people start',
     'trust.h2': 'Coaching that feels like support, not pressure.',
-    'trust.p': "Whether you've never set foot in a gym, tried and quit before, or just want to push further — you always start at your own level here.",
+    'trust.p': "Whether you've never set foot in a gym, tried and quit before, or just want to push further. You always start at your own level here.",
     'trust.f1.h3': 'Stick with it after session one', 'trust.f1.p': 'That first session makes everything clear. Almost everyone who shows up, keeps coming back.',
     'trust.f2.h3': 'Coaching on your terms', 'trust.f2.p': "No group classes. No waiting around. Your trainer's full attention, every session.",
     'trust.f3.h3': 'No contracts. No commitments.', 'trust.f3.p': "Start when you're ready. Stop when you want. Nothing holding you in.",
     'forwho.eyebrow': 'Is this for me?', 'forwho.h2': "You've probably felt this before.",
     'forwho.c1.tag': 'Beginners', 'forwho.c1.quote': '"I don\'t know where to start."',
     'forwho.c1.p': "You don't need to know anything. Your trainer starts exactly where you are and walks you through it.",
-    'forwho.c2.tag': 'Coming Back', 'forwho.c2.quote': '"I\'ve quit before — this time I want it to stick."',
+    'forwho.c2.tag': 'Coming Back', 'forwho.c2.quote': '"I\'ve quit before, this time I want it to stick."',
     'forwho.c2.p': "Structure, personal guidance, and someone who keeps you accountable. That's what makes it different this time.",
     'forwho.c3.tag': 'Ready to Level Up', 'forwho.c3.quote': '"I already work out, but I\'ve hit a wall."',
     'forwho.c3.p': "You're already putting in the work. But the scale isn't moving, or progress has just stopped. A trainer spots in one session exactly where you're stuck and adjusts straight away. No starting over, just training smarter.",
     'forwho.c4.tag': 'Losing weight',
-    'forwho.c4.quote': '"I\'m genuinely putting in the effort — it just isn\'t working."',
+    'forwho.c4.quote': '"I\'m genuinely putting in the effort but it just isn\'t working."',
     'forwho.c4.p': "Losing weight isn't about trying harder. It's about the right approach for your specific body. Your trainer watches, adjusts, and makes sure this time you actually see results.",
     'testi.eyebrow': 'Reviews', 'testi.h2': 'What our clients say after their first session.',
     'testi.stars.aria': '5 out of 5 stars',
@@ -152,10 +153,10 @@ const i18n = {
     'testi.sander.badge': '+10 kg on bench in 3 months',
     'process.eyebrow': 'How it works', 'process.h2': 'From quiz to your first session in three steps.',
     'process.s1.h3': 'Take the quick quiz', 'process.s1.p': "Four questions about your goal and what's getting in the way. Takes 60 seconds.",
-    'process.s2.h3': 'Get your personal recommendation', 'process.s2.p': "You'll immediately see which approach fits you best — based on exactly what you told us.",
+    'process.s2.h3': 'Get your personal recommendation', 'process.s2.p': "You'll immediately see which approach fits you best, based on exactly what you told us.",
     'process.s3.h3': 'Book your free session', 'process.s3.p': 'Pick a time, come in, and see if it clicks in person. No commitment required.',
     'team.h2': 'Personal. Local. No fitness BS.',
-    'team.p': "We're a small team spread across a few spots in Utrecht. You start with a free session — we listen, no sales pitch. Then you decide.",
+    'team.p': "We're a small team spread across a few spots in Utrecht. You start with a free session, we listen, no sales pitch. Then you decide.",
     'team.cta': 'Book your free session',
     'team.p1.strong': '3 locations in Utrecht', 'team.p1.span': 'Always nearby',
     'team.p2.strong': '1-on-1 sessions', 'team.p2.span': 'Always personal',
@@ -166,20 +167,20 @@ const i18n = {
     'trainer.2.name': 'Erik', 'trainer.2.role': 'Beginners & recovery',
     'trainer.3.name': 'Aria', 'trainer.3.role': "Women's training",
     'faq.eyebrow': 'Common questions', 'faq.h2': 'What people wonder before they sign up.',
-    'faq.q1': '"I\'ve never really worked out — is this for me?"',
+    'faq.q1': '"I\'ve never really worked out, is this for me?"',
     'faq.a1': 'Absolutely. In fact, beginners get the most out of 1-on-1 coaching. You learn everything properly from day one, without picking up bad habits.',
     'faq.q2': '"What does it cost?"',
     'faq.a2': 'Your first session is completely free, no strings attached. After that, we work out together what makes sense for your goals and situation.',
-    'faq.q3': '"I barely have time — can this actually work?"',
-    'faq.a3': "One session a week is enough to see real results. We build a schedule that fits around your life — not the other way around.",
-    'faq.q4': '"I\'ve quit before — how is this any different?"',
+    'faq.q3': '"I barely have time, can this actually work?"',
+    'faq.a3': "One session a week is enough to see real results. We build a schedule that fits around your life, not the other way around.",
+    'faq.q4': '"I\'ve quit before, how is this any different?"',
     'faq.a4': "Because this time you're not doing it alone. Someone's watching your progress, adjusting your plan, and keeping you on track. That's the actual difference.",
-    'faq.q5': '"I\'ve tried everything to lose weight — why would this be different?"',
-    'faq.a5': "Because we don't start with a standard plan. We start with you — your body, your schedule, and what hasn't worked before. 1-on-1 coaching means your trainer sees what's going wrong and adjusts it on the spot. That's something no app, diet, or group class can ever do.",
+    'faq.q5': '"I\'ve tried everything to lose weight, why would this be different?"',
+    'faq.a5': "Because we don't start with a standard plan. We start with you: your body, your schedule, and what hasn't worked before. 1-on-1 coaching means your trainer sees what's going wrong and adjusts it on the spot. That's something no app, diet, or group class can ever do.",
     'faq.q6': '"Can I actually see results with just one session a week?"',
-    'faq.a6': "Yes — if that one session is built around your goal. We train with purpose, give you tools to use outside the gym, and build progress that holds. Most clients find that one consistent session a week does more than they expected.",
+    'faq.a6': "Yes, if that one session is built around your goal. We train with purpose, give you tools to use outside the gym, and build progress that holds. Most clients find that one consistent session a week does more than they expected.",
     'faq.q7': '"What exactly happens in the free intro session?"',
-    'faq.a7': "You come in, we get to know you and talk through your goal. Together we look at which approach fits you best. No fitness tests, no sales pitch, no obligations — just an honest conversation and a first impression. Then you decide.",
+    'faq.a7': "You come in, we get to know you and talk through your goal. Together we look at which approach fits you best. No fitness tests, no sales pitch, no obligations, just an honest conversation and a first impression. Then you decide.",
     'closing.eyebrow': 'Free first step', 'closing.h2': 'Ready to find out what works for you?',
     'closing.p': 'Take the quiz in 60 seconds. No obligations, no contracts.',
     'closing.cta': 'Take the free quiz',
@@ -193,12 +194,13 @@ const i18n = {
     'quiz.s2.p': "Most people who come to us have tried before. The difference: now you have someone who's actually in your corner.",
     'quiz.s2.m1': 'Personal plan', 'quiz.s2.m2': 'Built around you', 'quiz.s2.m3': 'Always at your pace', 'quiz.s2.btn': 'Keep going',
     'quiz.s3.kicker': 'Question 2 of 4', 'quiz.s3.h3': "How would you describe where you're at?",
-    'quiz.s3.a1': 'Barely exercise', 'quiz.s3.a2': 'Started before — ready to try again', 'quiz.s3.a3': 'Occasionally active', 'quiz.s3.a4': 'I work out regularly',
+    'quiz.s3.a1': 'Barely exercise', 'quiz.s3.a2': 'Started before, ready to try again', 'quiz.s3.a3': 'Occasionally active', 'quiz.s3.a4': 'I work out regularly',
     'quiz.s4.kicker': 'Question 3 of 4', 'quiz.s4.h3': "What's your biggest obstacle?",
     'quiz.s4.a1': 'Too busy, no time', 'quiz.s4.a2': "Don't know where to start", 'quiz.s4.a3': "I can't see myself sticking with it", 'quiz.s4.a4': "I don't feel comfortable at the gym",
     'quiz.s5.kicker': 'Question 4 of 4', 'quiz.s5.h3': 'How quickly do you want to see results?',
     'quiz.s5.a1': 'As soon as possible', 'quiz.s5.a2': 'I want to build gradually', 'quiz.s5.a3': 'Still exploring my options',
-    'quiz.s6.kicker': 'Last step', 'quiz.s6.h3': 'Almost there — who are we making this plan for?',
+    'quiz.s6.kicker': 'Last step', 'quiz.s6.h3': 'Almost there. Who are we making this plan for?',
+    'trust.f2.sub': '-on-1',
     'quiz.s6.labelname': 'First name', 'quiz.s6.labelphone': 'WhatsApp number',
     'quiz.input.name': 'e.g. Sara', 'quiz.input.phone': '07922 481 307',
     'quiz.s6.submit': 'See my result',
@@ -207,7 +209,7 @@ const i18n = {
     'quiz.s7.note': 'Putting together your personal plan\u2026',
     'quiz.s8.kicker': 'Your profile',
     'quiz.result.label': 'Your recommended first step',
-    'quiz.result.p': "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan — no commitment.",
+    'quiz.result.p': "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan, no commitment.",
     'quiz.result.book': 'Book your free session', 'quiz.result.later': 'Maybe later',
     'quiz.back': '← Back',
   },
@@ -424,38 +426,38 @@ function updateInterstitialForGoal() {
   const copy = {
     'Strakker worden': isEn
       ? {
-        h: "Getting toned isn't about training harder — it's about training right.",
+        h: "Getting toned isn't about training harder. It's about training right.",
         p: "Most people who come to us are already putting in the effort. The difference: a trainer who sees exactly what your body needs and builds around that. You'll feel it in the first session."
       }
       : {
-        h: "Strakker worden heeft alles te maken met de juiste aanpak — niet met harder trainen.",
+        h: "Strakker worden heeft alles te maken met de juiste aanpak, niet met harder trainen.",
         p: "De meeste mensen die bij ons komen, doen al hun best. Het verschil: een trainer die precies ziet wat jóuw lichaam nodig heeft en daar op inspeelt. Dat voel je al in de eerste sessie."
       },
     'Meer zelfvertrouwen': isEn
       ? {
-        h: "Confidence in your body isn't built in the mirror — it's built by doing.",
-        p: "Almost everyone who starts with us feels like the gym isn't for them. A few sessions later, that changes. Not because of something magic — because you know what you're doing and it shows."
+        h: "Confidence in your body isn't built in the mirror. It's built by doing.",
+        p: "Almost everyone who starts with us feels like the gym isn't for them. A few sessions later, that changes. Not because of something magic, because you know what you're doing and it shows."
       }
       : {
-        h: "Vertrouwen in je lichaam bouw je niet voor de spiegel — je bouwt het door te doen.",
-        p: "Bijna iedereen die bij ons begint, voelt zich eerst niet op zijn plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch — maar omdat je weet wat je doet en dat voelt."
+        h: "Vertrouwen in je lichaam bouw je niet voor de spiegel. Je bouwt het door te doen.",
+        p: "Bijna iedereen die bij ons begint, voelt zich eerst niet op zijn plek in de gym. Na een paar sessies is dat weg. Niet door iets magisch, maar omdat je weet wat je doet en dat voelt."
       },
     'Afvallen en meer energie': isEn
       ? {
         h: "Losing weight has nothing to do with willpower.",
-        p: "Most people who come to us have tried it all — diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start."
+        p: "Most people who come to us have tried it all: diets, apps, group classes. The effort was never the problem. The approach was. That's exactly where we start."
       }
       : {
         h: "Afvallen heeft niks te maken met wilskracht.",
-        p: "De meeste mensen die bij ons komen, hebben van alles geprobeerd — diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen."
+        p: "De meeste mensen die bij ons komen, hebben van alles geprobeerd: diëten, apps, groepslessen. De inzet was er. De aanpak paste niet. Dat is precies waar we beginnen."
       },
     'Sterker worden': isEn
       ? {
-        h: "Getting fitter doesn't start with training more — it starts with training smarter.",
+        h: "Getting fitter doesn't start with training more. It starts with training smarter.",
         p: "Most people who come to us have already tried doing more. The problem was almost never effort. It was structure. We fix that together, starting in the very first session."
       }
       : {
-        h: "Fitter worden begint niet bij meer trainen — het begint bij slimmer trainen.",
+        h: "Fitter worden begint niet bij meer trainen. Het begint bij slimmer trainen.",
         p: "De meeste mensen die bij ons komen, hebben al geprobeerd om meer te doen. Het probleem was bijna nooit de inzet. Het was de structuur. Dat lossen we samen op, al in de eerste sessie."
       },
   };
@@ -625,12 +627,12 @@ function buildResult() {
 
   const readiness = isEn
     ? (quizState.timeline === "Zo snel mogelijk"
-      ? "You said you want to start soon — now's the moment to lock in a session."
+      ? "You said you want to start soon. Now's the moment to lock in a session."
       : quizState.timeline === "Rustig opbouwen"
         ? "Good timing: booking something now means you'll actually follow through."
         : "Even if you're still exploring, a free session is the best way to feel it out without any pressure.")
     : (quizState.timeline === "Zo snel mogelijk"
-      ? "Je gaf aan dat je snel wilt starten — dit is het moment om direct een sessie vast te leggen."
+      ? "Je gaf aan dat je snel wilt starten. Dit is het moment om direct een sessie vast te leggen."
       : quizState.timeline === "Rustig opbouwen"
         ? "Je zit in een goede fase: nu een moment vastleggen zorgt dat je het ook echt doet."
         : "Zelfs als je je nog oriënteert, is een gratis sessie de beste manier om zonder druk te voelen of het bij je past.");
@@ -646,24 +648,24 @@ function buildResult() {
 
     if (obs === 'Ik voel me onzeker in een sportschool' || obs === 'Onzeker gevoel') {
       cardText = isEnCard
-        ? "Come in for a free session. No big group, no unfamiliar faces — just you and your trainer. We start exactly where you are now, at a pace that feels right."
-        : "Kom langs voor een gratis sessie. Geen grote zaal, geen onbekende blikken — gewoon jij en jouw trainer. We beginnen precies waar jij nu staat, op een tempo dat goed voelt.";
+        ? "Come in for a free session. No big group, no unfamiliar faces, just you and your trainer. We start exactly where you are now, at a pace that feels right."
+        : "Kom langs voor een gratis sessie. Geen grote zaal, geen onbekende blikken, gewoon jij en jouw trainer. We beginnen precies waar jij nu staat, op een tempo dat goed voelt.";
     } else if (obs === 'Ik ben eerder begonnen maar gestopt' || obs === 'Ik zie het niet volhouden' || obs === 'Motivatie weggevallen' || obs === 'Te druk geworden') {
       cardText = isEnCard
-        ? "Book your free session. We start with what made it hard last time — and build something that actually works this time. No contract, no pressure."
-        : "Plan je gratis sessie. We beginnen met wat het de vorige keer moeilijk maakte — en bouwen iets op dat dit keer wél werkt. Geen contract, geen druk.";
+        ? "Book your free session. We start with what made it hard last time, and build something that actually works this time. No contract, no pressure."
+        : "Plan je gratis sessie. We beginnen met wat het de vorige keer moeilijk maakte, en bouwen iets op dat dit keer wél werkt. Geen contract, geen druk.";
     } else if (obs === 'Ik heb geen tijd') {
       cardText = isEnCard
-        ? "Book your free session. 60 minutes is all it takes to see if this works for you — and to build a plan that fits around your busy life."
-        : "Plan je gratis sessie. 60 minuten is genoeg om te zien of dit bij jou past — en om een aanpak te bouwen die past bij jouw drukke agenda.";
+        ? "Book your free session. 60 minutes is all it takes to see if this works for you, and to build a plan that fits around your busy life."
+        : "Plan je gratis sessie. 60 minuten is genoeg om te zien of dit bij jou past, en om een aanpak te bouwen die past bij jouw drukke agenda.";
     } else if ((obs === 'Geen resultaat meer' || obs === 'Geen resultaat gezien' || obs === 'Weet niet wat ik verkeerd doe') && goal !== 'Afvallen en meer energie') {
       cardText = isEnCard
         ? "Come in and let us take a look at what you're already doing. One session is enough to find where the progress is hiding."
         : "Kom langs en laat ons een blik werpen op wat je al doet. Eén sessie is genoeg om te zien waar de winst zit.";
     } else {
       cardText = isEnCard
-        ? "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan — no commitment."
-        : "Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan — zonder verplichting.";
+        ? "Book a free intro session. In 60 minutes you'll meet your trainer, talk through your goal, and put together an initial plan, no commitment."
+        : "Plan een gratis kennismakingssessie. In 60 minuten leer je jouw trainer kennen, bespreken we jouw doel en maken we samen een eerste plan, zonder verplichting.";
     }
 
     resultCardP.textContent = cardText;
@@ -673,7 +675,7 @@ function buildResult() {
   const weightSuffix = quizState.goal === 'Afvallen en meer energie'
     ? (isEn
       ? " For weight loss specifically: no crash plans, no one-size-fits-all schedules. We build something that fits your life and actually lasts."
-      : " Specifiek voor afvallen: geen crash-schema's en geen standaardlijstjes. We bouwen iets op dat bij jóuw leven past — en dat ook blijft.")
+      : " Specifiek voor afvallen: geen crash-schema's en geen standaardlijstjes. We bouwen iets op dat bij jóuw leven past, en dat ook blijft.")
     : '';
 
   resultText.textContent = `${profile.body}${weightSuffix} ${readiness}`;
@@ -845,6 +847,15 @@ const langToggle = document.getElementById('langToggle');
 if (langToggle) {
   langToggle.addEventListener('click', () => {
     setLang(currentLang === 'nl' ? 'en' : 'nl');
+  });
+}
+
+// ── FLOATING LANG ISLAND ──────────────────────────────────────
+const langFloat = document.getElementById('langFloat');
+if (langFloat) {
+  langFloat.addEventListener('click', e => {
+    const opt = e.target.closest('.lang-opt');
+    if (opt && opt.dataset.lang) setLang(opt.dataset.lang);
   });
 }
 

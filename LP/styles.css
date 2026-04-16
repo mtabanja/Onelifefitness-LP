@@ -193,6 +193,30 @@ img { display: block; max-width: 100%; }
 
 .lang-sep { display: none; }
 
+/* ── FLOATING LANG ISLAND ────────────────────────────────────── */
+.lang-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.28rem 0.35rem;
+  background: rgba(20, 14, 8, 0.76);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+}
+.lang-float:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
 /* ── NAVIGATION ──────────────────────────────────────────────── */
 
 /* Right-side wrapper: hamburger + CTA */
