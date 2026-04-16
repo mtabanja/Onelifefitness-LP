@@ -210,11 +210,22 @@ img { display: block; max-width: 100%; }
   border-radius: 2rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   cursor: pointer;
-  transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+  transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease),
+              bottom 400ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 .lang-float:hover {
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* On mobile the sticky CTA bar occupies the full bottom strip (~5rem + safe-area).
+   Float the island to the left side and lift it clear of the bar. */
+@media (max-width: 767px) {
+  .lang-float {
+    right: auto;
+    left: 1rem;
+    bottom: calc(5.2rem + env(safe-area-inset-bottom));
+  }
 }
 
 /* ── NAVIGATION ──────────────────────────────────────────────── */
