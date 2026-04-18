@@ -19,40 +19,40 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <!-- ── HEADER ───────────────────────────────────────────── -->
+    <header class="site-header" id="siteHeader">
+      <div class="brand-core">
+        <img src="ASSETS/logo.avif" alt="One Life Fitness" class="brand-logo" fetchpriority="high" />
+      </div>
+
+      <nav class="site-nav" id="siteNav" aria-label="Paginanavigatie">
+        <a href="#aanpak"     class="nav-link" data-i18n="nav.link.aanpak">Aanpak</a>
+        <a href="#ervaringen" class="nav-link" data-i18n="nav.link.ervaringen">Ervaringen</a>
+        <a href="#werkwijze"  class="nav-link" data-i18n="nav.link.werkwijze">Werkwijze</a>
+        <a href="#team"       class="nav-link" data-i18n="nav.link.team">Over ons</a>
+        <a href="#faq"        class="nav-link" data-i18n="nav.link.faq">FAQ</a>
+      </nav>
+
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-opt is-active" data-lang="nl">NL</span>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <span class="lang-opt" data-lang="en">EN</span>
+      </button>
+
+      <div class="header-actions">
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span class="nt-bar" aria-hidden="true"></span>
+          <span class="nt-bar" aria-hidden="true"></span>
+        </button>
+        <button class="nav-cta" data-open-quiz id="headerCta">
+          <span data-i18n="nav.cta">Start de test</span>
+          <span class="nav-cta-icon">↗</span>
+        </button>
+      </div>
+    </header>
+
     <div class="page-shell">
       <div class="page-noise" aria-hidden="true"></div>
-
-      <!-- ── HEADER ───────────────────────────────────────────── -->
-      <header class="site-header reveal" id="siteHeader">
-        <div class="brand-core">
-          <img src="ASSETS/logo.avif" alt="One Life Fitness" class="brand-logo" fetchpriority="high" />
-        </div>
-
-        <nav class="site-nav" id="siteNav" aria-label="Paginanavigatie">
-          <a href="#aanpak"     class="nav-link" data-i18n="nav.link.aanpak">Aanpak</a>
-          <a href="#ervaringen" class="nav-link" data-i18n="nav.link.ervaringen">Ervaringen</a>
-          <a href="#werkwijze"  class="nav-link" data-i18n="nav.link.werkwijze">Werkwijze</a>
-          <a href="#team"       class="nav-link" data-i18n="nav.link.team">Over ons</a>
-          <a href="#faq"        class="nav-link" data-i18n="nav.link.faq">FAQ</a>
-        </nav>
-
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-          <span class="lang-opt is-active" data-lang="nl">NL</span>
-          <span class="lang-sep" aria-hidden="true">/</span>
-          <span class="lang-opt" data-lang="en">EN</span>
-        </button>
-
-        <div class="header-actions">
-          <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-            <span class="nt-bar" aria-hidden="true"></span>
-            <span class="nt-bar" aria-hidden="true"></span>
-          </button>
-          <button class="nav-cta" data-open-quiz id="headerCta">
-            <span data-i18n="nav.cta">Start de test</span>
-            <span class="nav-cta-icon">↗</span>
-          </button>
-        </div>
-      </header>
 
       <main>
         <!-- ── HERO ─────────────────────────────────────────────── -->
@@ -243,17 +243,17 @@
               <div class="card-shell">
                 <div class="card-core testi-core">
                   <div class="testi-top">
-                    <div class="avatar-initials" aria-hidden="true">N</div>
+                    <img src="ASSETS/pp-imane.jpg" alt="Imane" class="avatar-photo" loading="lazy" />
                     <div>
-                      <strong>Nora, 27</strong>
-                      <span class="testi-meta" data-i18n="testi.floor.meta">Utrecht · Zelfvertrouwen</span>
+                      <strong>Imane, 27</strong>
+                      <span class="testi-meta" data-i18n="testi.imane.meta">Utrecht · Zelfvertrouwen</span>
                     </div>
                   </div>
                   <div class="testi-stars" aria-label="5 uit 5 sterren" data-i18n-aria="testi.stars.aria">
                     <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
                   </div>
-                  <p class="testi-quote" data-i18n="testi.floor.quote">"Ik vond de gym altijd een beetje eng, echt waar. Maar 1-op-1 is gewoon anders, er is niemand die kijkt. Nu ga ik drie keer per week en het voelt inmiddels bijna normaal."</p>
-                  <span class="testi-badge" data-i18n="testi.floor.badge">Van nul naar 3× per week</span>
+                  <p class="testi-quote" data-i18n="testi.imane.quote">"De sportschool vond ik altijd een drempel. Niet één grote reden, het voelde gewoon niet prettig. Nu train ik al maanden drie keer per week en ik denk er niet meer over na."</p>
+                  <span class="testi-badge" data-i18n="testi.imane.badge">Van nul naar 3× per week</span>
                 </div>
               </div>
             </article>
@@ -650,6 +650,12 @@
       <button class="lang-opt is-active" data-lang="nl" aria-label="Nederlands">NL</button>
       <button class="lang-opt" data-lang="en" aria-label="English">EN</button>
     </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Terug naar boven">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M7 11.5V2.5M2.5 7L7 2.5 11.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
     <script src="./script.js"></script>
   </body>

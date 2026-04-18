@@ -36,16 +36,16 @@ const i18n = {
     'testi.eyebrow': 'Ervaringen', 'testi.h2': 'Wat onze cliënten zeggen na hun eerste sessie.',
     'testi.stars.aria': '5 uit 5 sterren',
     'testi.anouk.meta': 'Utrecht · Afvallen',
-    'testi.anouk.quote': '"Begin dit jaar begonnen met één doel: afvallen. Na zes weken was ik al 4 kilo kwijt. Ik snap zelf niet precies hoe het deze keer wel werkte maar ik doe het gewoon."',
+    'testi.anouk.quote': '"In zes weken vier kilo kwijt. Had dat zelf ook niet verwacht. Mijn trainer past het schema elke week aan op basis van hoe het gaat. Dat maakt het verschil."',
     'testi.anouk.badge': '4 kg afgevallen in 6 weken',
     'testi.roos.meta': 'Utrecht · Meer energie',
-    'testi.roos.quote': '"Ben al drie keer eerder gestopt met sporten. Dacht eerlijk gezegd niet dat het deze keer anders zou zijn. Maar vier maanden later ben ik er nog steeds. Mijn trainer wacht gewoon op je, dat helpt echt."',
+    'testi.roos.quote': '"Eerder meerdere keren gestopt met sporten. Verwachtte niet dat het dit keer anders zou zijn. Vier maanden later ben ik er nog. Dat iemand op je wacht maakt meer uit dan ik dacht."',
     'testi.roos.badge': 'Al 4 maanden actief',
-    'testi.floor.meta': 'Utrecht · Zelfvertrouwen',
-    'testi.floor.quote': '"Ik vond de gym altijd een beetje eng, echt waar. Maar 1-op-1 is gewoon anders, er is niemand die kijkt. Nu ga ik drie keer per week en het voelt inmiddels bijna normaal."',
-    'testi.floor.badge': 'Van nul naar 3× per week',
+    'testi.imane.meta': 'Utrecht · Zelfvertrouwen',
+    'testi.imane.quote': '"De sportschool vond ik altijd een drempel. Niet één grote reden, het voelde gewoon niet prettig. Nu train ik al maanden drie keer per week en ik denk er niet meer over na."',
+    'testi.imane.badge': 'Van nul naar 3× per week',
     'testi.sander.meta': 'Utrecht · Sterker worden',
-    'testi.sander.quote': '"Ik sportte al jaren zelf en dacht dat ik het wel wist. Mijn trainer zag in de eerste sessie al wat er fout zat. Sindsdien is mijn bench met 10 kilo omhoog gegaan. Eerder had ik dat in drie jaar niet voor elkaar gekregen."',
+    'testi.sander.quote': '"Vijf jaar op eigen houtje getraind en dacht dat ik het prima deed. Mijn trainer zag in de eerste sessie meteen wat er fout zat. Bench in drie maanden tien kilo omhoog. In vijf jaar zelf was dat me niet gelukt."',
     'testi.sander.badge': '+10 kg bench in 3 maanden',
     'process.eyebrow': 'Hoe werkt het', 'process.h2': 'Van test naar eerste sessie in drie stappen.',
     'process.s1.h3': 'Doe de korte test', 'process.s1.p': 'Vier vragen over jouw doel en wat je tegenhoudt. Duurt 60 seconden.',
@@ -140,16 +140,16 @@ const i18n = {
     'testi.eyebrow': 'Reviews', 'testi.h2': 'What our clients say after their first session.',
     'testi.stars.aria': '5 out of 5 stars',
     'testi.anouk.meta': 'Utrecht · Weight loss',
-    'testi.anouk.quote': '"Started this year with one goal: lose weight. Six weeks in I was already 4 kilos down. Honestly don\'t know exactly why it worked this time but it did."',
+    'testi.anouk.quote': '"Four kilos in six weeks. Didn\'t expect that myself. My trainer adjusts the plan every week based on how things are going. That\'s what makes the difference."',
     'testi.anouk.badge': '4 kg down in 6 weeks',
     'testi.roos.meta': 'Utrecht · More energy',
-    'testi.roos.quote': '"Quit working out three times before. Honestly didn\'t think this time would be different. Four months later I\'m still here. Having a trainer who\'s actually waiting for you makes a real difference."',
+    'testi.roos.quote': '"Quit working out more than once before. Didn\'t think this time would be any different. Four months later I\'m still here. Having someone who actually expects you makes more of a difference than I thought."',
     'testi.roos.badge': '4 months in and still going',
-    'testi.floor.meta': 'Utrecht · Confidence',
-    'testi.floor.quote': '"Honestly the gym used to freak me out a bit. Not even joking. But 1-on-1 is just different, no one watching. Now I go three times a week and it almost feels normal."',
-    'testi.floor.badge': 'From zero to 3× a week',
+    'testi.imane.meta': 'Utrecht · Confidence',
+    'testi.imane.quote': '"I always found the gym a barrier. Not one big reason, it just never felt right. Now I\'ve been training three times a week for months and I don\'t think about it anymore."',
+    'testi.imane.badge': 'From zero to 3× a week',
     'testi.sander.meta': 'Utrecht · Getting stronger',
-    'testi.sander.quote': '"Been training on my own for years. Thought I knew what I was doing. My trainer spotted what was wrong in the first session. Since then my bench went up 10 kilos. In three years on my own I hadn\'t managed that."',
+    'testi.sander.quote': '"Five years training on my own, thought I was doing fine. My trainer spotted what was wrong in our first session. Bench went up ten kilos in three months. In five years solo I hadn\'t pulled that off."',
     'testi.sander.badge': '+10 kg on bench in 3 months',
     'process.eyebrow': 'How it works', 'process.h2': 'From quiz to your first session in three steps.',
     'process.s1.h3': 'Take the quick quiz', 'process.s1.p': "Four questions about your goal and what's getting in the way. Takes 60 seconds.",
@@ -776,6 +776,43 @@ document.addEventListener("click", e => {
     navToggle?.setAttribute("aria-expanded", "false");
   }
 });
+
+// ── SMART STICKY NAV + BACK TO TOP ───────────────────────────
+const backToTop = document.getElementById('backToTop');
+let _lastScrollY = window.scrollY;
+let _scrollTicking = false;
+const HIDE_THRESHOLD = 80;   // px — nav hides below this
+const BTT_THRESHOLD  = 400;  // px — back-to-top appears above this
+
+window.addEventListener('scroll', () => {
+  if (_scrollTicking) return;
+  _scrollTicking = true;
+  window.requestAnimationFrame(() => {
+    const currentY = window.scrollY;
+    const scrollingDown = currentY > _lastScrollY;
+    const pastThreshold = currentY > HIDE_THRESHOLD;
+    const navIsOpen = siteHeader.classList.contains('nav-open');
+
+    if (scrollingDown && pastThreshold && !navIsOpen) {
+      siteHeader.classList.add('is-hidden');
+    } else {
+      siteHeader.classList.remove('is-hidden');
+    }
+
+    if (backToTop) {
+      backToTop.classList.toggle('is-visible', currentY > BTT_THRESHOLD);
+    }
+
+    _lastScrollY = currentY;
+    _scrollTicking = false;
+  });
+}, { passive: true });
+
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ── ACTIVE NAV SECTION HIGHLIGHT ─────────────────────────────
 const sectionIds = ["aanpak", "ervaringen", "werkwijze", "team", "faq"];
