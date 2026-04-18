@@ -1,5 +1,5 @@
 -- One Life Fitness – Leads table
--- Run this in Supabase SQL editor: https://supabase.com/dashboard/project/chmxoloedyjpmeocqzri/sql
+-- Run this in your Supabase SQL editor
 
 CREATE TABLE IF NOT EXISTS leads (
   id               uuid        DEFAULT gen_random_uuid() PRIMARY KEY,
