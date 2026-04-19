@@ -276,7 +276,7 @@ const resultTitle = document.getElementById("resultTitle");
 const resultText = document.getElementById("resultText");
 const bookingLink = document.getElementById("bookingLink");
 
-const bookingUrl = "https://cal.com/one-life-fitness/gratis-1-op-1-gesprek-met-jouw-personal-trainer";
+const bookingUrl = "https://wa.me/31687540796";
 
 const TOTAL_STEPS = steps.length;  // 8
 const TYPING_STEP = TOTAL_STEPS - 1; // 7
@@ -731,17 +731,16 @@ leadForm.addEventListener("submit", event => {
       ...utmData,
     }),
   }).catch(() => { });
+
+  // ── META PIXEL: Lead event ────────────────────────────────────
+  if (typeof fbq === "function") {
+    fbq("track", "Lead");
+  }
 });
 
 bookingLink.addEventListener("click", event => {
   event.preventDefault();
-  let p = quizState.phone.replace(/[\s\-\(\)\.]/g, '');
-  if (p.startsWith('+31')) p = p.slice(1);       // +31... → 31...
-  else if (p.startsWith('00')) p = p.slice(2);    // 0031... → 31...
-  else if (p.startsWith('0')) p = '31' + p.slice(1); // 06... → 316...
-  else if (!p.startsWith('31')) p = '31' + p;     // 6... → 316...
-  const urlWithMeta = p ? `${bookingUrl}?metadata[phone]=${p}` : bookingUrl;
-  window.open(urlWithMeta, "_blank", "noopener,noreferrer");
+  window.open(bookingUrl, "_blank", "noopener,noreferrer");
 });
 
 // ── KEYBOARD ESCAPE ───────────────────────────────────────────
