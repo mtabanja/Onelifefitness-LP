@@ -16,7 +16,7 @@ const i18n = {
     'hero.cta.primary': 'Doe de gratis test', 'hero.cta.secondary': 'Hoe werkt het?',
     'hero.meta.1': 'Gratis kennismaking', 'hero.meta.2': 'Geen contract', 'hero.meta.3': '1-op-1 aandacht',
     'proof.1on1': '1-op-1', 'proof.label.1': 'Komt terug na de eerste sessie',
-    'proof.label.2': 'Locaties in Utrecht', 'proof.label.3': 'Altijd persoonlijk',
+    'proof.label.2': 'Basic-Fit · Van Heuven Goedhartplein', 'proof.label.3': 'Altijd persoonlijk',
     'trust.eyebrow': 'Waarom mensen beginnen',
     'trust.h2': 'Coaching die aanvoelt als steun, niet als druk.',
     'trust.p': 'Of je nu nog nooit gesport hebt, eerder gestopt bent, of gewoon meer uit jezelf wilt halen. Hier begin je altijd op jouw eigen niveau.',
@@ -52,9 +52,9 @@ const i18n = {
     'process.s2.h3': 'Ontvang jouw persoonlijk advies', 'process.s2.p': 'Je ziet direct welke aanpak het beste bij jou past, afgestemd op jouw antwoorden.',
     'process.s3.h3': 'Plan je gratis sessie', 'process.s3.p': 'Kies een moment, kom langs, en voel zelf of het klopt. Zonder verplichting.',
     'team.h2': 'Persoonlijk. Lokaal. Zonder opgeblazen fitnesspraat.',
-    'team.p': 'We werken met een klein team op meerdere locaties in Utrecht. Je start met een gratis sessie, we luisteren, geen verkooppraatje. Daarna kies jij.',
+    'team.p': 'We werken met een klein team in Utrecht. Je start met een gratis sessie, we luisteren, geen verkooppraatje. Daarna kies jij.',
     'team.cta': 'Plan de gratis sessie',
-    'team.p1.strong': '3 locaties in Utrecht', 'team.p1.span': 'Altijd dichtbij',
+    'team.p1.strong': 'Basic-Fit Utrecht', 'team.p1.span': 'Van Heuven Goedhartplein 13',
     'team.p2.strong': '1-op-1 sessies', 'team.p2.span': 'Altijd persoonlijk',
     'team.p3.strong': '60 minuten', 'team.p3.span': 'Volledig op jou gericht',
     'team.p4.strong': 'Gratis start', 'team.p4.span': 'Geen verplichtingen',
@@ -120,7 +120,7 @@ const i18n = {
     'hero.cta.primary': 'Take the free quiz', 'hero.cta.secondary': 'How does it work?',
     'hero.meta.1': 'Free intro session', 'hero.meta.2': 'No contract', 'hero.meta.3': '1-on-1 attention',
     'proof.1on1': '1-on-1', 'proof.label.1': 'Come back after their first session',
-    'proof.label.2': 'Locations in Utrecht', 'proof.label.3': 'Always personal',
+    'proof.label.2': 'Basic-Fit · Van Heuven Goedhartplein', 'proof.label.3': 'Always personal',
     'trust.eyebrow': 'Why people start',
     'trust.h2': 'Coaching that feels like support, not pressure.',
     'trust.p': "Whether you've never set foot in a gym, tried and quit before, or just want to push further. You always start at your own level here.",
@@ -156,9 +156,9 @@ const i18n = {
     'process.s2.h3': 'Get your personal recommendation', 'process.s2.p': "You'll immediately see which approach fits you best, based on exactly what you told us.",
     'process.s3.h3': 'Book your free session', 'process.s3.p': 'Pick a time, come in, and see if it clicks in person. No commitment required.',
     'team.h2': 'Personal. Local. No fitness BS.',
-    'team.p': "We're a small team spread across a few spots in Utrecht. You start with a free session, we listen, no sales pitch. Then you decide.",
+    'team.p': "We're a small team based in Utrecht. You start with a free session, we listen, no sales pitch. Then you decide.",
     'team.cta': 'Book your free session',
-    'team.p1.strong': '3 locations in Utrecht', 'team.p1.span': 'Always nearby',
+    'team.p1.strong': 'Basic-Fit Utrecht', 'team.p1.span': 'Van Heuven Goedhartplein 13',
     'team.p2.strong': '1-on-1 sessions', 'team.p2.span': 'Always personal',
     'team.p3.strong': '60 minutes', 'team.p3.span': 'Fully focused on you',
     'team.p4.strong': 'Free start', 'team.p4.span': 'No obligations',
@@ -276,7 +276,7 @@ const resultTitle = document.getElementById("resultTitle");
 const resultText = document.getElementById("resultText");
 const bookingLink = document.getElementById("bookingLink");
 
-const bookingUrl = "https://wa.me/31687540796";
+const bookingUrl = "https://cal.com/one-life-fitness/gratis-1-op-1-gesprek-met-jouw-personal-trainer";
 
 const TOTAL_STEPS = steps.length;  // 8
 const TYPING_STEP = TOTAL_STEPS - 1; // 7
@@ -740,7 +740,13 @@ leadForm.addEventListener("submit", event => {
 
 bookingLink.addEventListener("click", event => {
   event.preventDefault();
-  window.open(bookingUrl, "_blank", "noopener,noreferrer");
+  let p = quizState.phone.replace(/[\s\-\(\)\.]/g, '');
+  if (p.startsWith('+31')) p = p.slice(1);       // +31... → 31...
+  else if (p.startsWith('00')) p = p.slice(2);    // 0031... → 31...
+  else if (p.startsWith('0')) p = '31' + p.slice(1); // 06... → 316...
+  else if (!p.startsWith('31')) p = '31' + p;     // 6... → 316...
+  const urlWithMeta = p ? `${bookingUrl}?metadata[phone]=${p}` : bookingUrl;
+  window.open(urlWithMeta, "_blank", "noopener,noreferrer");
 });
 
 // ── KEYBOARD ESCAPE ───────────────────────────────────────────

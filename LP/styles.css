@@ -1366,6 +1366,64 @@ h1, h2, h3 {
   background: rgba(23, 20, 13, 0.09);
 }
 
+/* ── LOCATION MAP ───────────────────────────────────────────── */
+.map-section {
+  border-top: 1px solid var(--line);
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.map-iframe {
+  display: block;
+  width: 100%;
+  height: 280px;
+  filter: saturate(0.85) contrast(1.02);
+}
+
+.map-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(22, 18, 12, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #F5F0E8;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.map-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .map-iframe { height: 360px; }
+  .map-label {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    font-size: 0.82rem;
+    padding: 0.55rem 1rem;
+  }
+}
+
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .site-footer {
   position: relative;
