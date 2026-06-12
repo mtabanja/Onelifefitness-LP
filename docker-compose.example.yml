@@ -1,0 +1,44 @@
+# Example self-hosted stack for the One Life Fitness AI lead-conversion system.
+# Sanitized: replace domains, secrets and webhook paths with your own values.
+# Total infrastructure cost on a small VPS: ~15 euro/month.
+
+services:
+  n8n:
+    image: n8nio/n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=n8n.example.com
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.example.com/
+      - GENERIC_TIMEZONE=Europe/Amsterdam
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+  waha:
+    image: devlikeapro/waha
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # WAHA runs in its own container; webhooks reach n8n on the host
+      # via host.docker.internal (the Docker-to-Docker routing problem
+      # described in the README).
+      - WHATSAPP_HOOK_URL=http://host.docker.internal:5678/webhook/whatsapp-inbound
+      - WHATSAPP_HOOK_EVENTS=message
+      - WAHA_API_KEY=${WAHA_API_KEY}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - waha_sessions:/app/.sessions
+
+volumes:
+  n8n_data:
+  waha_sessions:
+
+# Not in this compose file:
+# - Landing page: deployed on Vercel (see LP/)
+# - Database: Supabase managed PostgreSQL (see create_leads_table.sql)
+# - Booking: Cal.com cloud

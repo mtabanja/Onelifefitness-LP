@@ -13,6 +13,26 @@ When a prospect submits the landing page form, the system:
 
 The AI agent speaks Dutch by default and switches to English if the lead replies in English. It's built to match the trainer's exact tone and sales style.
 
+## Results (first 6 weeks in production)
+
+- **32% automated lead-to-booking conversion**
+- Runs 24/7 unattended; leads converse naturally without realising it's automated
+- Detailed funnel data available on request (client data stays private)
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Meta ad campaign] --> B[Landing page<br/>Vercel]
+    B -- form webhook --> C[n8n workflow<br/>self-hosted Docker]
+    C --> D[Claude AI sales agent<br/>Anthropic API]
+    D -- send/receive --> E[WhatsApp<br/>WAHA, Docker]
+    E -- inbound reply webhook --> C
+    C -- per-lead memory --> F[(Supabase<br/>PostgreSQL)]
+    D -- drives lead to book --> G[Cal.com booking]
+    C -- 4h / 24h / 72h<br/>follow-up cadence --> E
+```
+
 ## Tech stack
 
 | Layer | Tool |
@@ -27,10 +47,17 @@ The AI agent speaks Dutch by default and switches to English if the lead replies
 ## Repository structure
 
 ```
-LP/              # Landing page (HTML/CSS/JS) deployed on Vercel
-ASSETS/          # Brand assets, trainer photos, logo
-create_leads_table.sql   # Supabase schema with RLS and auto-updated_at trigger
+LP/                          # Landing page (HTML/CSS/JS) deployed on Vercel
+ASSETS/                      # Brand assets, trainer photos, logo
+create_leads_table.sql       # Supabase schema with RLS and auto-updated_at trigger
+docker-compose.example.yml   # Sanitized self-hosted stack (n8n + WAHA)
+workflow/OVERVIEW.md         # Node-level workflow architecture (see note below)
 ```
+
+> **Why no workflow export?** The n8n workflow is the commercial core of this
+> system and is deployed for clients as a paid product, so the importable JSON
+> is intentionally not published. `workflow/OVERVIEW.md` documents the node-level
+> design instead.
 
 ## Key technical decisions
 
